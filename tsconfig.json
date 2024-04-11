@@ -8,7 +8,7 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "."
+    // "baseUrl": "."
   },
   "ts-node": {
     "compilerOptions": {
