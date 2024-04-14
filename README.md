@@ -1,49 +1,25 @@
-# React Try 3
 
-A simple React project for learning purposes.
+# react-try-3
 
-## Installation
 
-1. Make sure you have Node.js and npm installed.
-2. Clone this repository.
-3. Run `npm install` to install dependencies.
 
-## Usage
+## Установка
 
-- Start the development server: `npm start`
-- Build for production: `npm run build:prod`
-- Build for development: `npm run build:dev`
+1. Клонируйте репозиторий
+2. Установите зависимости с помощью `npm install`
 
-## Dependencies
+## Использование
 
-- React: ^17.0.2
-- React DOM: ^17.0.2
-- React Router DOM: ^6.2.1
+Запустите проект с помощью:
 
-## Dev Dependencies
+```bash
+npm start
+`
 
-- TypeScript: ^4.9.5
-- Webpack: ^5.69.1
-- @types/node: ^17.0.21
-- @types/react: ^17.0.39
-- @types/react-dom: ^17.0.11
-- @types/webpack: ^5.28.0
-- @types/webpack-dev-server: ^4.7.2
-- css-loader: ^6.6.0
-- html-webpack-plugin: ^5.5.0
-- mini-css-extract-plugin: ^2.5.3
-- sass: ^1.49.9
-- sass-loader: ^12.6.0
-- style-loader: ^3.3.1
-- ts-loader: ^9.2.6
-- ts-node: ^10.9.1
-- webpack-cli: ^5.1.4
-- webpack-dev-server: ^4.7.4
+## Лицензия
 
-## License
+ISC
 
-This project is licensed under the ISC License.
+## Автор
 
-## Contact
 
-Feel free to reach out via email or visit my GitHub profile.
