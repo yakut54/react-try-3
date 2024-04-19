@@ -1,0 +1,15 @@
+.button {
+    cursor: pointer;
+}
+
+.clear {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+.outline {
+    border: 1px solid var(--primary-color);
+}
