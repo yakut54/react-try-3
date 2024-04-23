@@ -23,7 +23,6 @@ export const LangSwitcher: FC<LangSwitcherProps> = (props: LangSwitcherProps) =>
             theme={ButtonTheme.CLEAR}
         >
             {t('Перевод')}
-            {t('ЭТО НОВЫЙ ТЕСТОВЫЙ ПЕРЕВОД 15 видео')}
         </Button>
 
     )
