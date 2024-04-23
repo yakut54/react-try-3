@@ -10,13 +10,14 @@ export  function buildWebpackConfig(options: BuildOptions): webpack.Configuratio
 
     return {
         mode,
+        cache: false,
         entry: paths.entry,
         output: {
             filename: '[name].[contenthash].js',
             path: paths.build,
             clean: true
         },
-        plugins: buildPlugins(paths),
+        plugins: buildPlugins(options),
         module: {
             rules: buildLoaders(options)
         },

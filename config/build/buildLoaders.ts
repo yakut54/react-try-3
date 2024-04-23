@@ -42,7 +42,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     }
 
     const fileLoader: webpack.RuleSetRule = {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|woff2|woff|eot|ttf|json|ico)$/i,
         use: [
             {
                 loader: 'file-loader',
