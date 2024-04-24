@@ -20,7 +20,7 @@ export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstan
         })
     ];
 
-    if (__IS_DEV__) {
+    if (isDev) {
         plugins.push(new ReactRefreshWebpackPlugin());
     }
 

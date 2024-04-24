@@ -9,8 +9,8 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         return resourcePath.includes(".module.");
     }
     const fileHashName = (): string => options.isDev
-        ? '[name]__[local]--[hash:base64:5]'
-        : '[hash:base64:8]'
+        ? '[local]-[hash:base64:3]'
+        : '[hash:base64:8]_build_[hash:base64:2]'
 
     const tsLoader: webpack.RuleSetRule = {
         test: /\.tsx?$/,
@@ -43,17 +43,20 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 
     const fileLoader: webpack.RuleSetRule = {
         test: /\.(png|jpe?g|gif|woff2|woff|eot|ttf|json|ico)$/i,
-        use: [
-            {
-                loader: 'file-loader',
-            },
-        ]
+        use: [{loader: 'file-loader'}]
+    }
+
+    const babelLoader: webpack.RuleSetRule = {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: {loader: 'babel-loader'}
     }
 
     return [
         fileLoader,
         svgrLoader,
         sassLoader,
+        babelLoader,
         tsLoader,
     ]
 }
