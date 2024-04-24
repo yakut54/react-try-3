@@ -24,6 +24,7 @@ export const Sidebar: FC<SidebarProps> = (props: SidebarProps) => {
       )}
     >
       <Button onClick={onToggle}>toggle</Button>
+
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={cls.lang}>huj</LangSwitcher>
