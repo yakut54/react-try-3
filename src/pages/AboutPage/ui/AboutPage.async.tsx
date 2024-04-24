@@ -1,9 +1,7 @@
-import {lazy, LazyExoticComponent} from "react";
+import { lazy, LazyExoticComponent, JSXElementConstructor } from 'react'
 
-export const AboutPageAsync: LazyExoticComponent<() => JSX.Element> = lazy(() =>
-    new Promise(resolve =>
-        setTimeout(() => {
-            resolve(import('./AboutPage'));
-        }, 500)
-    )
-);
+export const AboutPageAsync: LazyExoticComponent<JSXElementConstructor<{}>> = lazy(() => new Promise((resolve) => {
+  setTimeout(() => {
+    resolve(import('./AboutPage'))
+  }, 500)
+}))

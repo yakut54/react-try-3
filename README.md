@@ -27,6 +27,16 @@ npm run build:prod
 npm run build:dev
 ```
 
+### Запускает ESLint для проверки кода в файлах с расширениями .ts и .tsx.
+```bash
+npm run lint:ts
+```
+
+### Запускает ESLint для проверки и исправления кода в файлах с расширениями .ts и .tsx.
+```bash
+npm run lint:ts:fix
+```
+
 ## Лицензия
 
 ISC
