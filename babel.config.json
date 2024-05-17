@@ -1,10 +1,23 @@
 {
-  "presets": ["@babel/preset-env"],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ],
+    "@babel/preset-typescript"
+  ],
   "plugins": [
     [
       "i18next-extract",
       {
-        "locales": ["ru", "en"],
+        "locales": [
+          "ru",
+          "en"
+        ],
         "outputPath": "src/locales/{{locale}}/{{ns}}.json",
         "discardOldKeys": true,
         "keyAsDefaultValue": true
