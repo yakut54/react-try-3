@@ -10,11 +10,13 @@
   height: 100vh;
 }
 
-.content-page{
+.content-page {
   display: flex;
 }
 
-.page-wrapper{
+.page-wrapper {
   padding: 20px;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
