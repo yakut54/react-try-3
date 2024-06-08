@@ -5,8 +5,7 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 // import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import { BuildOptions } from './types/config'
 
-export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstance[] {
-  const { paths, isDev } = options
+export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
   const plugins = [
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',

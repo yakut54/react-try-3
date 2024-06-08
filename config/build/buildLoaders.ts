@@ -45,7 +45,9 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   const babelLoader: webpack.RuleSetRule = {
     test: /\.tsx?$/,
     exclude: /node_modules/,
-    use: { loader: 'babel-loader' },
+    use: {
+      loader: 'babel-loader',
+    },
   }
 
   return [

@@ -6,16 +6,6 @@
 import type { Config } from 'jest'
 
 const config: Config = {
-  // All imported modules in your tests should be mocked automatically
-  // automock: false,
-
-  // Stop running tests after `n` failures
-  // bail: 0,
-
-  // The directory where Jest should store its cached dependency information
-  // cacheDirectory: "C:\\Users\\Yalut\\AppData\\Local\\Temp\\jest",
-
-  // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
   testEnvironment: 'jsdom',
   coveragePathIgnorePatterns: [
@@ -31,6 +21,9 @@ const config: Config = {
     'json',
     'node',
   ],
+  modulePaths: [ // для (просто) jest абсолютные пути
+    '<rootDir>src',
+  ],
   moduleDirectories: [
     'node_modules',
   ],
@@ -38,6 +31,21 @@ const config: Config = {
   testMatch: [
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
   ],
+  moduleNameMapper: {
+    '\\.(s?css)$': 'identity-obj-proxy', // для react testing library (scss module)
+  },
+  setupFilesAfterEnv: [
+    '<rootDir>config/jest/setupTests.ts',
+  ],
+
+  // All imported modules in your tests should be mocked automatically
+  // automock: false,
+
+  // Stop running tests after `n` failures
+  // bail: 0,
+
+  // The directory where Jest should store its cached dependency information
+  // cacheDirectory: "C:\\Users\\Yalut\\AppData\\Local\\Temp\\jest",
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
@@ -47,8 +55,6 @@ const config: Config = {
 
   // The directory where Jest should output its coverage files
   // coverageDirectory: undefined,
-
-  // An array of regexp pattern strings used to skip coverage collection
 
   // Indicates which provider should be used to instrument code for coverage
   // coverageProvider: "babel",
@@ -91,17 +97,6 @@ const config: Config = {
   // or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the
   // maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
   // maxWorkers: "50%",
-
-  // An array of directory names to be searched recursively up from the requiring module's location
-
-  // An array of file extensions your modules use
-
-  // A map from regular expressions to module names or to arrays of module names
-  // that allow to stub out resources with a single module
-  // moduleNameMapper: {
-  //   '*': '<rootDir>',
-  // },
-
   // An array of regexp pattern strings, matched against all
   // module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
