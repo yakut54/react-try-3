@@ -22,7 +22,9 @@
   },
   "include": [
     "./config/jest/jest.config.ts",
-    "./src/**/*"
+    "./config/storybook/**/*",
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
   ],
   "exclude": [
     "node_modules"

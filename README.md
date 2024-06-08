@@ -54,6 +54,18 @@ npm run lint:scss
 npm run lint:scss:fix
 ```
 
+### Запускает Storybook
+
+```bash
+npm storybook dev -p 6009 -c ./config/storybook/
+```
+
+### Запускает build Storybook
+
+```bash
+npm storybook build -c ./config/storybook/
+```
+
 ## Лицензия
 
 ISC
