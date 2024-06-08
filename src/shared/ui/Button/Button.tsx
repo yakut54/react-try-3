@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { ButtonHTMLAttributes, FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Button.module.scss'
@@ -17,7 +16,7 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
   const {
     className,
     children,
-    theme,
+    theme = ButtonTheme.OUTLINE,
     ...otherProps
   } = props
 

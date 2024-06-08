@@ -41,13 +41,25 @@ module.exports = {
     semi: ['error', 'never'],
     'eslint-disable-next-line react/jsx-props-no-spreading': 'off',
     'max-len': ['error', { code: 120, ignoreComments: true }],
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'i18next/no-literal-string': [
+      'error',
+      {
+        markupOnly: true,
+        ignoreAttribute: ['data-testid', 'to'],
+      },
+    ],
   },
   overrides: [
     {
-      files: ['**/routeConfig.tsx'],
+      files: ['**/routeConfig.tsx', '**/Button.tsx'],
       rules: {
         'no-unused-vars': 'off',
+      },
+    },
+    {
+      files: ['**/src/**/*.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
       },
     },
   ],

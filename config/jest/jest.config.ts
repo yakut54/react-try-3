@@ -33,6 +33,7 @@ const config: Config = {
   ],
   moduleNameMapper: {
     '\\.(s?css)$': 'identity-obj-proxy', // для react testing library (scss module)
+    '\\.svg': '<rootDir>/config/jest/jestEmptyComponent.tsx',
   },
   setupFilesAfterEnv: [
     '<rootDir>config/jest/setupTests.ts',
