@@ -22,7 +22,10 @@
   },
   "include": [
     "./config/jest/jest.config.ts",
+<<<<<<< HEAD
     "./config/storybook/**/*",
+=======
+>>>>>>> 0168944dbcd54ae42f68aeeb3ab1635e6efd9f74
     "./src/**/*.ts",
     "./src/**/*.tsx"
   ],
