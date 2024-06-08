@@ -22,7 +22,8 @@
   },
   "include": [
     "./config/jest/jest.config.ts",
-    "./src/**/*"
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
   ],
   "exclude": [
     "node_modules"
