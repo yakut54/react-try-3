@@ -1,6 +1,6 @@
 import { FC, Suspense, useState } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { ThemeSwitcher } from 'widgets/ThemeSwitcer'
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 import { LangSwitcher } from 'widgets/LangSwitcher'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import cls from './Sidebar.module.scss'

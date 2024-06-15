@@ -7,7 +7,6 @@ export const AppRouter = () => (
 
   <Routes>
     {
-
             Object.values(routeConfig)
               .map(({ path, element }: RouteProps) => (
                 <Route
@@ -20,7 +19,6 @@ export const AppRouter = () => (
                         )}
                 />
               ))
-
         }
   </Routes>
 )

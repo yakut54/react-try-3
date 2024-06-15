@@ -1,7 +1,7 @@
 @import 'reset';
-@import './variables/global';
-@import './themes/dark';
-@import './themes/normal';
+@import 'variables/global';
+@import 'themes/dark';
+@import 'themes/normal';
 
 #root {
   height: 100vh;
@@ -24,5 +24,13 @@
   padding: 20px;
   flex-grow: 1;
   display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100%;
   flex-direction: column;
 }

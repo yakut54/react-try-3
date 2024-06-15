@@ -7,11 +7,13 @@ export enum AppLinkTheme {
     NORMAL = 'normal',
     INVERTED = 'inverted',
 }
+
 interface AppLinkProps extends LinkProps {
     className?: string
     children: ReactNode
     theme?: AppLinkTheme
 }
+
 export const AppLink: FC<AppLinkProps> = (props: AppLinkProps) => {
   const {
     to,

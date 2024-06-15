@@ -1,5 +1,4 @@
 import type { StorybookConfig } from '@storybook/react-webpack5'
-import { modifyWebpackConfig } from './webpack.config.storybook'
 
 const config: StorybookConfig = {
   stories: [
@@ -17,6 +16,7 @@ const config: StorybookConfig = {
     name: '@storybook/react-webpack5',
     options: {},
   },
+  staticDirs: ['../../public'],
   swc: () => ({
     jsc: {
       transform: {
@@ -26,6 +26,5 @@ const config: StorybookConfig = {
       },
     },
   }),
-  webpackFinal: modifyWebpackConfig,
 }
 export default config

@@ -1,7 +1,7 @@
 import webpack from 'webpack'
 import { BuildOptions } from './types/config'
 import { buildPlugins } from './buildPlugins'
-import { buildLoaders } from './buildLoaders'
+import { svgrLoader } from './svgrLoader'
 import { buildResolvers } from './buildResolvers'
 import { buildDevServer } from './buildDevServer'
 
@@ -19,7 +19,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
     },
     plugins: buildPlugins(options),
     module: {
-      rules: buildLoaders(options),
+      rules: svgrLoader(options),
     },
     resolve: buildResolvers(options),
     devtool: isDev ? 'inline-source-map' : undefined,

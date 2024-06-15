@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "strict": false,
     "moduleResolution": "node",
     "noImplicitAny": true,
     "module": "ESNext",
@@ -21,8 +22,8 @@
     }
   },
   "include": [
-    "./config/jest/jest.config.ts",
-    "./config/storybook/**/*",
+    "./config/**/*.ts",
+    "./config/**/*.tsx",
     "./src/**/*.ts",
     "./src/**/*.tsx"
   ],

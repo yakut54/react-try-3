@@ -2,6 +2,6 @@ import { JSXElementConstructor, lazy, LazyExoticComponent } from 'react'
 
 export const AboutPageAsync: LazyExoticComponent<JSXElementConstructor<{}>> = lazy(() => new Promise((resolve) => {
   setTimeout(() => {
-    resolve(import('./AboutPage'))
+    resolve(import(/* webpackChunkName: "AboutPage" */'./AboutPage'))
   }, 1000)
 }))

@@ -28,5 +28,6 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
     >
       {children}
     </button>
+
   )
 }

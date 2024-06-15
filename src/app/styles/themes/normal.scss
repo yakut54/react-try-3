@@ -1,8 +1,8 @@
-.app.light {
-    --bg-color: #f0f0f0;
-    --inverted-bg-color: #0b0035;
-    --primary-color: #2a52b5;
-    --secondary-color: #3d6bff;
-    --inverted-primary-color: #0ca70d;
-    --inverted-secondary-color: #0aff0a;
+:root, .app.light {
+  --bg-color: #f0f0f0;
+  --inverted-bg-color: #0b0035;
+  --primary-color: #2a52b5;
+  --secondary-color: #3d6bff;
+  --inverted-primary-color: #0ca70d;
+  --inverted-secondary-color: #0aff0a;
 }

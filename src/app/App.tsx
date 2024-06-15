@@ -3,7 +3,6 @@ import { useTheme } from 'app/providers/ThemeProvider'
 import { AppRouter } from 'app/providers/router'
 import { Sidebar } from 'widgets/Sidebar'
 import { Navbar } from 'widgets/Navbar'
-import './styles/index.scss'
 
 export const App = () => {
   const { theme } = useTheme()
