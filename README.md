@@ -54,16 +54,34 @@ npm run lint:scss
 npm run lint:scss:fix
 ```
 
+### Запускает unit тестирование
+
+```bash
+npm run test:unit
+```
+
+### Запускает screenshot tests
+
+```bash
+npm run test:ui
+```
+
+### Запускает approve screenshot tests
+
+```bash
+npm run test:ui:ok
+```
+
 ### Запускает Storybook
 
 ```bash
-npm storybook dev -p 6009 -c ./config/storybook/
+npm run storybook
 ```
 
 ### Запускает build Storybook
 
 ```bash
-npm storybook build -c ./config/storybook/
+npm run storybook:build
 ```
 
 ## Лицензия
