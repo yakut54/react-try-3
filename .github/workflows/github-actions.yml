@@ -2,7 +2,7 @@ name: linting, testing, and building
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [ push ]
 jobs:
-  MozhnoNazvatKakUgodno:
+  pipline:
     runs-on: ubuntu-latest
     strategy:
       matrix:
