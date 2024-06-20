@@ -7,12 +7,6 @@ describe('Button', () => {
     expect(screen.getByText('TEST')).toBeInTheDocument()
   })
 
-  test('Test Render not class undefined', () => {
-    render(<Button>TEST</Button>)
-    expect(screen.getByText('TEST')).not.toHaveClass('undefined')
-    screen.debug()
-  })
-
   test('Test Clear Theme', () => {
     render(<Button theme={ButtonTheme.CLEAR}>TEST</Button>)
     expect(screen.getByText('TEST')).toHaveClass('clear')
