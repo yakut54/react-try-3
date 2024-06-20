@@ -17,20 +17,20 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
-#      - name: Install dependencies
-#        run: npm install --legacy-peer-deps
-#      - name: build production project
-#        run: npm run build:prod
-#      - name: lint typescript
-#        run: npm run lint:ts
-#      - name: lint scss
-#        run: npm run lint:scss
-#      - name: unit testing
-#        run: npm run test:unit
-#      - name: build storybook
-#        run: npm run storybook:build
-#      - name: screenshots testing
-#        run: npm run test:ui:ci
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+      - name: build production project
+        run: npm run build:prod
+      - name: lint typescript
+        run: npm run lint:ts
+      - name: lint scss
+        run: npm run lint:scss
+      - name: unit testing
+        run: npm run test:unit
+      - name: build storybook
+        run: npm run storybook:build
+      - name: screenshots testing
+        run: npm run test:ui:ci
 
 
 

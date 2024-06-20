@@ -9,7 +9,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
   const plugins = [
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
-      chunkFilename: 'css/[name].[contenthash:7].css',
+      chunkFilename: 'css/[name].[contenthash:8].css',
     }),
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
