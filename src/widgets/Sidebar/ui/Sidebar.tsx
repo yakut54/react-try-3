@@ -1,5 +1,5 @@
 import { FC, useState } from 'react'
-import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button'
+import { Button, ButtonSize, ButtonVariant } from 'shared/ui/Button/Button'
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { classNames } from 'shared/lib/classNames/classNames'
@@ -35,7 +35,7 @@ export const Sidebar: FC<SidebarProps> = (props: SidebarProps) => {
         onClick={onToggle}
         isSquare
         size={ButtonSize.L}
-        theme={ButtonTheme.BACKGROUND_INVERTED}
+        theme={ButtonVariant.BACKGROUND_INVERTED}
         className={cls['collapse-btn']}
       >
         {collapsed ? '>' : '<'}

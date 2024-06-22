@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Button.module.scss'
 
-export enum ButtonTheme {
+export enum ButtonVariant {
     CLEAR = 'clear',
     OUTLINE = 'outline',
     BACKGROUND = 'background',
@@ -17,7 +17,7 @@ export enum ButtonSize {
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string
-    theme?: ButtonTheme
+    theme?: ButtonVariant
     isSquare?: boolean
     size?: ButtonSize
 }
@@ -26,7 +26,7 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
   const {
     className,
     children,
-    theme = ButtonTheme.OUTLINE,
+    theme = ButtonVariant.OUTLINE,
     isSquare,
     size,
     ...otherProps

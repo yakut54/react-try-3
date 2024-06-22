@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { ThemeDecorator } from 'shared/lib/storybookDecorators/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
-import { Button, ButtonSize, ButtonTheme } from './Button'
+import { Button, ButtonSize, ButtonVariant } from './Button'
 
 const meta: Meta<typeof Button> = {
   title: 'Shared/Button',
@@ -15,7 +15,7 @@ type Story = StoryObj<typeof Button>
 export const ClearLight: Story = {
   args: {
     children: 'CLEAR',
-    theme: ButtonTheme.CLEAR,
+    theme: ButtonVariant.CLEAR,
   },
   decorators: [ThemeDecorator(Theme.LIGHT)],
 }
@@ -23,7 +23,7 @@ export const ClearLight: Story = {
 export const ClearDark: Story = {
   args: {
     children: 'CLEAR',
-    theme: ButtonTheme.CLEAR,
+    theme: ButtonVariant.CLEAR,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 }
@@ -31,7 +31,7 @@ export const ClearDark: Story = {
 export const OutlineLight: Story = {
   args: {
     children: 'OutlineLight',
-    theme: ButtonTheme.OUTLINE,
+    theme: ButtonVariant.OUTLINE,
   },
   decorators: [ThemeDecorator(Theme.LIGHT)],
 }
@@ -39,7 +39,7 @@ export const OutlineLight: Story = {
 export const OutlineDark: Story = {
   args: {
     children: 'OutlineDark',
-    theme: ButtonTheme.OUTLINE,
+    theme: ButtonVariant.OUTLINE,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 }
@@ -47,7 +47,7 @@ export const OutlineDark: Story = {
 export const OutlineSizeLLight: Story = {
   args: {
     children: 'OutlineSizeLLight',
-    theme: ButtonTheme.OUTLINE,
+    theme: ButtonVariant.OUTLINE,
     size: ButtonSize.L,
   },
   decorators: [ThemeDecorator(Theme.LIGHT)],
@@ -56,7 +56,7 @@ export const OutlineSizeLLight: Story = {
 export const OutlineSizeMLight: Story = {
   args: {
     children: 'OutlineSizeMLight',
-    theme: ButtonTheme.OUTLINE,
+    theme: ButtonVariant.OUTLINE,
     size: ButtonSize.M,
   },
   decorators: [ThemeDecorator(Theme.LIGHT)],
@@ -65,7 +65,7 @@ export const OutlineSizeMLight: Story = {
 export const OutlineSizeXLLight: Story = {
   args: {
     children: 'OutlineSizeXLLight',
-    theme: ButtonTheme.OUTLINE,
+    theme: ButtonVariant.OUTLINE,
     size: ButtonSize.XL,
   },
   decorators: [ThemeDecorator(Theme.LIGHT)],
@@ -74,7 +74,7 @@ export const OutlineSizeXLLight: Story = {
 export const OutlineSizeLDark: Story = {
   args: {
     children: 'OutlineSizeLLight',
-    theme: ButtonTheme.OUTLINE,
+    theme: ButtonVariant.OUTLINE,
     size: ButtonSize.L,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
@@ -83,7 +83,7 @@ export const OutlineSizeLDark: Story = {
 export const OutlineSizeMDark: Story = {
   args: {
     children: 'OutlineSizeMLight',
-    theme: ButtonTheme.OUTLINE,
+    theme: ButtonVariant.OUTLINE,
     size: ButtonSize.M,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
@@ -92,7 +92,7 @@ export const OutlineSizeMDark: Story = {
 export const OutlineSizeXLDark: Story = {
   args: {
     children: 'OutlineSizeXLLight',
-    theme: ButtonTheme.OUTLINE,
+    theme: ButtonVariant.OUTLINE,
     size: ButtonSize.XL,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
@@ -101,7 +101,7 @@ export const OutlineSizeXLDark: Story = {
 export const BackgroundLight: Story = {
   args: {
     children: 'Outline',
-    theme: ButtonTheme.BACKGROUND,
+    theme: ButtonVariant.BACKGROUND,
   },
   decorators: [ThemeDecorator(Theme.LIGHT)],
 }
@@ -109,7 +109,7 @@ export const BackgroundLight: Story = {
 export const BackgroundDark: Story = {
   args: {
     children: 'BACKGROUND',
-    theme: ButtonTheme.BACKGROUND,
+    theme: ButtonVariant.BACKGROUND,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 }
@@ -117,7 +117,7 @@ export const BackgroundDark: Story = {
 export const BackgroundInvertedLight: Story = {
   args: {
     children: 'BACKGROUND_INVERTED',
-    theme: ButtonTheme.BACKGROUND_INVERTED,
+    theme: ButtonVariant.BACKGROUND_INVERTED,
   },
   decorators: [ThemeDecorator(Theme.LIGHT)],
 }
@@ -125,7 +125,7 @@ export const BackgroundInvertedLight: Story = {
 export const BackgroundInvertedDark: Story = {
   args: {
     children: 'BACKGROUND_INVERTED',
-    theme: ButtonTheme.BACKGROUND_INVERTED,
+    theme: ButtonVariant.BACKGROUND_INVERTED,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 }
@@ -133,7 +133,7 @@ export const BackgroundInvertedDark: Story = {
 export const SquareMDark: Story = {
   args: {
     children: '>',
-    theme: ButtonTheme.BACKGROUND,
+    theme: ButtonVariant.BACKGROUND,
     isSquare: true,
     size: ButtonSize.M,
   },
@@ -143,7 +143,7 @@ export const SquareMDark: Story = {
 export const SquareMLight: Story = {
   args: {
     children: '>',
-    theme: ButtonTheme.BACKGROUND,
+    theme: ButtonVariant.BACKGROUND,
     isSquare: true,
     size: ButtonSize.M,
   },
@@ -153,7 +153,7 @@ export const SquareMLight: Story = {
 export const SquareLDark: Story = {
   args: {
     children: '>',
-    theme: ButtonTheme.BACKGROUND,
+    theme: ButtonVariant.BACKGROUND,
     isSquare: true,
     size: ButtonSize.L,
   },
@@ -163,7 +163,7 @@ export const SquareLDark: Story = {
 export const SquareLLight: Story = {
   args: {
     children: '>',
-    theme: ButtonTheme.BACKGROUND,
+    theme: ButtonVariant.BACKGROUND,
     isSquare: true,
     size: ButtonSize.L,
   },
@@ -173,7 +173,7 @@ export const SquareLLight: Story = {
 export const SquareXLDark: Story = {
   args: {
     children: '>',
-    theme: ButtonTheme.BACKGROUND,
+    theme: ButtonVariant.BACKGROUND,
     isSquare: true,
     size: ButtonSize.XL,
   },
@@ -183,7 +183,7 @@ export const SquareXLDark: Story = {
 export const SquareXLLight: Story = {
   args: {
     children: '>',
-    theme: ButtonTheme.BACKGROUND,
+    theme: ButtonVariant.BACKGROUND,
     isSquare: true,
     size: ButtonSize.XL,
   },
