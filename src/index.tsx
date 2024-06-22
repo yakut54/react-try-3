@@ -7,12 +7,12 @@ import 'app/styles/index.scss'
 import 'shared/config/i18n/i18n'
 
 render(
-  <ErrorBoundary>
-    <BrowserRouter>
+  <BrowserRouter>
+    <ErrorBoundary>
       <ThemeProvider>
         <App />
       </ThemeProvider>
-    </BrowserRouter>
-  </ErrorBoundary>,
+    </ErrorBoundary>
+  </BrowserRouter>,
   document.getElementById('root'),
 )
