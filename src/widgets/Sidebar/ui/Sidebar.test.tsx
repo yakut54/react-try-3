@@ -1,21 +1,31 @@
-import { fireEvent, screen } from '@testing-library/react'
+import { fireEvent, screen, waitFor } from '@testing-library/react'
 import { Sidebar } from 'widgets/Sidebar'
-import { renderWithTranslations } from 'shared/lib/renderWithTranslations/renderWithTranslations'
+import { componentRender } from 'shared/lib/tests/RenderWithRouter'
 
 describe('Sidebar', () => {
   test('Test Render', () => {
-    renderWithTranslations(<Sidebar />)
+    componentRender(<Sidebar />, { route: '/' })
     expect(screen.getByTestId('sidebar')).toBeInTheDocument()
+    expect(screen.getByTestId('sidebar')).not.toHaveClass('collapsed')
   })
 
-  test('Test Toggle Sidebar', () => {
-    renderWithTranslations(<Sidebar />)
-    expect(screen.getByTestId('sidebar')).toBeInTheDocument()
-
+  test('Test Toggle Sidebar', async () => {
+    componentRender(<Sidebar />, { route: '/' })
     const toggleBtn = screen.getByTestId('sidebar-toggle')
-    fireEvent.click(toggleBtn)
-    expect(screen.getByTestId('sidebar')).toHaveClass('collapsed')
-    fireEvent.click(toggleBtn)
+
+    // Проверяем начальное состояние
     expect(screen.getByTestId('sidebar')).not.toHaveClass('collapsed')
+
+    // Клик для сворачивания
+    fireEvent.click(toggleBtn)
+    await waitFor(() => {
+      expect(screen.getByTestId('sidebar')).toHaveClass('collapsed')
+    })
+
+    // Клик для разворачивания
+    fireEvent.click(toggleBtn)
+    await waitFor(() => {
+      expect(screen.getByTestId('sidebar')).not.toHaveClass('collapsed')
+    })
   })
 })

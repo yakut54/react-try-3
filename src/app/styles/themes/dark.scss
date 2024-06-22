@@ -1,8 +1,10 @@
-:root, .app.dark {
-  --bg-color: #0b0035;
-  --inverted-bg-color: #f0f0f0;
-  --primary-color: #0ca70d;
-  --secondary-color: #0aff0a;
-  --inverted-primary-color: #2a52b5;
-  --inverted-secondary-color: #3d6bff;
+/* Стиль "Город" для темной темы */
+.app.dark {
+  --bg-color: #293241; /* Темно-синий цвет ночного неба */
+  --inverted-bg-color: #E0FBFC; /* Светлый цвет для контраста */
+  --primary-color: #B0BEC5; /* Серый цвет неоновых вывесок */
+  --secondary-color: #98C1D9; /* Цвет ночного городского света */
+  --inverted-primary-color: #3D5A80; /* Темный цвет для элементов интерфейса */
+  --inverted-secondary-color: #E63946; /* Яркий акцентный цвет */
 }
+

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ThemeDecorator } from 'shared/config/storybookDecorators/ThemeDecorator'
+import { ThemeDecorator } from 'shared/lib/storybookDecorators/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
+import { RouterDecorator } from 'shared/lib/storybookDecorators/RouterDecorator'
 import { Sidebar } from './Sidebar'
 
 const meta: Meta<typeof Sidebar> = {
@@ -13,9 +14,15 @@ export default meta
 type Story = StoryObj<typeof Sidebar>
 
 export const SidebarLight: Story = {
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+  decorators: [
+    RouterDecorator,
+    ThemeDecorator(Theme.LIGHT),
+  ],
 }
 
 export const SidebarDark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [
+    RouterDecorator,
+    ThemeDecorator(Theme.DARK),
+  ],
 }

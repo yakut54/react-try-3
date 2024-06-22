@@ -1,8 +1,11 @@
 {
-  "Перевод": "Translation",
+  "Перевод": "Русский",
   "Тест": "Test",
   "ЭТО НОВЫЙ ТЕСТОВЫЙ ПЕРЕВОД 15 видео": "THIS IS A NEW TEST TRANSLATION 15 videos",
   "Страница не найдена": "Page not found",
   "Произошла непредвиденная ошибка": "An unexpected error occurred",
-  "Обновить страницу": "Refresh the page"
+  "Обновить страницу": "Refresh the page",
+  "Короткий перевод": "Ру",
+  "Главная": "Home",
+  "О сайте": "About"
 }

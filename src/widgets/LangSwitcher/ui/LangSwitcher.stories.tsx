@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ThemeDecorator } from 'shared/config/storybookDecorators/ThemeDecorator'
+import { ThemeDecorator } from 'shared/lib/storybookDecorators/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 import { LangSwitcher } from './LangSwitcher'
 

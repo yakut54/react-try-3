@@ -11,7 +11,7 @@ export function buildCssLoader(isDev: boolean) {
           modules: {
             auto: true,
             localIdentName: isDev
-              ? '[name]__[local]--[hash:base64:3]'
+              ? '[local]_[hash:base64:3]'
               : '[hash:base64:8]',
           },
         },
