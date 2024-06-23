@@ -3,6 +3,11 @@
 @import 'themes/dark';
 @import 'themes/normal';
 
+body {
+  font: var(--font-m);
+  color: var(--primary-color);
+}
+
 #root {
   height: 100vh;
   display: flex;
@@ -10,9 +15,7 @@
 }
 
 .app {
-  font: var(--font-m);
   background-color: var(--bg-color);
-  color: var(--primary-color);
   height: 100vh;
 }
 

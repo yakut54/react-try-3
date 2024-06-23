@@ -3,7 +3,7 @@ import { Theme, ThemeProvider } from 'app/providers/ThemeProvider'
 
 export const ThemeDecorator = (theme: Theme) => {
   const DecoratedStoryComponent = (StoryComponent: StoryFn) => (
-    <ThemeProvider>
+    <ThemeProvider initialTheme={theme}>
       <div className={`flex-center app ${theme}`}>
         <StoryComponent />
       </div>

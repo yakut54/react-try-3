@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-console */
 import React, { ErrorInfo, Suspense } from 'react'
 import { PageError } from 'widgets/PageError'
 

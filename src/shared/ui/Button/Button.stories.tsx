@@ -28,6 +28,22 @@ export const ClearDark: Story = {
   decorators: [ThemeDecorator(Theme.DARK)],
 }
 
+export const ClearInvertedLight: Story = {
+  args: {
+    children: 'CLEAR_INVERTED',
+    theme: ButtonVariant.CLEAR_INVERTED,
+  },
+  decorators: [ThemeDecorator(Theme.LIGHT)],
+}
+
+export const ClearInvertedDark: Story = {
+  args: {
+    children: 'CLEAR_INVERTED',
+    theme: ButtonVariant.CLEAR_INVERTED,
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
+}
+
 export const OutlineLight: Story = {
   args: {
     children: 'OutlineLight',

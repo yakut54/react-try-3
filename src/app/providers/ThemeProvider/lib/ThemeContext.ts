@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Context, createContext } from 'react'
 
 export enum Theme {

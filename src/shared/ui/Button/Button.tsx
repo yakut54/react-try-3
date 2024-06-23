@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars */
 import { ButtonHTMLAttributes, FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Button.module.scss'
 
 export enum ButtonVariant {
     CLEAR = 'clear',
+    CLEAR_INVERTED = 'clear-inverted',
     OUTLINE = 'outline',
     BACKGROUND = 'background',
     BACKGROUND_INVERTED = 'background-inverted'

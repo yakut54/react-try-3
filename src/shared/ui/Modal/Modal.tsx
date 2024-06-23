@@ -1,7 +1,9 @@
+import { useTheme } from 'app/providers/ThemeProvider'
 import {
   FC, MouseEvent, ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
+import { Portal } from 'shared/ui/Portal/Portal'
 import cls from './Modal.module.scss'
 
 interface ModalProps {
@@ -10,6 +12,8 @@ interface ModalProps {
     isOpen?: boolean
     onClose?: () => void
 }
+
+const ANIMATION_DELAY = 300
 
 export const Modal: FC<ModalProps> = (props: ModalProps) => {
   const {
@@ -20,9 +24,9 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
     ...otherProps
   } = props
 
-  const ANIMATION_DELAY = 300
   const [isClosing, setIsClosing] = useState(false)
   const timeRef = useRef<ReturnType<typeof setTimeout>>()
+  const { theme } = useTheme()
 
   const closeHandler = useCallback(() => {
     if (onClose) {
@@ -41,6 +45,10 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
     }
   }, [closeHandler])
 
+  const handleContentClick = useCallback((e: MouseEvent) => {
+    e.stopPropagation()
+  }, [])
+
   useEffect(
     () => {
       if (isOpen) {
@@ -57,23 +65,24 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
     [isOpen, onKeyDown],
   )
 
-  const handleContentClick = (e: MouseEvent) => {
-    e.stopPropagation()
-  }
-
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
     [cls['is-closing']]: isClosing,
+    [cls[theme]]: true,
   }
 
   return (
-    <div
-      className={classNames(cls.modal, mods, [className])}
-      {...otherProps}
-    >
-      <div className={cls.overlay} onClick={closeHandler}>
-        <div className={cls.content} onClick={handleContentClick}>{children}</div>
+    <Portal>
+      <div
+        className={classNames(cls.modal, mods, [className])}
+        {...otherProps}
+      >
+        <div className={cls.overlay} onClick={closeHandler}>
+          <div className={cls.content} onClick={handleContentClick}>
+            {children}
+          </div>
+        </div>
       </div>
-    </div>
+    </Portal>
   )
 }
