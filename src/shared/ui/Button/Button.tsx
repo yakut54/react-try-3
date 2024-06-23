@@ -19,7 +19,11 @@ export enum ButtonSize {
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string
+<<<<<<< HEAD
     theme?: ButtonVariant
+=======
+    theme?: ButtonTheme
+>>>>>>> origin/master
     isSquare?: boolean
     size?: ButtonSize
 }
@@ -28,7 +32,11 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
   const {
     className,
     children,
+<<<<<<< HEAD
     theme = ButtonVariant.OUTLINE,
+=======
+    theme = ButtonTheme.OUTLINE,
+>>>>>>> origin/master
     isSquare,
     size,
     ...otherProps

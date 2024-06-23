@@ -1,7 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react'
+<<<<<<< HEAD
 import { Theme } from 'app/providers/ThemeProvider'
 import { RouterDecorator } from 'shared/lib/storybookDecorators/RouterDecorator'
 import { ThemeDecorator } from 'shared/lib/storybookDecorators/ThemeDecorator'
+=======
+import { ThemeDecorator } from 'shared/lib/storybookDecorators/ThemeDecorator'
+import { Theme } from 'app/providers/ThemeProvider'
+import { RouterDecorator } from 'shared/lib/storybookDecorators/RouterDecorator'
+>>>>>>> origin/master
 import { AppLink, AppLinkTheme } from './AppLink'
 
 const meta: Meta<typeof AppLink> = {

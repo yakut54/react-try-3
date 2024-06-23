@@ -1,5 +1,15 @@
 {
   "extends": "stylelint-config-standard-scss",
   "fix": true,
-  "rules": {}
+  "rules": {
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": [
+          "global",
+          "local"
+        ]
+      }
+    ]
+  }
 }

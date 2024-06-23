@@ -1,7 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { ThemeDecorator } from 'shared/lib/storybookDecorators/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
+<<<<<<< HEAD
 import { Button, ButtonSize, ButtonVariant } from './Button'
+=======
+import { Button, ButtonSize, ButtonTheme } from './Button'
+>>>>>>> origin/master
 
 const meta: Meta<typeof Button> = {
   title: 'Shared/Button',
@@ -47,7 +51,11 @@ export const ClearInvertedDark: Story = {
 export const OutlineLight: Story = {
   args: {
     children: 'OutlineLight',
+<<<<<<< HEAD
     theme: ButtonVariant.OUTLINE,
+=======
+    theme: ButtonTheme.OUTLINE,
+>>>>>>> origin/master
   },
   decorators: [ThemeDecorator(Theme.LIGHT)],
 }
@@ -55,7 +63,11 @@ export const OutlineLight: Story = {
 export const OutlineDark: Story = {
   args: {
     children: 'OutlineDark',
+<<<<<<< HEAD
     theme: ButtonVariant.OUTLINE,
+=======
+    theme: ButtonTheme.OUTLINE,
+>>>>>>> origin/master
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 }
@@ -63,7 +75,11 @@ export const OutlineDark: Story = {
 export const OutlineSizeLLight: Story = {
   args: {
     children: 'OutlineSizeLLight',
+<<<<<<< HEAD
     theme: ButtonVariant.OUTLINE,
+=======
+    theme: ButtonTheme.OUTLINE,
+>>>>>>> origin/master
     size: ButtonSize.L,
   },
   decorators: [ThemeDecorator(Theme.LIGHT)],
@@ -72,7 +88,11 @@ export const OutlineSizeLLight: Story = {
 export const OutlineSizeMLight: Story = {
   args: {
     children: 'OutlineSizeMLight',
+<<<<<<< HEAD
     theme: ButtonVariant.OUTLINE,
+=======
+    theme: ButtonTheme.OUTLINE,
+>>>>>>> origin/master
     size: ButtonSize.M,
   },
   decorators: [ThemeDecorator(Theme.LIGHT)],
@@ -81,7 +101,11 @@ export const OutlineSizeMLight: Story = {
 export const OutlineSizeXLLight: Story = {
   args: {
     children: 'OutlineSizeXLLight',
+<<<<<<< HEAD
     theme: ButtonVariant.OUTLINE,
+=======
+    theme: ButtonTheme.OUTLINE,
+>>>>>>> origin/master
     size: ButtonSize.XL,
   },
   decorators: [ThemeDecorator(Theme.LIGHT)],
@@ -90,7 +114,11 @@ export const OutlineSizeXLLight: Story = {
 export const OutlineSizeLDark: Story = {
   args: {
     children: 'OutlineSizeLLight',
+<<<<<<< HEAD
     theme: ButtonVariant.OUTLINE,
+=======
+    theme: ButtonTheme.OUTLINE,
+>>>>>>> origin/master
     size: ButtonSize.L,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
@@ -99,7 +127,11 @@ export const OutlineSizeLDark: Story = {
 export const OutlineSizeMDark: Story = {
   args: {
     children: 'OutlineSizeMLight',
+<<<<<<< HEAD
     theme: ButtonVariant.OUTLINE,
+=======
+    theme: ButtonTheme.OUTLINE,
+>>>>>>> origin/master
     size: ButtonSize.M,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
@@ -108,7 +140,11 @@ export const OutlineSizeMDark: Story = {
 export const OutlineSizeXLDark: Story = {
   args: {
     children: 'OutlineSizeXLLight',
+<<<<<<< HEAD
     theme: ButtonVariant.OUTLINE,
+=======
+    theme: ButtonTheme.OUTLINE,
+>>>>>>> origin/master
     size: ButtonSize.XL,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
@@ -117,7 +153,11 @@ export const OutlineSizeXLDark: Story = {
 export const BackgroundLight: Story = {
   args: {
     children: 'Outline',
+<<<<<<< HEAD
     theme: ButtonVariant.BACKGROUND,
+=======
+    theme: ButtonTheme.BACKGROUND,
+>>>>>>> origin/master
   },
   decorators: [ThemeDecorator(Theme.LIGHT)],
 }
@@ -125,7 +165,11 @@ export const BackgroundLight: Story = {
 export const BackgroundDark: Story = {
   args: {
     children: 'BACKGROUND',
+<<<<<<< HEAD
     theme: ButtonVariant.BACKGROUND,
+=======
+    theme: ButtonTheme.BACKGROUND,
+>>>>>>> origin/master
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 }
@@ -133,7 +177,11 @@ export const BackgroundDark: Story = {
 export const BackgroundInvertedLight: Story = {
   args: {
     children: 'BACKGROUND_INVERTED',
+<<<<<<< HEAD
     theme: ButtonVariant.BACKGROUND_INVERTED,
+=======
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+>>>>>>> origin/master
   },
   decorators: [ThemeDecorator(Theme.LIGHT)],
 }
@@ -141,7 +189,11 @@ export const BackgroundInvertedLight: Story = {
 export const BackgroundInvertedDark: Story = {
   args: {
     children: 'BACKGROUND_INVERTED',
+<<<<<<< HEAD
     theme: ButtonVariant.BACKGROUND_INVERTED,
+=======
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+>>>>>>> origin/master
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 }
@@ -149,7 +201,11 @@ export const BackgroundInvertedDark: Story = {
 export const SquareMDark: Story = {
   args: {
     children: '>',
+<<<<<<< HEAD
     theme: ButtonVariant.BACKGROUND,
+=======
+    theme: ButtonTheme.BACKGROUND,
+>>>>>>> origin/master
     isSquare: true,
     size: ButtonSize.M,
   },
@@ -159,7 +215,11 @@ export const SquareMDark: Story = {
 export const SquareMLight: Story = {
   args: {
     children: '>',
+<<<<<<< HEAD
     theme: ButtonVariant.BACKGROUND,
+=======
+    theme: ButtonTheme.BACKGROUND,
+>>>>>>> origin/master
     isSquare: true,
     size: ButtonSize.M,
   },
@@ -169,7 +229,11 @@ export const SquareMLight: Story = {
 export const SquareLDark: Story = {
   args: {
     children: '>',
+<<<<<<< HEAD
     theme: ButtonVariant.BACKGROUND,
+=======
+    theme: ButtonTheme.BACKGROUND,
+>>>>>>> origin/master
     isSquare: true,
     size: ButtonSize.L,
   },
@@ -179,7 +243,11 @@ export const SquareLDark: Story = {
 export const SquareLLight: Story = {
   args: {
     children: '>',
+<<<<<<< HEAD
     theme: ButtonVariant.BACKGROUND,
+=======
+    theme: ButtonTheme.BACKGROUND,
+>>>>>>> origin/master
     isSquare: true,
     size: ButtonSize.L,
   },
@@ -189,7 +257,11 @@ export const SquareLLight: Story = {
 export const SquareXLDark: Story = {
   args: {
     children: '>',
+<<<<<<< HEAD
     theme: ButtonVariant.BACKGROUND,
+=======
+    theme: ButtonTheme.BACKGROUND,
+>>>>>>> origin/master
     isSquare: true,
     size: ButtonSize.XL,
   },
@@ -199,7 +271,11 @@ export const SquareXLDark: Story = {
 export const SquareXLLight: Story = {
   args: {
     children: '>',
+<<<<<<< HEAD
     theme: ButtonVariant.BACKGROUND,
+=======
+    theme: ButtonTheme.BACKGROUND,
+>>>>>>> origin/master
     isSquare: true,
     size: ButtonSize.XL,
   },

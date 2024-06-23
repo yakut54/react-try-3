@@ -1,8 +1,10 @@
-:root, .app.light {
-  --bg-color: #f0f0f0;
-  --inverted-bg-color: #0b0035;
-  --primary-color: #2a52b5;
-  --secondary-color: #3d6bff;
-  --inverted-primary-color: #0ca70d;
-  --inverted-secondary-color: #0aff0a;
+/* Стиль "Город" для светлой темы */
+.app.light {
+  --bg-color: #E0FBFC; /* Светлый цвет дневного неба */
+  --inverted-bg-color: #293241; /* Темный цвет для контраста */
+  --primary-color: #3D5A80; /* Цвет городских зданий днем */
+  --secondary-color: #B0BEC5; /* Серый цвет для солнечных бликов */
+  --inverted-primary-color: #98C1D9; /* Светлый цвет для элементов интерфейса */
+  --inverted-secondary-color: #E63946; /* Яркий акцентный цвет */
 }
+

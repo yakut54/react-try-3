@@ -1,4 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
+<<<<<<< HEAD
+=======
+import { ThemeDecorator } from 'shared/lib/storybookDecorators/ThemeDecorator'
+>>>>>>> origin/master
 import { Theme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from 'shared/lib/storybookDecorators/ThemeDecorator'
 import { Loader } from './Loader'

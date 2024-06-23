@@ -23,7 +23,11 @@ export const LangSwitcher: FC<LangSwitcherProps> = (props: LangSwitcherProps) =>
       onClick={toggle}
       theme={ButtonVariant.CLEAR}
     >
+<<<<<<< HEAD
       {short ? t('Короткий перевод') : t('Перевод')}
+=======
+      {t(short ? 'Короткий перевод' : 'Перевод')}
+>>>>>>> origin/master
     </Button>
   )
 }
