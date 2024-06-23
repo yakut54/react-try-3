@@ -12,7 +12,7 @@ git clone git@github.com:yakut54/react-try-3.git
 
 ## Использование
 
-### Запуск проекта
+[package.json](package.json)### Запуск проекта
 
 ```bash
 npm start
@@ -82,6 +82,24 @@ npm run storybook
 
 ```bash
 npm run storybook:build
+```
+
+### Генерируем report.json для регрессионных тестов
+
+```bash
+npm run test:ui:json
+```
+
+### Генерируем report.html для регрессионных тестов
+
+```bash
+npm run test:ui:html
+```
+
+### Генерируем report.json и report.html для регрессионных тестов
+
+```bash
+npm run test:ui:report
 ```
 
 ## Лицензия
