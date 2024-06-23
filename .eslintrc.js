@@ -37,11 +37,14 @@ module.exports = {
     semi: ['error', 'never'],
     'eslint-disable-next-line react/jsx-props-no-spreading': 'off',
     'max-len': ['error', { code: 120, ignoreComments: true }],
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
     'i18next/no-literal-string': [
       'error',
       {
         markupOnly: true,
-        ignoreAttribute: ['data-testid', 'to'],
+        ignoreAttribute: ['data-testid', 'to', 'fallback'],
       },
     ],
   },
@@ -53,7 +56,7 @@ module.exports = {
       },
     },
     {
-      files: ['**/src/**/*.{ts,tsx}'],
+      files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
       rules: {
         'i18next/no-literal-string': 'off',
       },

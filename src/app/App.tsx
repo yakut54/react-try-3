@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useTheme } from 'app/providers/ThemeProvider'
 import { AppRouter } from 'app/providers/router'
@@ -9,11 +9,26 @@ import { Modal } from 'shared/ui/Modal/Modal'
 export const App = () => {
   const { theme } = useTheme()
 
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
     <div className={classNames('app', {}, [theme])}>
       <Suspense fallback="">
         <Navbar />
-        <Modal />
+
+        <button
+          type="button"
+          onClick={() => setIsOpen(true)}
+          className="toggle"
+        >
+          1233
+        </button>
+
+        <Modal
+          isOpen={isOpen}
+          onClose={() => setIsOpen((p) => !p)}
+        />
+
         <div className="content-page">
           <Sidebar />
           <AppRouter />
