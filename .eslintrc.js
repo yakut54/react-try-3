@@ -50,12 +50,6 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['**/routeConfig.tsx', '**/Button.tsx'],
-      rules: {
-        'no-unused-vars': 'off',
-      },
-    },
-    {
       files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
       rules: {
         'i18next/no-literal-string': 'off',

@@ -27,7 +27,9 @@ export const App = () => {
         <Modal
           isOpen={isOpen}
           onClose={() => setIsOpen((p) => !p)}
-        />
+        >
+          1234
+        </Modal>
 
         <div className="content-page">
           <Sidebar />
