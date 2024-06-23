@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
         if: always()
-      - name: build production project
+      - name: build prod project
         run: npm run build:prod
         if: always()
       - name: lint typescript
