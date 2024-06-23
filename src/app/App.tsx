@@ -11,6 +11,10 @@ export const App = () => {
 
   const [isOpen, setIsOpen] = useState(false)
 
+  const closeHandler = () => {
+    setIsOpen((p) => !p)
+  }
+
   return (
     <div className={classNames('app', {}, [theme])}>
       <Suspense fallback="">
@@ -26,9 +30,9 @@ export const App = () => {
 
         <Modal
           isOpen={isOpen}
-          onClose={() => setIsOpen((p) => !p)}
+          onClose={closeHandler}
         >
-          1234
+          --22--
         </Modal>
 
         <div className="content-page">
