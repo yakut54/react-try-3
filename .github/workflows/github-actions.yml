@@ -1,5 +1,5 @@
 name: linting, testing, and building
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: Hedonism and sybaritism 👻
 on: [ push ]
 jobs:
   pipline:
