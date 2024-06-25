@@ -1,5 +1,5 @@
 name: linting, testing, and building
-run-name: Hedonism and sybaritism 👻
+run-name: Hedonism and sybaritism! 👻
 on: [ push ]
 jobs:
   pipeline:
