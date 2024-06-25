@@ -1,5 +1,7 @@
 {
   "extends": "stylelint-config-standard-scss",
   "fix": true,
-  "rules": {}
+  "rules": {
+    "block-closing-brace-newline-after": "never"
+  }
 }
