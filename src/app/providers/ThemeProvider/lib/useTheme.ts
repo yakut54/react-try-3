@@ -15,8 +15,6 @@ export function useTheme(): UseThemeResult {
       : Theme.LIGHT
 
     setTheme(newTheme)
-    // document.body.className = newTheme
-    // console.log(document.body.className)
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme)
   }
 
