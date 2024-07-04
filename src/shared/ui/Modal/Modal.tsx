@@ -24,6 +24,7 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
     ...otherProps
   } = props
 
+  const [isMounted, setIsMounted] = useState(false)
   const [isClosing, setIsClosing] = useState(false)
   const timeRef = useRef<ReturnType<typeof setTimeout>>()
   const { theme } = useTheme()
@@ -31,6 +32,7 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
   const closeHandler = useCallback(() => {
     if (onClose) {
       setIsClosing(true)
+      setIsMounted(false)
 
       timeRef.current = setTimeout(() => {
         onClose()
@@ -48,6 +50,12 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
   const handleContentClick = useCallback((e: MouseEvent) => {
     e.stopPropagation()
   }, [])
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true)
+    }
+  }, [isOpen])
 
   useEffect(
     () => {
@@ -70,18 +78,21 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
     [cls['is-closing']]: isClosing,
   }
 
-  return (
-    <Portal>
-      <div
-        className={classNames(cls.modal, mods, [className, theme, 'app-modal'])}
-        {...otherProps}
-      >
-        <div className={cls.overlay} onClick={closeHandler}>
-          <div className={cls.content} onClick={handleContentClick}>
-            {children}
+  if (isMounted) {
+    return (
+      <Portal>
+        <div
+          className={classNames(cls.modal, mods, [className, theme, 'app-modal'])}
+          {...otherProps}
+        >
+          <div className={cls.overlay} onClick={closeHandler}>
+            <div className={cls.content} onClick={handleContentClick}>
+              {children}
+            </div>
           </div>
         </div>
-      </div>
-    </Portal>
-  )
+      </Portal>
+    )
+  }
+  return null
 }
