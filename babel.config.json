@@ -24,7 +24,7 @@
           "ru",
           "en"
         ],
-        "outputPath": "src/locales/{{locale}}/{{ns}}.json",
+        "outputPath": "public/locales/{{locale}}/{{ns}}.json",
         "discardOldKeys": true,
         "keyAsDefaultValue": true
       }

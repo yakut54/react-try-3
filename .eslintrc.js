@@ -23,21 +23,21 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
-    indent: [2],
     'no-shadow': 'off',
-    'react/jsx-indent': [2],
+    indent: ['error', 2],
     semi: ['error', 'never'],
     'no-unused-vars': 'warn',
     'import/extensions': 'off',
-    'react/jsx-indent-props': [2],
     'import/no-unresolved': 'off',
     'no-underscore-dangle': 'off',
+    'react/jsx-indent': ['error', 2],
     'react/react-in-jsx-scope': 'off',
     'react/require-default-props': 'off',
     'react/jsx-props-no-spreading': 'off',
     'import/prefer-default-export': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
+    'react/jsx-indent-props': ['error', 2],
     'import/no-extraneous-dependencies': 'off',
     'react/function-component-definition': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
@@ -45,7 +45,7 @@ module.exports = {
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
     'max-len': ['error', { code: 120, ignoreComments: true }],
     'eslint-disable-next-line react/jsx-props-no-spreading': 'off',
-    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
+    'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx', '.tsx'] }],
     'i18next/no-literal-string': [
       'error',
       {
@@ -60,7 +60,21 @@ module.exports = {
         'i18next/no-literal-string': 'off',
         'max-len': 'off',
       },
-      files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+      files: [
+        '**/src/**/*.{test,stories}.{ts,tsx}',
+      ],
+    },
+    {
+      files: ['**/src/**/slice/*.{ts,tsx}'],
+      rules: {
+        'no-param-reassign': [
+          'error',
+          {
+            props: true,
+            ignorePropertyModificationsFor: ['state'],
+          },
+        ],
+      },
     },
   ],
   globals: { __IS_DEV__: true },

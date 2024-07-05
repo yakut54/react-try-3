@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { BugButton } from 'app/providers/ErrorBoundary'
+import { Counter } from 'entities/Counter'
 
 const MainPage = () => {
   const { t } = useTranslation('main')
@@ -8,8 +8,9 @@ const MainPage = () => {
   return (
     <div>
       <h1>{t('Главная страница')}</h1>
-      <div>234</div>
-      <BugButton />
+      <br />
+      <br />
+      <Counter />
     </div>
   )
 }
