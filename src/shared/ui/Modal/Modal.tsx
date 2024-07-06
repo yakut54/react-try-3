@@ -11,6 +11,7 @@ interface ModalProps {
     children?: ReactNode
     isOpen?: boolean
     onClose?: () => void
+    lazy?: boolean
 }
 
 const ANIMATION_DELAY = 300
@@ -20,10 +21,12 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
     className,
     children,
     isOpen,
+    lazy,
     onClose,
     ...otherProps
   } = props
 
+  const [isMounted, setIsMounted] = useState(false)
   const [isClosing, setIsClosing] = useState(false)
   const timeRef = useRef<ReturnType<typeof setTimeout>>()
   const { theme } = useTheme()
@@ -49,39 +52,55 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
     e.stopPropagation()
   }, [])
 
-  useEffect(
-    () => {
-      if (isOpen) {
-        window.addEventListener('keydown', onKeyDown)
-      }
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true)
+    }
 
-      return () => {
-        if (timeRef.current) {
-          clearTimeout(timeRef.current)
-          window.removeEventListener('keydown', onKeyDown)
-        }
+    setIsClosing(true)
+
+    setTimeout(() => {
+      setIsClosing(false)
+    }, 0)
+
+    return () => {
+      setIsMounted(false)
+    }
+  }, [isOpen])
+
+  useEffect(() => {
+    if (isOpen) {
+      window.addEventListener('keydown', onKeyDown)
+    }
+
+    return () => {
+      if (timeRef.current) {
+        clearTimeout(timeRef.current)
+        window.removeEventListener('keydown', onKeyDown)
       }
-    },
-    [isOpen, onKeyDown],
-  )
+    }
+  }, [isOpen, onKeyDown])
 
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
     [cls['is-closing']]: isClosing,
   }
 
-  return (
-    <Portal>
-      <div
-        className={classNames(cls.modal, mods, [className, theme, 'app-modal'])}
-        {...otherProps}
-      >
-        <div className={cls.overlay} onClick={closeHandler}>
-          <div className={cls.content} onClick={handleContentClick}>
-            {children}
+  if (!lazy && isMounted) {
+    return (
+      <Portal>
+        <div
+          className={classNames(cls.modal, mods, [className, theme, 'app-modal'])}
+          {...otherProps}
+        >
+          <div className={cls.overlay} onClick={closeHandler}>
+            <div className={cls.content} onClick={handleContentClick}>
+              {children}
+            </div>
           </div>
         </div>
-      </div>
-    </Portal>
-  )
+      </Portal>
+    )
+  }
+  return null
 }
