@@ -1,7 +1,4 @@
 {
   "extends": "stylelint-config-standard-scss",
-  "fix": true,
-  "rules": {
-    "max-nesting-depth": 3
-  }
+  "rules": {}
 }

@@ -7,8 +7,8 @@ import { useTranslation } from 'react-i18next'
 import { Button, ButtonVariant } from 'shared/ui/Button/Button'
 import { Input } from 'shared/ui/Input/Input'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
-import { getLoginState } from 'features/AuthByUsername/model/selectors/getLoginState/getLoginState'
-import loginByUserName from 'features/AuthByUsername/model/servises/loginByUserName/loginByUserName'
+import { getLoginState } from '../../model/selectors/getLoginState/getLoginState'
+import loginByUserName from '../../model/services/loginByUserName/loginByUserName'
 import { loginActions } from '../..'
 import cls from './LoginForm.module.scss'
 
@@ -42,6 +42,7 @@ export const LoginForm: FC<LoginFormProps> = memo((props: LoginFormProps) => {
       className={classNames(cls['login-form'], {}, [className])}
       {...otherProps}
     >
+      <Text theme={TextTheme.NORMAl} title={t('Форма авторизации')} />
 
       {error && <Text text={error} theme={TextTheme.ERROR} />}
 
