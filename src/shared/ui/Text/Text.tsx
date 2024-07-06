@@ -1,24 +1,28 @@
 import { FC, ReactNode } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { useTranslation } from 'react-i18next'
 import cls from './Text.module.scss'
+
+export enum TextTheme {
+    NORMAl = 'normal',
+    ERROR = 'error'
+}
 
 interface TextProps {
     className?: string
     title?: string
     text?: string
+    theme: TextTheme
     children?: ReactNode
 }
 
 export const Text: FC<TextProps> = (props: TextProps) => {
   const {
-    className, children, text, title, ...otherProps
+    className, children, text, title, theme = TextTheme.NORMAl, ...otherProps
   } = props
-  const { t } = useTranslation()
 
   return (
     <div
-      className={classNames(cls.text, {}, [className])}
+      className={classNames(cls.text, {}, [className, cls[theme]])}
       {...otherProps}
     >
       {title && <p className={cls.title}>{title}</p>}
