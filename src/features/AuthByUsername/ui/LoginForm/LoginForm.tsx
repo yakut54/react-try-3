@@ -20,7 +20,9 @@ export const LoginForm: FC<LoginFormProps> = memo((props: LoginFormProps) => {
   const { className, children, ...otherProps } = props
   const { t } = useTranslation()
   const dispatch = useDispatch()
-  const { password, username } = useSelector(getLoginState)
+  const {
+    password, username, isLoading, error,
+  } = useSelector(getLoginState)
 
   const onChangeUsername = useCallback((value: string) => {
     dispatch(loginActions.setUsername(value))
@@ -39,6 +41,9 @@ export const LoginForm: FC<LoginFormProps> = memo((props: LoginFormProps) => {
       className={classNames(cls['login-form'], {}, [className])}
       {...otherProps}
     >
+
+      {error && <div>{error}</div>}
+
       <Input
         autofocus
         value={username}
@@ -47,13 +52,14 @@ export const LoginForm: FC<LoginFormProps> = memo((props: LoginFormProps) => {
         onChange={onChangeUsername}
       />
       <Input
+        type="password"
         value={password}
         placeholder={t('Введите пароль')}
         className={cls.input}
-        type="password"
         onChange={onChangePassword}
       />
       <Button
+        disabled={isLoading}
         theme={ButtonVariant.OUTLINE}
         className={cls['login-btn']}
         onClick={onLoginHandler}

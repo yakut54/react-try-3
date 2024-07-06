@@ -205,3 +205,21 @@ export const SquareXLLight: Story = {
   },
   decorators: [ThemeDecorator(Theme.LIGHT)],
 }
+
+export const OpacityLight: Story = {
+  args: {
+    children: 'Disabled Light',
+    theme: ButtonVariant.BACKGROUND,
+    disabled: true,
+  },
+  decorators: [ThemeDecorator(Theme.LIGHT)],
+}
+
+export const OpacityDark: Story = {
+  args: {
+    children: 'Disabled Dark',
+    theme: ButtonVariant.BACKGROUND,
+    disabled: true,
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
+}

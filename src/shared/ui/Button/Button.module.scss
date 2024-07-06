@@ -65,3 +65,8 @@
 .size-xl {
   font-size: var(--font-line-xl);
 }
+
+.disabled {
+  opacity: .5;
+  cursor: default;
+}
