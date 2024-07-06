@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { Button, ButtonVariant } from 'shared/ui/Button/Button'
 import { Input } from 'shared/ui/Input/Input'
+import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { getLoginState } from 'features/AuthByUsername/model/selectors/getLoginState/getLoginState'
 import loginByUserName from 'features/AuthByUsername/model/servises/loginByUserName/loginByUserName'
 import { loginActions } from '../..'
@@ -42,7 +43,7 @@ export const LoginForm: FC<LoginFormProps> = memo((props: LoginFormProps) => {
       {...otherProps}
     >
 
-      {error && <div>{error}</div>}
+      {error && <Text text={error} theme={TextTheme.ERROR} />}
 
       <Input
         autofocus
