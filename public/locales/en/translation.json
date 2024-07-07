@@ -2,5 +2,14 @@
   "Введите username": "Enter username",
   "Введите пароль": "Enter password",
   "Войти": "Sign in",
-  "Форма авторизации": "Authorization form"
+  "Главная": "Home",
+  "Главная страница": "Main page",
+  "Короткий перевод": "Short translation",
+  "О сайте": "About",
+  "Обновить страницу": "Refresh page",
+  "Перевод": "Translation",
+  "Произошла непредвиденная ошибка": "An unexpected error has occurred",
+  "Страница не найдена": "Page not found",
+  "Форма авторизации": "Form of authorization",
+  "Ошибка аутентификации": "Authentication error: User not found or wrong credentials"
 }

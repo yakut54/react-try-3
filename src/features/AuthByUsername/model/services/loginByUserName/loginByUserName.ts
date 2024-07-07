@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 import type { User } from 'entities/User'
+import i18n from 'i18next'
 
 interface LoginByUsernameProps {
     username: string
@@ -19,8 +20,14 @@ const loginByUserName = createAsyncThunk<User, LoginByUsernameProps, { rejectVal
 
       return response.data
     } catch (e) {
-      if (axios.isAxiosError(e)) {
-        // Обработка ошибки Axios
+      if (axios.isAxiosError(e) && e.response) {
+        // Проверяем код статуса ошибки
+        const statusCode = e.response.status
+        if (statusCode === 403) {
+          // Обработка ошибки аутентификации
+          return thunkAPI.rejectWithValue(i18n.t('Ошибка аутентификации'))
+        }
+        // Обработка других ошибок Axios
         return thunkAPI.rejectWithValue(`Axios error: ${e.message}`)
       }
       // Обработка неизвестной ошибки
