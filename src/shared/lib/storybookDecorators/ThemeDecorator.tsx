@@ -14,7 +14,6 @@ export const ThemeDecorator = (theme: Theme, options: componentRenderOptions = {
         </div>
       </ThemeProvider>
     </StoreProvider>
-
   )
 
   DecoratedStoryComponent.displayName = `ThemeDecorator(${theme})`

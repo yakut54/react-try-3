@@ -26,3 +26,17 @@ export const NavbarDark: Story = {
     ThemeDecorator(Theme.DARK),
   ],
 }
+
+export const NavbarAuthLight: Story = {
+  decorators: [
+    RouterDecorator,
+    ThemeDecorator(Theme.LIGHT, { initialState: { user: { authData: {} } } }),
+  ],
+}
+
+export const NavbarAuthDark: Story = {
+  decorators: [
+    RouterDecorator,
+    ThemeDecorator(Theme.DARK, { initialState: { user: { authData: {} } } }),
+  ],
+}
