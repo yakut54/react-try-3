@@ -23,8 +23,8 @@
   padding: 20px;
   border-radius: 12px;
   background: var(--bg-color);
-  transition: .3s transform;
-  transform: scale(.5);
+  transition: .6s transform;
+  transform: scale(.1);
   max-width: 60%;
   width: 600px;
 }
@@ -35,12 +35,33 @@
   z-index: var(--modal-z-index);
 
   .content {
-    transform: scale(1);
+    animation: modal-open .3s ease-in-out forwards;
   }
 }
 
 .is-closing {
   .content {
-    transform: scale(.3);
+    animation: modal-close .3s ease-in-out forwards;
+  }
+}
+
+
+@keyframes modal-open {
+  0% {
+    transform: scale(.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes modal-close {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(.1);
   }
 }

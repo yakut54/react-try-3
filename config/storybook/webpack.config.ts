@@ -9,10 +9,7 @@ type WebpackConfig = {
 }
 
 export default ({ config }: WebpackConfig) => {
-  const paths: BuildPaths = {
-    build: '',
-    html: '',
-    entry: '',
+  const paths: Partial<BuildPaths> = {
     src: path.resolve(__dirname, '..', '..', 'src'),
   }
 

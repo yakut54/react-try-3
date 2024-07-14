@@ -46,11 +46,17 @@ module.exports = {
     'max-len': ['error', { code: 120, ignoreComments: true }],
     'eslint-disable-next-line react/jsx-props-no-spreading': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx', '.tsx'] }],
+    'react/jsx-no-useless-fragment': 'off',
     'i18next/no-literal-string': [
       'error',
       {
         markupOnly: true,
-        ignoreAttribute: ['data-testid', 'to', 'fallback'],
+        ignoreAttribute: [
+          'to',
+          'fallback',
+          'reducerKey',
+          'data-testid',
+        ],
       },
     ],
   },
@@ -60,9 +66,7 @@ module.exports = {
         'i18next/no-literal-string': 'off',
         'max-len': 'off',
       },
-      files: [
-        '**/src/**/*.{test,stories}.{ts,tsx}',
-      ],
+      files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
     },
     {
       files: ['**/src/**/slice/*.{ts,tsx}'],
@@ -74,6 +78,13 @@ module.exports = {
             ignorePropertyModificationsFor: ['state'],
           },
         ],
+      },
+    },
+    {
+      files: ['DynamicModuleLoader.tsx'],
+      rules: {
+        'react-hooks/exhaustive-deps': 'off',
+        'no-unused-vars': 'off',
       },
     },
   ],

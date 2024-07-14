@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from 'app/providers/ThemeProvider'
 import { RouterDecorator } from 'shared/lib/storybookDecorators/RouterDecorator'
-import { ThemeDecorator } from 'shared/lib/storybookDecorators/ThemeDecorator'
+import { SBDecorator } from 'shared/lib/storybookDecorators/SBDecorator'
 import { AppLink, AppLinkTheme } from './AppLink'
 
 const meta: Meta<typeof AppLink> = {
@@ -23,7 +23,7 @@ export const LinkNormal: Story = {
   },
   decorators: [
     RouterDecorator,
-    ThemeDecorator(Theme.LIGHT),
+    SBDecorator(Theme.LIGHT),
   ],
 }
 
@@ -34,7 +34,7 @@ export const LinkInverted: Story = {
   },
   decorators: [
     RouterDecorator,
-    ThemeDecorator(Theme.LIGHT),
+    SBDecorator(Theme.LIGHT),
   ],
 }
 
@@ -45,7 +45,7 @@ export const LinkNormalDark: Story = {
   },
   decorators: [
     RouterDecorator,
-    ThemeDecorator(Theme.DARK),
+    SBDecorator(Theme.DARK),
   ],
 }
 
@@ -56,6 +56,6 @@ export const LinkInvertedDark: Story = {
   },
   decorators: [
     RouterDecorator,
-    ThemeDecorator(Theme.DARK),
+    SBDecorator(Theme.DARK),
   ],
 }

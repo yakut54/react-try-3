@@ -1,3 +1,3 @@
 export { StoreProvider } from './ui/StoreProvider'
-export { configureAppStore } from './config/store'
-export type { StateSchema } from './config/StateSchema'
+export { createAppStore } from './config/store'
+export type { StateSchema, StoreWithManager, StateSchemaKey } from './config/StateSchema'

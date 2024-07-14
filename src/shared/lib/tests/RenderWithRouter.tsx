@@ -15,7 +15,10 @@ export function componentRender(
   component: ReactNode,
   options: componentRenderOptions = {},
 ) {
-  const { route = '/', initialState } = options
+  const {
+    route = '/',
+    initialState,
+  } = options
 
   return render(
     <StoreProvider initialState={initialState as StateSchema}>

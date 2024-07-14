@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ThemeDecorator } from 'shared/lib/storybookDecorators/ThemeDecorator'
+import { SBDecorator } from 'shared/lib/storybookDecorators/SBDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 import { Text, TextTheme } from './Text'
 
@@ -16,7 +16,7 @@ export const TextLight: Story = {
     title: 'Lorem ipsum dolor sit amet',
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cumque expedita fuga iure iusto mollitia officia pariatur porro quos sed!',
   },
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+  decorators: [SBDecorator(Theme.LIGHT)],
 }
 
 export const TextDark: Story = {
@@ -24,35 +24,35 @@ export const TextDark: Story = {
     title: 'Lorem ipsum dolor sit amet',
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cumque expedita fuga iure iusto mollitia officia pariatur porro quos sed!',
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [SBDecorator(Theme.DARK)],
 }
 
 export const OnlyTextLight: Story = {
   args: {
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cumque expedita fuga iure iusto mollitia officia pariatur porro quos sed!',
   },
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+  decorators: [SBDecorator(Theme.LIGHT)],
 }
 
 export const OnlyTextDark: Story = {
   args: {
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cumque expedita fuga iure iusto mollitia officia pariatur porro quos sed!',
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [SBDecorator(Theme.DARK)],
 }
 
 export const OnlyTitleLight: Story = {
   args: {
     title: 'Lorem ipsum dolor sit amet',
   },
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+  decorators: [SBDecorator(Theme.LIGHT)],
 }
 
 export const OnlyTitleDark: Story = {
   args: {
     title: 'Lorem ipsum dolor sit amet',
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [SBDecorator(Theme.DARK)],
 }
 
 export const TextErrorLight: Story = {
@@ -61,7 +61,7 @@ export const TextErrorLight: Story = {
     title: 'Lorem ipsum dolor sit amet',
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cumque expedita fuga iure iusto mollitia officia pariatur porro quos sed!',
   },
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+  decorators: [SBDecorator(Theme.LIGHT)],
 }
 
 export const TextErrorDark: Story = {
@@ -70,5 +70,5 @@ export const TextErrorDark: Story = {
     title: 'Lorem ipsum dolor sit amet',
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cumque expedita fuga iure iusto mollitia officia pariatur porro quos sed!',
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [SBDecorator(Theme.DARK)],
 }

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { ThemeDecorator } from 'shared/lib/storybookDecorators/ThemeDecorator'
+import { SBDecorator } from 'shared/lib/storybookDecorators/SBDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 import { Input } from './Input'
 
@@ -18,7 +18,7 @@ export const InputLight: Story = {
     value: 'light theme',
     placeholder: 'placeholder',
   },
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+  decorators: [SBDecorator(Theme.LIGHT)],
 }
 
 export const InputDark: Story = {
@@ -27,5 +27,5 @@ export const InputDark: Story = {
     value: 'dark theme',
     placeholder: 'placeholder',
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [SBDecorator(Theme.DARK)],
 }

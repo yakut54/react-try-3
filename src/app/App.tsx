@@ -6,6 +6,7 @@ import { Sidebar } from 'widgets/Sidebar'
 import { Navbar } from 'widgets/Navbar'
 import { useDispatch } from 'react-redux'
 import { userActions } from 'entities/User'
+import { PageLoader } from 'widgets/PageLoader/ui/PageLoader'
 
 export const App = () => {
   const { theme } = useTheme()
@@ -17,7 +18,7 @@ export const App = () => {
 
   return (
     <div className={classNames('app', {}, [theme])}>
-      <Suspense fallback="">
+      <Suspense fallback={<PageLoader />}>
         <Navbar />
         <div className="content-page">
           <Sidebar />

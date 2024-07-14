@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ThemeDecorator } from 'shared/lib/storybookDecorators/ThemeDecorator'
+import { SBDecorator } from 'shared/lib/storybookDecorators/SBDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 import { Button, ButtonSize, ButtonVariant } from './Button'
 
@@ -17,7 +17,7 @@ export const ClearLight: Story = {
     children: 'CLEAR',
     theme: ButtonVariant.CLEAR,
   },
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+  decorators: [SBDecorator(Theme.LIGHT)],
 }
 
 export const ClearDark: Story = {
@@ -25,7 +25,7 @@ export const ClearDark: Story = {
     children: 'CLEAR',
     theme: ButtonVariant.CLEAR,
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [SBDecorator(Theme.DARK)],
 }
 
 export const ClearInvertedLight: Story = {
@@ -33,7 +33,7 @@ export const ClearInvertedLight: Story = {
     children: 'CLEAR_INVERTED',
     theme: ButtonVariant.CLEAR_INVERTED,
   },
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+  decorators: [SBDecorator(Theme.LIGHT)],
 }
 
 export const ClearInvertedDark: Story = {
@@ -41,7 +41,7 @@ export const ClearInvertedDark: Story = {
     children: 'CLEAR_INVERTED',
     theme: ButtonVariant.CLEAR_INVERTED,
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [SBDecorator(Theme.DARK)],
 }
 
 export const OutlineLight: Story = {
@@ -49,7 +49,7 @@ export const OutlineLight: Story = {
     children: 'OutlineLight',
     theme: ButtonVariant.OUTLINE,
   },
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+  decorators: [SBDecorator(Theme.LIGHT)],
 }
 
 export const OutlineDark: Story = {
@@ -57,7 +57,7 @@ export const OutlineDark: Story = {
     children: 'OutlineDark',
     theme: ButtonVariant.OUTLINE,
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [SBDecorator(Theme.DARK)],
 }
 
 export const OutlineSizeLLight: Story = {
@@ -66,7 +66,7 @@ export const OutlineSizeLLight: Story = {
     theme: ButtonVariant.OUTLINE,
     size: ButtonSize.L,
   },
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+  decorators: [SBDecorator(Theme.LIGHT)],
 }
 
 export const OutlineSizeMLight: Story = {
@@ -75,7 +75,7 @@ export const OutlineSizeMLight: Story = {
     theme: ButtonVariant.OUTLINE,
     size: ButtonSize.M,
   },
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+  decorators: [SBDecorator(Theme.LIGHT)],
 }
 
 export const OutlineSizeXLLight: Story = {
@@ -84,7 +84,7 @@ export const OutlineSizeXLLight: Story = {
     theme: ButtonVariant.OUTLINE,
     size: ButtonSize.XL,
   },
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+  decorators: [SBDecorator(Theme.LIGHT)],
 }
 
 export const OutlineSizeLDark: Story = {
@@ -93,7 +93,7 @@ export const OutlineSizeLDark: Story = {
     theme: ButtonVariant.OUTLINE,
     size: ButtonSize.L,
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [SBDecorator(Theme.DARK)],
 }
 
 export const OutlineSizeMDark: Story = {
@@ -102,7 +102,7 @@ export const OutlineSizeMDark: Story = {
     theme: ButtonVariant.OUTLINE,
     size: ButtonSize.M,
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [SBDecorator(Theme.DARK)],
 }
 
 export const OutlineSizeXLDark: Story = {
@@ -111,7 +111,7 @@ export const OutlineSizeXLDark: Story = {
     theme: ButtonVariant.OUTLINE,
     size: ButtonSize.XL,
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [SBDecorator(Theme.DARK)],
 }
 
 export const BackgroundLight: Story = {
@@ -119,7 +119,7 @@ export const BackgroundLight: Story = {
     children: 'Outline',
     theme: ButtonVariant.BACKGROUND,
   },
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+  decorators: [SBDecorator(Theme.LIGHT)],
 }
 
 export const BackgroundDark: Story = {
@@ -127,7 +127,7 @@ export const BackgroundDark: Story = {
     children: 'BACKGROUND',
     theme: ButtonVariant.BACKGROUND,
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [SBDecorator(Theme.DARK)],
 }
 
 export const BackgroundInvertedLight: Story = {
@@ -135,7 +135,7 @@ export const BackgroundInvertedLight: Story = {
     children: 'BACKGROUND_INVERTED',
     theme: ButtonVariant.BACKGROUND_INVERTED,
   },
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+  decorators: [SBDecorator(Theme.LIGHT)],
 }
 
 export const BackgroundInvertedDark: Story = {
@@ -143,7 +143,7 @@ export const BackgroundInvertedDark: Story = {
     children: 'BACKGROUND_INVERTED',
     theme: ButtonVariant.BACKGROUND_INVERTED,
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [SBDecorator(Theme.DARK)],
 }
 
 export const SquareMDark: Story = {
@@ -153,7 +153,7 @@ export const SquareMDark: Story = {
     isSquare: true,
     size: ButtonSize.M,
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [SBDecorator(Theme.DARK)],
 }
 
 export const SquareMLight: Story = {
@@ -163,7 +163,7 @@ export const SquareMLight: Story = {
     isSquare: true,
     size: ButtonSize.M,
   },
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+  decorators: [SBDecorator(Theme.LIGHT)],
 }
 
 export const SquareLDark: Story = {
@@ -173,7 +173,7 @@ export const SquareLDark: Story = {
     isSquare: true,
     size: ButtonSize.L,
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [SBDecorator(Theme.DARK)],
 }
 
 export const SquareLLight: Story = {
@@ -183,7 +183,7 @@ export const SquareLLight: Story = {
     isSquare: true,
     size: ButtonSize.L,
   },
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+  decorators: [SBDecorator(Theme.LIGHT)],
 }
 
 export const SquareXLDark: Story = {
@@ -193,7 +193,7 @@ export const SquareXLDark: Story = {
     isSquare: true,
     size: ButtonSize.XL,
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [SBDecorator(Theme.DARK)],
 }
 
 export const SquareXLLight: Story = {
@@ -203,7 +203,7 @@ export const SquareXLLight: Story = {
     isSquare: true,
     size: ButtonSize.XL,
   },
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+  decorators: [SBDecorator(Theme.LIGHT)],
 }
 
 export const OpacityLight: Story = {
@@ -212,7 +212,7 @@ export const OpacityLight: Story = {
     theme: ButtonVariant.BACKGROUND,
     disabled: true,
   },
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+  decorators: [SBDecorator(Theme.LIGHT)],
 }
 
 export const OpacityDark: Story = {
@@ -221,5 +221,5 @@ export const OpacityDark: Story = {
     theme: ButtonVariant.BACKGROUND,
     disabled: true,
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [SBDecorator(Theme.DARK)],
 }

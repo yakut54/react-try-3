@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ThemeDecorator } from 'shared/lib/storybookDecorators/ThemeDecorator'
+import { SBDecorator } from 'shared/lib/storybookDecorators/SBDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 import { Modal } from './Modal'
 
@@ -18,7 +18,7 @@ export const ModalLight: Story = {
     children: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, ad alias amet corporis dolor expedita 
         harum incidunt maiores molestias nesciunt nihil omnis possimus tempore voluptates voluptatibus.`,
   },
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+  decorators: [SBDecorator(Theme.LIGHT)],
 }
 
 export const ModalDark: Story = {
@@ -27,5 +27,5 @@ export const ModalDark: Story = {
     children: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, ad alias amet corporis dolor expedita 
         harum incidunt maiores molestias nesciunt nihil omnis possimus tempore voluptates voluptatibus.`,
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [SBDecorator(Theme.DARK)],
 }

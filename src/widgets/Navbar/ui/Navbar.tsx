@@ -14,19 +14,20 @@ interface NavbarProps {
 
 export const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation()
-  const [isOpenModal, setIsOpenModal] = useState(false)
-  const authData = useSelector(getUserAuthData)
+  const [isOpenAuthModal, setIsOpenAuthModal] = useState(false)
   const dispatch = useDispatch()
+  const authData = useSelector(getUserAuthData)
 
   const onCloseModal = useCallback(() => {
-    setIsOpenModal(false)
+    setIsOpenAuthModal(false)
   }, [])
 
   const onOpenModal = useCallback(() => {
-    setIsOpenModal(true)
+    setIsOpenAuthModal(true)
   }, [])
 
   const onLogout = useCallback(() => {
+    setIsOpenAuthModal(false)
     dispatch(userActions.logout())
   }, [dispatch])
 
@@ -55,10 +56,12 @@ export const Navbar = ({ className }: NavbarProps) => {
         {t('Войти')}
       </Button>
 
-      <LoginModal
-        isOpen={isOpenModal}
-        onClose={onCloseModal}
-      />
+      {isOpenAuthModal && (
+        <LoginModal
+          isOpen={isOpenAuthModal}
+          onClose={onCloseModal}
+        />
+      )}
     </div>
   )
 }

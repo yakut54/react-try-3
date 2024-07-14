@@ -7,19 +7,19 @@ import { Portal } from 'shared/ui/Portal/Portal'
 import cls from './Modal.module.scss'
 
 interface ModalProps {
+    children: ReactNode
     className?: string
-    children?: ReactNode
     isOpen?: boolean
-    onClose?: () => void
     lazy?: boolean
+    onClose?: () => void
 }
 
 const ANIMATION_DELAY = 300
 
 export const Modal: FC<ModalProps> = (props: ModalProps) => {
   const {
-    className,
     children,
+    className,
     isOpen,
     lazy,
     onClose,
@@ -54,7 +54,7 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
 
   useEffect(() => {
     if (isOpen) {
-      setIsMounted(true)
+      setTimeout(() => setIsMounted(true), 0)
     }
 
     setIsClosing(true)

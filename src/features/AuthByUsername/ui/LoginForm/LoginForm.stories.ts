@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { ThemeDecorator } from 'shared/lib/storybookDecorators/ThemeDecorator'
+import { Meta, StoryObj } from '@storybook/react'
 import { Theme } from 'app/providers/ThemeProvider'
-import { LoginForm } from './LoginForm'
+import { SBDecorator } from 'shared/lib/storybookDecorators/SBDecorator'
+import { LoginFormAsync as LoginForm } from './LoginForm.async'
 
 const meta: Meta<typeof LoginForm> = {
   title: 'Features/LoginForm',
@@ -13,7 +13,7 @@ type Story = StoryObj<typeof LoginForm>
 
 export const LoginFormErrorLight: Story = {
   args: {},
-  decorators: [ThemeDecorator(
+  decorators: [SBDecorator(
     Theme.LIGHT,
     {
       initialState: {
@@ -29,7 +29,7 @@ export const LoginFormErrorLight: Story = {
 
 export const LoginFormErrorDark: Story = {
   args: {},
-  decorators: [ThemeDecorator(
+  decorators: [SBDecorator(
     Theme.DARK,
     {
       initialState: {
@@ -45,7 +45,7 @@ export const LoginFormErrorDark: Story = {
 
 export const LoginFormLight: Story = {
   args: {},
-  decorators: [ThemeDecorator(
+  decorators: [SBDecorator(
     Theme.LIGHT,
     {
       initialState: {
@@ -60,7 +60,7 @@ export const LoginFormLight: Story = {
 
 export const LoginFormDark: Story = {
   args: {},
-  decorators: [ThemeDecorator(
+  decorators: [SBDecorator(
     Theme.DARK,
     {
       initialState: {
@@ -75,7 +75,7 @@ export const LoginFormDark: Story = {
 
 export const LoginFormDisableLight: Story = {
   args: {},
-  decorators: [ThemeDecorator(
+  decorators: [SBDecorator(
     Theme.LIGHT,
     {
       initialState: {
@@ -91,7 +91,7 @@ export const LoginFormDisableLight: Story = {
 
 export const LoginFormDisableDark: Story = {
   args: {},
-  decorators: [ThemeDecorator(
+  decorators: [SBDecorator(
     Theme.DARK,
     {
       initialState: {

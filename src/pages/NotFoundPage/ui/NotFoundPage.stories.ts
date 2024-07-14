@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from 'app/providers/ThemeProvider'
-import { ThemeDecorator } from 'shared/lib/storybookDecorators/ThemeDecorator'
+import { SBDecorator } from 'shared/lib/storybookDecorators/SBDecorator'
 import { NotFoundPage } from './NotFoundPage'
 
 const meta: Meta<typeof NotFoundPage> = {
@@ -14,12 +14,12 @@ type Story = StoryObj<typeof NotFoundPage>
 
 export const NotFoundPageLight: Story = {
   decorators: [
-    ThemeDecorator(Theme.LIGHT),
+    SBDecorator(Theme.LIGHT),
   ],
 }
 
 export const NotFoundPageDark: Story = {
   decorators: [
-    ThemeDecorator(Theme.DARK),
+    SBDecorator(Theme.DARK),
   ],
 }
