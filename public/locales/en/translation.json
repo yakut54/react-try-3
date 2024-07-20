@@ -12,5 +12,6 @@
   "Страница не найдена": "Page not found",
   "Форма авторизации": "Form of authorization",
   "Ошибка аутентификации": "Authentication error: User not found or wrong credentials",
-  "Выйти": "Sign out"
+  "Выйти": "Sign out",
+  "Что то пошло не так": "Something went wrong"
 }
