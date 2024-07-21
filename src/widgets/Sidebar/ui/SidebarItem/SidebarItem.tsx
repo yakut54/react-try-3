@@ -25,6 +25,7 @@ export const SidebarItem: FC<SidebarItemProps> = memo((props: SidebarItemProps) 
       <span
         className={cls.link}
       >
+        {/* i18next-extract-disable-line */}
         {t(translationKey)}
       </span>
     </AppLink>
