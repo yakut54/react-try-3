@@ -13,6 +13,7 @@ interface SidebarItemProps {
 export const SidebarItem: FC<SidebarItemProps> = memo((props: SidebarItemProps) => {
   const { item, isCollapsed } = props
   const { t } = useTranslation()
+  const translationKey = `${item.text}`
 
   return (
     <AppLink
@@ -24,7 +25,7 @@ export const SidebarItem: FC<SidebarItemProps> = memo((props: SidebarItemProps) 
       <span
         className={cls.link}
       >
-        {t(item.text)}
+        {t(translationKey)}
       </span>
     </AppLink>
   )
