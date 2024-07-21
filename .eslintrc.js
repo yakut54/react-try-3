@@ -53,6 +53,7 @@ module.exports = {
         markupOnly: true,
         ignoreAttribute: [
           'to',
+          'key',
           'fallback',
           'reducerKey',
           'data-testid',
