@@ -32,14 +32,12 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
   const { theme } = useTheme()
 
   const closeHandler = useCallback(() => {
-    if (onClose) {
-      setIsClosing(true)
+    setIsClosing(true)
 
-      timeRef.current = setTimeout(() => {
-        onClose()
-        setIsClosing(false)
-      }, ANIMATION_DELAY)
-    }
+    timeRef.current = setTimeout(() => {
+      onClose()
+      setIsClosing(false)
+    }, ANIMATION_DELAY)
   }, [onClose])
 
   const onKeyDown = useCallback((e: KeyboardEvent) => {
@@ -56,12 +54,6 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
     if (isOpen) {
       setTimeout(() => setIsMounted(true), 0)
     }
-
-    setIsClosing(true)
-
-    setTimeout(() => {
-      setIsClosing(false)
-    }, 0)
 
     return () => {
       setIsMounted(false)

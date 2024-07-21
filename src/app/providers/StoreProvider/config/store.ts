@@ -2,7 +2,7 @@ import type { ReducersMapObject } from '@reduxjs/toolkit'
 import { configureStore } from '@reduxjs/toolkit'
 import { userReducer } from 'entities/User'
 import { counterReducer } from 'entities/Counter'
-import type { StateSchema, StoreWithManager } from './StateSchema'
+import type { StateSchema } from './StateSchema'
 import { createReducerManager } from './reducerManager'
 
 export function createAppStore(initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) {
@@ -18,9 +18,11 @@ export function createAppStore(initialState?: StateSchema, asyncReducers?: Reduc
     reducer: reducerManager.reduce,
     devTools: __IS_DEV__,
     preloadedState: initialState,
-  }) as StoreWithManager
+  })
 
-  store.reducerManager = reducerManager
-
-  return store
+  return { ...store, reducerManager }
 }
+
+export type AppStore = ReturnType<typeof createAppStore>
+export type RootState = ReturnType<AppStore['getState']>
+export type AppDispatch = AppStore['dispatch']

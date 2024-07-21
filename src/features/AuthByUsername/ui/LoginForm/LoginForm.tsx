@@ -1,16 +1,16 @@
 import React, { FC, memo, useCallback } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { Button, ButtonVariant } from 'shared/ui/Button/Button'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { Input } from 'shared/ui/Input/Input'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import loginByUserName from 'features/AuthByUsername/model/services/loginByUserName/loginByUserName'
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername'
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword'
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading'
-import loginByUserName from '../../model/services/loginByUserName/loginByUserName'
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 import cls from './LoginForm.module.scss'
 
@@ -25,12 +25,12 @@ const initialLoginReducer: ReducersList = {
 const LoginForm: FC<LoginFormProps> = memo((props: LoginFormProps) => {
   const { className, ...otherProps } = props
   const { t } = useTranslation()
+  const dispatch = useAppDispatch()
 
-  const username = useSelector(getLoginUsername)
-  const password = useSelector(getLoginPassword)
-  const isLoading = useSelector(getLoginIsLoading)
-  const error = useSelector(getLoginError)
-  const dispatch = useDispatch()
+  const username = useAppSelector(getLoginUsername)
+  const password = useAppSelector(getLoginPassword)
+  const isLoading = useAppSelector(getLoginIsLoading)
+  const error = useAppSelector(getLoginError)
 
   const onChangeUsername = useCallback((value: string) => {
     dispatch(loginActions.setUsername(value))
@@ -40,8 +40,8 @@ const LoginForm: FC<LoginFormProps> = memo((props: LoginFormProps) => {
     dispatch(loginActions.setPassword(value))
   }, [dispatch])
 
-  const onLoginHandler = useCallback(() => {
-    dispatch(loginByUserName({ username, password }))
+  const onLoginHandler = useCallback(async () => {
+    await dispatch(loginByUserName({ username, password }))
   }, [dispatch, password, username])
 
   return (

@@ -1,11 +1,10 @@
-/* eslint-disable i18next/no-literal-string */
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
 import { Button, ButtonVariant } from 'shared/ui/Button/Button'
 import { LoginModal } from 'features/AuthByUsername'
 import { useCallback, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { getUserAuthData, userActions } from 'entities/User'
+import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import cls from './Navbar.module.scss'
 
 interface NavbarProps {
@@ -15,8 +14,8 @@ interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation()
   const [isOpenAuthModal, setIsOpenAuthModal] = useState(false)
-  const dispatch = useDispatch()
-  const authData = useSelector(getUserAuthData)
+  const dispatch = useAppDispatch()
+  const authData = useAppSelector(getUserAuthData)
 
   const onCloseModal = useCallback(() => {
     setIsOpenAuthModal(false)
