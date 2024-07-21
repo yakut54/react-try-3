@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { FC, ReactNode } from 'react'
+import { FC, memo, ReactNode } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Text.module.scss'
 
@@ -16,7 +16,7 @@ interface TextProps {
     children?: ReactNode
 }
 
-export const Text: FC<TextProps> = (props: TextProps) => {
+export const Text: FC<TextProps> = memo((props: TextProps) => {
   const {
     className, children, text, title, theme = TextTheme.NORMAl, ...otherProps
   } = props
@@ -30,4 +30,6 @@ export const Text: FC<TextProps> = (props: TextProps) => {
       {text && <p className={cls.text}>{text}</p>}
     </div>
   )
-}
+})
+
+Text.displayName = 'Text'

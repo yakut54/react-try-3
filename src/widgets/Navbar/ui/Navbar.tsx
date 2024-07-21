@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
 import { Button, ButtonVariant } from 'shared/ui/Button/Button'
 import { LoginModal } from 'features/AuthByUsername'
-import { useCallback, useState } from 'react'
+import { memo, useCallback, useState } from 'react'
 import { getUserAuthData, userActions } from 'entities/User'
 import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import cls from './Navbar.module.scss'
@@ -11,7 +11,7 @@ interface NavbarProps {
     className?: string
 }
 
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation()
   const [isOpenAuthModal, setIsOpenAuthModal] = useState(false)
   const dispatch = useAppDispatch()
@@ -63,4 +63,6 @@ export const Navbar = ({ className }: NavbarProps) => {
       )}
     </div>
   )
-}
+})
+
+Navbar.displayName = 'Navbar'

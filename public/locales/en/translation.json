@@ -13,5 +13,7 @@
   "Форма авторизации": "Form of authorization",
   "Ошибка аутентификации": "Authentication error: User not found or wrong credentials",
   "Выйти": "Sign out",
-  "Что то пошло не так": "Something went wrong"
+  "Что то пошло не так": "Something went wrong",
+  "Страница профиля": "Profile page",
+  "Профиль": "Profile"
 }

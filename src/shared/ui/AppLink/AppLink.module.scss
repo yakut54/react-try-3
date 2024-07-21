@@ -1,3 +1,11 @@
+.app-link {
+  text-decoration: none;
+}
+
+.app-link:hover {
+  text-decoration: underline;
+}
+
 .app-link.normal {
   color: var(--primary-color);
 }
