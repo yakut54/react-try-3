@@ -5,10 +5,12 @@ import { Theme, ThemeProvider } from 'app/providers/ThemeProvider'
 import type { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit'
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider'
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice'
+import { profileReducer } from 'entities/Profile'
 import type { componentRenderOptions } from 'shared/lib/tests/RenderWithRouter'
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
   loginForm: loginReducer,
+  profile: profileReducer,
 }
 
 export const SBDecorator = (
