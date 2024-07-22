@@ -7,6 +7,7 @@ import { StateSchema, StoreProvider } from 'app/providers/StoreProvider'
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice'
 import { profileReducer } from 'entities/Profile'
 import type { componentRenderOptions } from 'shared/lib/tests/RenderWithRouter'
+import { BrowserRouter } from 'react-router-dom'
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
   loginForm: loginReducer,
@@ -19,21 +20,23 @@ export const SBDecorator = (
   asyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {},
 ) => {
   const DecoratedStoryComponent = (StoryComponent: StoryFn) => (
-    <StoreProvider
-      initialState={options.initialState as StateSchema}
-      asyncReducers={{
-        ...defaultAsyncReducers,
-        ...asyncReducers,
-      }}
-    >
-      <ThemeProvider initialTheme={theme}>
-        <div className={`flex-center app ${theme}`}>
-          <Suspense fallback={<PageLoader />}>
-            <StoryComponent />
-          </Suspense>
-        </div>
-      </ThemeProvider>
-    </StoreProvider>
+    <BrowserRouter>
+      <StoreProvider
+        initialState={options.initialState as StateSchema}
+        asyncReducers={{
+          ...defaultAsyncReducers,
+          ...asyncReducers,
+        }}
+      >
+        <ThemeProvider initialTheme={theme}>
+          <div className={`flex-center app ${theme}`}>
+            <Suspense fallback={<PageLoader />}>
+              <StoryComponent />
+            </Suspense>
+          </div>
+        </ThemeProvider>
+      </StoreProvider>
+    </BrowserRouter>
   )
 
   DecoratedStoryComponent.displayName = `SBDecorator(${theme})`
