@@ -5,7 +5,7 @@ import type { User, UserSchema } from '../types/userSchema'
 const initialState: UserSchema = {}
 
 export const userSlice = createSlice({
-  name: 'user',
+  name: 'userSlice',
   initialState,
   reducers: {
     setAuthData: (state, action: PayloadAction<User>) => {

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import type { ReducersMapObject } from '@reduxjs/toolkit'
 import { configureStore } from '@reduxjs/toolkit'
 import { userReducer } from 'entities/User'
@@ -5,7 +6,8 @@ import { counterReducer } from 'entities/Counter'
 import { $api } from 'shared/api/api'
 import type { To } from '@remix-run/router'
 import type { NavigateOptions } from 'react-router/dist/lib/context'
-import type { StateSchema } from './StateSchema'
+import { CombinedState, Reducer } from 'redux'
+import { StateSchema, ThunkExtraArgs } from './StateSchema'
 import { createReducerManager } from './reducerManager'
 
 export function createAppStore(
@@ -21,17 +23,17 @@ export function createAppStore(
 
   const reducerManager = createReducerManager(rootReducers)
 
+  const extraArg: ThunkExtraArgs = {
+    api: $api,
+    navigate,
+  }
+
   const store = configureStore({
-    reducer: reducerManager.reduce,
+    reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
     devTools: __IS_DEV__,
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-      thunk: {
-        extraArgument: {
-          api: $api,
-          navigate,
-        },
-      },
+      thunk: { extraArgument: extraArg },
     }),
   })
 
@@ -40,4 +42,4 @@ export function createAppStore(
 
 export type AppStore = ReturnType<typeof createAppStore>
 export type RootState = ReturnType<AppStore['getState']>
-export type AppDispatch = AppStore['dispatch']
+export type AppDispatch = ReturnType<typeof createAppStore>['dispatch']

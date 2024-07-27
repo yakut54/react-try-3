@@ -47,6 +47,7 @@ module.exports = {
     'eslint-disable-next-line react/jsx-props-no-spreading': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx', '.tsx'] }],
     'react/jsx-no-useless-fragment': 'off',
+    'no-undef': 'off',
     'i18next/no-literal-string': [
       'error',
       {

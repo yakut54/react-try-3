@@ -1,5 +1,5 @@
 import type { FC, ReactNode } from 'react'
-import type { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit'
+import type { ReducersMapObject } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import type { StateSchema } from '../config/StateSchema'

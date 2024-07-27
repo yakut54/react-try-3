@@ -15,16 +15,25 @@ export default ({ config }: WebpackConfig) => {
 
   const SBWConfig: Configuration = { ...config }
 
-  SBWConfig.resolve.modules.push(paths.src)
-  SBWConfig.resolve.extensions.push('.ts', '.tsx')
-  SBWConfig.module.rules.push(buildCssLoader(true))
+  SBWConfig.resolve?.extensions?.push('.ts', '.tsx')
 
-  SBWConfig.module.rules = config.module.rules
-    .filter((rule: webpack.RuleSetRule) => !(rule.test instanceof RegExp && /svg/.test(rule.test.source)))
+  if (SBWConfig.resolve?.modules && paths.src) {
+    SBWConfig.resolve.modules.push(paths.src)
+  }
 
-  SBWConfig.module.rules.push(buildSvgrLoader())
+  if (SBWConfig.module && SBWConfig.module.rules) {
+    SBWConfig.module.rules = SBWConfig.module.rules
+      .filter((rule): rule is webpack.RuleSetRule => typeof rule === 'object'
+                && rule !== null
+                && 'test' in rule
+                && rule.test instanceof RegExp
+                && !/svg/.test(rule.test.source))
 
-  SBWConfig.plugins.push(new webpack.DefinePlugin({
+    SBWConfig.module.rules.push(buildSvgrLoader())
+    SBWConfig.module.rules.push(buildCssLoader(true))
+  }
+
+  SBWConfig.plugins?.push(new webpack.DefinePlugin({
     __IS_DEV__: JSON.stringify(true),
     __API__: JSON.stringify(''),
   }))

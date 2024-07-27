@@ -1,8 +1,8 @@
-import { FC, memo, ReactNode } from 'react'
+import { FC, memo, useEffect } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { useTranslation } from 'react-i18next'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { profileReducer } from 'entities/Profile'
+import { fetchProfileData, ProfileCard, profileReducer } from 'entities/Profile'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import cls from './ProfilePage.module.scss'
 
 const reducers: ReducersList = {
@@ -11,12 +11,15 @@ const reducers: ReducersList = {
 
 interface ProfilePageProps {
     className?: string
-    children?: ReactNode
 }
 
 const ProfilePage: FC<ProfilePageProps> = memo((props: ProfilePageProps) => {
-  const { className, children, ...otherProps } = props
-  const { t } = useTranslation()
+  const { className, ...otherProps } = props
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(fetchProfileData())
+  }, [dispatch])
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -24,7 +27,7 @@ const ProfilePage: FC<ProfilePageProps> = memo((props: ProfilePageProps) => {
         className={classNames(cls['profile-page'], {}, [className])}
         {...otherProps}
       >
-        <h1 className={classNames(cls['profile-text'], {}, [])}>{t('Страница профиля')}</h1>
+        <ProfileCard />
       </div>
     </DynamicModuleLoader>
   )

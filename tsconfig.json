@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "strict": false,
+    "strict": true,
     "moduleResolution": "node",
     "noImplicitAny": true,
     "module": "ESNext",
@@ -11,9 +11,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "*": [
-        "./src/*"
-      ]
+      "*": ["./src/*"]
     }
   },
   "ts-node": {
