@@ -22,6 +22,7 @@ export default ({ config }: WebpackConfig) => {
   }
 
   if (SBWConfig.module && SBWConfig.module.rules) {
+    // Фильтруем правила, чтобы исключить SVG, если они уже добавлены
     SBWConfig.module.rules = SBWConfig.module.rules
       .filter((rule): rule is webpack.RuleSetRule => typeof rule === 'object'
                 && rule !== null
@@ -29,13 +30,20 @@ export default ({ config }: WebpackConfig) => {
                 && rule.test instanceof RegExp
                 && !/svg/.test(rule.test.source))
 
+    // Добавляем правило для обработки SVG
     SBWConfig.module.rules.push(buildSvgrLoader())
+    // Добавляем правило для обработки CSS
     SBWConfig.module.rules.push(buildCssLoader(true))
+    // Добавляем правило для обработки файлов (например, изображений)
+    SBWConfig.module.rules.push({
+      test: /\.(png|jpe?g|gif|woff2?|eot|ttf|ico)$/i,
+      use: [{ loader: 'file-loader' }],
+    })
   }
 
   SBWConfig.plugins?.push(new webpack.DefinePlugin({
     __IS_DEV__: JSON.stringify(true),
-    __API__: JSON.stringify(''),
+    __API__: JSON.stringify('http://localhost:8000'),
   }))
 
   return SBWConfig

@@ -97,7 +97,7 @@ const config: Config = {
 
   // The maximum amount of workers used to run your tests. Can be specified as %
   // or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the
-  // maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
+  // maximum worker number. maxWorkers: 2_widgets will use a maximum of 2_widgets workers.
   // maxWorkers: "50%",
   // An array of regexp pattern strings, matched against all
   // module paths before considered 'visible' to the module loader
