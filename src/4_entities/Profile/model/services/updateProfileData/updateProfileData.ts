@@ -1,32 +1,31 @@
-import i18n from 'i18next'
-import { AxiosError } from 'axios'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from '0_app/providers/StoreProvider'
-import type { Profile } from '../../types/profileSchema'
+import { Profile, ValidateProfileError } from '../../types/profileSchema'
 import { getProfileForm } from '../../selectors/getProfileForm/getProfileForm'
+import { validateProfileData } from '../validateProfileData/validateProfileData'
 
-export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<string>>(
-  'profile/updateProfileData',
-  async (_, thunkAPI) => {
-    const { rejectWithValue, extra, getState } = thunkAPI
-    const formData = getProfileForm(getState())
+export const updateProfileData = createAsyncThunk<
+    Profile,
+    void,
+    ThunkConfig<ValidateProfileError[]>>(
+      'profile/updateProfileData',
+      async (_, thunkAPI) => {
+        const { rejectWithValue, extra, getState } = thunkAPI
+        const formData = getProfileForm(getState())
 
-    try {
-      const response = await extra.api.put<Profile>('/profile', formData)
+        const errors = validateProfileData(formData)
 
-      return response.data
-    } catch (e) {
-      if (e instanceof AxiosError) {
-        const statusCode = (e as AxiosError).response?.status
-        if (statusCode === 403) {
-          return rejectWithValue(i18n.t('Ошибка обновления'))
+        if (errors.length) {
+          return rejectWithValue(errors)
         }
 
-        return rejectWithValue(`Axios error: ${(e as AxiosError).message}`)
-      }
+        try {
+          const response = await extra.api.put<Profile>('/profile', formData)
 
-      return rejectWithValue(`Unknown error: ${(e as Error).message}`)
-    }
-  },
-  {},
-)
+          return response.data
+        } catch (e) {
+          return rejectWithValue([ValidateProfileError.SERVER_ERROR])
+        }
+      },
+      {},
+    )

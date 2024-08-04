@@ -10,12 +10,16 @@ import {
   getProfileForm,
   getProfileIsLoading,
   getProfileReadOnly,
+  getProfileValidateErrors,
   profileActions,
   ProfileCard,
   profileReducer,
 } from '4_entities/Profile'
 import { Currency } from '4_entities/Currency'
 import { Country } from '4_entities/Country'
+import { ValidateProfileError } from '4_entities/Profile/model/types/profileSchema'
+import { Text, TextTheme } from '5_shared/ui/Text/Text'
+import { useTranslation } from 'react-i18next'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 import cls from './ProfilePage.module.scss'
 
@@ -29,11 +33,21 @@ interface ProfilePageProps {
 
 const ProfilePage: FC<ProfilePageProps> = memo((props: ProfilePageProps) => {
   const { className, ...otherProps } = props
+  const { t } = useTranslation('profile')
   const dispatch = useAppDispatch()
   const form = useAppSelector(getProfileForm)
   const error = useAppSelector(getProfileError)
   const isLoading = useAppSelector(getProfileIsLoading)
   const isReadOnly = useAppSelector(getProfileReadOnly)
+  const validateErrors = useAppSelector(getProfileValidateErrors)
+
+  const validateErrorsTranslates = {
+    [ValidateProfileError.NO_DATA]: t('Данные не указаны'),
+    [ValidateProfileError.INCORRECT_AGE]: t('Некорректный возраст'),
+    [ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
+    [ValidateProfileError.INCORRECT_COUNTRY]: t('Некорректный регион'),
+    [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
+  }
 
   useEffect(() => {
     dispatch(fetchProfileData())
@@ -78,6 +92,13 @@ const ProfilePage: FC<ProfilePageProps> = memo((props: ProfilePageProps) => {
         {...otherProps}
       >
         <ProfilePageHeader />
+        {validateErrors?.length && validateErrors.map((err) => (
+          <Text
+            key={err + Math.random().toString()}
+            theme={TextTheme.ERROR}
+            text={validateErrorsTranslates[err]}
+          />
+        ))}
         <ProfileCard
           data={form}
           error={error}

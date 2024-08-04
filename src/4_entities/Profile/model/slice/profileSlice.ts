@@ -19,12 +19,13 @@ export const profileSlice = createSlice({
     },
     updateProfile: (state: ProfileSchema, action: PayloadAction<Profile>) => {
       state.form = {
-        ...state.data,
+        ...state.form,
         ...action.payload,
       }
     },
     cancelEdit: (state: ProfileSchema) => {
       state.readonly = true
+      state.validateErrors = undefined
       state.form = state.data
     },
   },
@@ -51,7 +52,7 @@ export const profileSlice = createSlice({
       })
       .addCase(updateProfileData.pending, (state) => {
         if (state) {
-          state.error = undefined
+          state.validateErrors = undefined
           state.isLoading = true
         }
       })
@@ -61,12 +62,13 @@ export const profileSlice = createSlice({
           state.data = action.payload
           state.form = action.payload
           state.readonly = true
+          state.validateErrors = undefined
         }
       })
       .addCase(updateProfileData.rejected, (state, action) => {
         if (state) {
           state.isLoading = false
-          state.error = action.payload
+          state.validateErrors = action.payload
         }
       })
   },
