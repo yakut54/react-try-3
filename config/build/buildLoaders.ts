@@ -4,7 +4,7 @@ import { buildCssLoader } from './loaders/buildCssLoader'
 import { buildSvgrLoader } from './loaders/buildSvgrLoader'
 import { buildBabelLoader } from './loaders/buildBabelLoader'
 
-export function svgrLoader({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   const tsLoader: webpack.RuleSetRule = {
     test: /\.tsx?$/,
     use: 'ts-loader',
