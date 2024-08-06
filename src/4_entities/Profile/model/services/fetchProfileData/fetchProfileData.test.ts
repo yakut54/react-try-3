@@ -1,7 +1,6 @@
 import { TestAsyncThunk } from '5_shared/lib/tests/TestAsyncThunk'
 import { Currency } from '4_entities/Currency'
 import { Country } from '4_entities/Country'
-import AvatarJPG from '5_shared/assets/test/avatar.jpg'
 import { fetchProfileData } from './fetchProfileData'
 
 const data = {
@@ -12,7 +11,7 @@ const data = {
   currency: Currency.RUB,
   country: Country.Russia,
   city: 'Nsk',
-  avatar: AvatarJPG,
+  avatar: '',
 }
 
 describe('fetchProfileData.test', () => {
