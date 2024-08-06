@@ -56,4 +56,4 @@ export const Sidebar: FC<SidebarProps> = memo((props: SidebarProps) => {
   )
 })
 
-Sidebar.displayName = 'Sidebar'
+Sidebar.displayName = 'Sidebar1'
