@@ -26,12 +26,12 @@
     }
   ],
   "profile": {
-    "first": "Витёк",
-    "lastname": "Пух",
-    "age": 40,
+    "first": "DMITRII",
+    "lastname": "TIUTIAEV",
+    "age": 43,
     "currency": "RUB",
     "country": "Russia",
-    "city": "St.Petersburg",
+    "city": "Новосибирск",
     "username": "admin",
     "avatar": "https://api.selcdn.ru/v1/SEL_53369/mng/__medium__/images/podcast_2.png"
   }

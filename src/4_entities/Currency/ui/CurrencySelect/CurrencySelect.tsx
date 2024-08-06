@@ -13,11 +13,10 @@ interface CurrencySelectProps {
     isReadonly?: boolean
 }
 
-const options: SelectOption[] = [
-  { value: Currency.RUB, content: Currency.RUB },
-  { value: Currency.EUR, content: Currency.EUR },
-  { value: Currency.USD, content: Currency.USD },
-]
+const options: SelectOption[] = Object.values(Currency).map((currency) => ({
+  value: currency,
+  content: currency,
+}))
 
 export const CurrencySelect = memo((props: CurrencySelectProps) => {
   const {

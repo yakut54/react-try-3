@@ -23,3 +23,23 @@ export const SidebarDark: Story = {
     SBDecorator(Theme.DARK),
   ],
 }
+
+export const SidebarAuthLight: Story = {
+  decorators: [
+    SBDecorator(Theme.LIGHT, {
+      initialState: {
+        user: { authData: { username: 'admin', id: '1' } },
+      },
+    }),
+  ],
+}
+
+export const SidebarAuthDark: Story = {
+  decorators: [
+    SBDecorator(Theme.DARK, {
+      initialState: {
+        user: { authData: { username: 'admin', id: '1' } },
+      },
+    }),
+  ],
+}

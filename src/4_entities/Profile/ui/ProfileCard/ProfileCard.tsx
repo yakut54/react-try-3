@@ -30,19 +30,19 @@ interface ProfileCardProps {
 
 export const ProfileCard: FC<ProfileCardProps> = (props: ProfileCardProps) => {
   const {
-    className,
     data,
-    isLoading,
     error,
+    isLoading,
+    className,
     isReadOnly,
-    onChangeFirstName,
+    onChangeAge,
+    onChangeCity,
+    onChangeAvatar,
+    onChangeCountry,
     onChangeLastName,
     onChangeUsername,
-    onChangeAvatar,
-    onChangeCity,
-    onChangeAge,
     onChangeCurrency,
-    onChangeCountry,
+    onChangeFirstName,
   } = props
   const { t } = useTranslation('profile')
 

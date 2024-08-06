@@ -33,7 +33,7 @@ const config: Config = {
   ],
   moduleNameMapper: {
     '\\.(s?css)$': 'identity-obj-proxy', // для react testing library (scss module)
-    '\\.svg': '<rootDir>/config/jest/jestEmptyComponent.tsx',
+    '\\.(jpg|jpeg|png|gif|svg)': '<rootDir>/config/jest/jestEmptyComponent.tsx',
   },
   setupFilesAfterEnv: [
     '<rootDir>config/jest/setupTests.ts',
@@ -41,6 +41,7 @@ const config: Config = {
   globals: {
     __IS_DEV__: true,
     __API__: true,
+    __PROJECT__: 'jest',
   },
 
   // All imported modules in your tests should be mocked automatically
