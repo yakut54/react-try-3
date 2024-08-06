@@ -2,6 +2,7 @@ import webpack from 'webpack'
 import { BuildOptions } from './types/config'
 import { buildCssLoader } from './loaders/buildCssLoader'
 import { buildSvgrLoader } from './loaders/buildSvgrLoader'
+import { buildBabelLoader } from './loaders/buildBabelLoader'
 
 export function svgrLoader({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   const tsLoader: webpack.RuleSetRule = {
@@ -19,13 +20,7 @@ export function svgrLoader({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     use: [{ loader: 'file-loader' }],
   }
 
-  const babelLoader: webpack.RuleSetRule = {
-    test: /\.tsx?$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-    },
-  }
+  const babelLoader: webpack.RuleSetRule = buildBabelLoader(isDev)
 
   return [
     fileLoader,
