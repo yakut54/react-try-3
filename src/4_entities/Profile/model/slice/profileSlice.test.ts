@@ -22,7 +22,8 @@ describe('profileSlice', () => {
       readonly: false,
     }
 
-    expect(profileReducer(state as ProfileSchema, profileActions.setReadOnly(true))).toEqual({ readonly: true })
+    expect(profileReducer(state as ProfileSchema, profileActions.setReadOnly(true)))
+      .toEqual({ readonly: true })
   })
 
   it('cancelEdit', () => {
@@ -45,10 +46,11 @@ describe('profileSlice', () => {
       validateErrors: [ValidateProfileError.INCORRECT_USER_DATA],
     }
 
-    expect(profileReducer(state as ProfileSchema, updateProfileData.pending)).toEqual({
-      isLoading: true,
-      validateErrors: undefined,
-    })
+    expect(profileReducer(state as ProfileSchema, updateProfileData.pending))
+      .toEqual({
+        isLoading: true,
+        validateErrors: undefined,
+      })
   })
 
   it('updateProfile service fulfilled', () => {
@@ -56,12 +58,13 @@ describe('profileSlice', () => {
       isLoading: true,
     }
 
-    expect(profileReducer(state as ProfileSchema, updateProfileData.fulfilled(data, ''))).toEqual({
-      data,
-      form: data,
-      readonly: true,
-      isLoading: false,
-      validateErrors: undefined,
-    })
+    expect(profileReducer(state as ProfileSchema, updateProfileData.fulfilled(data, '')))
+      .toEqual({
+        data,
+        form: data,
+        readonly: true,
+        isLoading: false,
+        validateErrors: undefined,
+      })
   })
 })
