@@ -17,4 +17,4 @@ const MainPage = memo(() => {
 
 MainPage.displayName = 'MainPage'
 
-export default MainPage
+export default memo(MainPage)
