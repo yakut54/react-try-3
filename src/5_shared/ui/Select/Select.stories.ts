@@ -17,9 +17,9 @@ export const SelectNormal: Story = {
   args: {
     label: '38 попугаев',
     options: [
-      { value: '36', content: 'content ' },
-      { value: '37', content: 'content ' },
-      { value: '38', content: 'попугаев ' },
+      { value: '36', content: 'content 1' },
+      { value: '37', content: 'test ura!' },
+      { value: '38', content: 'попугаев )' },
     ],
   },
   decorators: [
@@ -31,9 +31,9 @@ export const SelectDark: Story = {
   args: {
     label: '38 попугаев',
     options: [
-      { value: '36', content: 'content ' },
-      { value: '37', content: 'content ' },
-      { value: '38', content: 'попугаев ' },
+      { value: '36', content: 'content 2' },
+      { value: '37', content: 'test 22 ' },
+      { value: '38', content: 'попугаев ((' },
     ],
   },
   decorators: [
