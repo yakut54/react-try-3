@@ -120,6 +120,6 @@ const ProfilePage: FC<ProfilePageProps> = memo((props: ProfilePageProps) => {
   )
 })
 
-ProfilePage.displayName = 'ProfilePage'
+ProfilePage.displayName = 'profile-page'
 
 export default ProfilePage

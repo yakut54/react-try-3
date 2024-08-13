@@ -16,5 +16,7 @@
   "Что то пошло не так": "Something went wrong",
   "Страница профиля": "Profile page",
   "Профиль": "Profile",
-  "Ошибка обновления": "Update error"
+  "Статьи": "Article",
+  "Ошибка обновления": "Update error",
+  "Ошибка получения статьи": "Error receiving the article"
 }

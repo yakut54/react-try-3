@@ -1,4 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
 import { FC, memo } from 'react'
 import { classNames } from '5_shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
@@ -10,14 +9,15 @@ interface ArticlesPageProps {
 
 const ArticlesPage: FC<ArticlesPageProps> = (props: ArticlesPageProps) => {
   const { className, ...otherProps } = props
-  const { t } = useTranslation()
+  const { t } = useTranslation('article-details')
 
   return (
     <div
       className={classNames(cls['articles-page'], {}, [className])}
       {...otherProps}
     >
-      ARTICLES PAGES
+      <h1>{t('Страница со статьями')}</h1>
+
     </div>
   )
 }

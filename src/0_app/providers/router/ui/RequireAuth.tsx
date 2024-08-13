@@ -5,9 +5,6 @@ import { getUserAuthData } from '4_entities/User'
 
 export function RequireAuth({ children }: { children: JSX.Element }) {
   const isAuth = useAppSelector(getUserAuthData)
-
-  console.log('isAuth >> ', isAuth)
-
   const location = useLocation()
 
   if (!isAuth) {

@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
+import type { To } from '@remix-run/router'
+import type { NavigateOptions } from 'react-router/dist/lib/context'
 import type { ReducersMapObject } from '@reduxjs/toolkit'
 import { configureStore } from '@reduxjs/toolkit'
+import { CombinedState, Reducer } from 'redux'
 import { userReducer } from '4_entities/User'
 import { counterReducer } from '4_entities/Counter'
 import { $api } from '5_shared/api/api'
-import type { To } from '@remix-run/router'
-import type { NavigateOptions } from 'react-router/dist/lib/context'
-import { CombinedState, Reducer } from 'redux'
 import { StateSchema, ThunkExtraArgs } from './StateSchema'
 import { createReducerManager } from './reducerManager'
 
