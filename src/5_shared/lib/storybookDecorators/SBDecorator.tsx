@@ -2,16 +2,19 @@ import { Suspense } from 'react'
 import type { StoryFn } from '@storybook/react/'
 import { AppLoader } from '5_shared/ui/AppLoader/AppLoader'
 import { Theme, ThemeProvider } from '0_app/providers/ThemeProvider'
-import { StateSchema, StoreProvider } from '0_app/providers/StoreProvider'
 import { loginReducer } from '3_features/AuthByUsername/model/slice/loginSlice'
 import { profileReducer } from '4_entities/Profile'
-import type { componentRenderOptions } from '5_shared/lib/tests/RenderWithRouter'
 import { BrowserRouter } from 'react-router-dom'
-import { ReducersList } from '5_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import type { StateSchema } from '0_app/providers/StoreProvider'
+import { StoreProvider } from '0_app/providers/StoreProvider'
+import type { componentRenderOptions } from '5_shared/lib/tests/RenderWithRouter'
+import type { ReducersList } from '5_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { articleDetailsReducer } from '4_entities/Article/model/slice/articleDetailsSlice'
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
+  articleDetails: articleDetailsReducer,
 }
 
 export const SBDecorator = (
@@ -31,7 +34,9 @@ export const SBDecorator = (
         <ThemeProvider initialTheme={theme}>
           <div className={`flex-center app ${theme}`}>
             <Suspense fallback={<AppLoader />}>
-              <StoryComponent />
+              <div className="page-wrapper">
+                <StoryComponent />
+              </div>
             </Suspense>
           </div>
         </ThemeProvider>

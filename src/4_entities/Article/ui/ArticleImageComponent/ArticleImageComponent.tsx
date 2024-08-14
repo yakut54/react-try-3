@@ -1,23 +1,27 @@
-import { FC, ReactNode } from 'react'
+import { FC, memo } from 'react'
 import { classNames } from '5_shared/lib/classNames/classNames'
-import { useTranslation } from 'react-i18next'
+import { Text, TextAlign } from '5_shared/ui/Text/Text'
+import { ArticleImageBlock } from '../../model/types/Article'
 import cls from './ArticleImageComponent.module.scss'
 
 interface ArticleImageComponentProps {
     className?: string
-    children?: ReactNode
+    block: ArticleImageBlock
 }
 
-export const ArticleImageComponent: FC<ArticleImageComponentProps> = (props: ArticleImageComponentProps) => {
-  const { className, children, ...otherProps } = props
-  const { t } = useTranslation()
+export const ArticleImageComponent: FC<ArticleImageComponentProps> = memo((props: ArticleImageComponentProps) => {
+  const { className, block } = props
 
   return (
     <div
       className={classNames(cls['article-image-component'], {}, [className])}
-      {...otherProps}
     >
-      {children}
+      <img src={block.src} alt={block.title} className={cls.img} />
+      {block.title && (
+        <Text text={block.title} align={TextAlign.CENTER} />
+      )}
     </div>
   )
-}
+})
+
+ArticleImageComponent.displayName = 'ArticleImageComponent'

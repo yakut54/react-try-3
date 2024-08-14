@@ -1,5 +1,5 @@
 
-:root, .app-orange-theme {
+.app-orange-theme {
   --bg-color: #faf4fb;
   --inverted-bg-color: #bd5012;
   --primary-color: #9a1a0e;
@@ -10,4 +10,7 @@
   // skeleton
   --skeleton-color: #fff;
   --skeleton-shadow: rgba(0 0 0 / 20%);
+
+  // code
+  --code-bg: #dbd5dc;
 }

@@ -24,6 +24,11 @@
       ],
       "blocks": [
         {
+          "id": "10",
+          "type": "IMAGE",
+          "src": "https://habrastorage.org/r/w1560/webt/g1/2-/6t/g12-6t9dskhrjwzzmjf-8b2_w8g.jpeg"
+        },
+        {
           "id": "1",
           "type": "TEXT",
           "title": "Заголовок этого блока",
@@ -36,7 +41,7 @@
         {
           "id": "4",
           "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;"
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>"
         },
         {
           "id": "5",
@@ -71,7 +76,7 @@
           "id": "8",
           "type": "IMAGE",
           "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Рисунок 1 - скриншот сайта"
+          "title": "Рисунок 2 - описание"
         },
         {
           "id": "9",

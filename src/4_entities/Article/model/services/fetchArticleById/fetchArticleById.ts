@@ -12,8 +12,6 @@ export const fetchArticleById = createAsyncThunk<Article, string, ThunkConfig<st
     try {
       const response = await extra.api.get<Article>(`/articles/${articleId}`)
 
-      console.log('huj', response.data)
-
       if (!response.data) {
         throw new Error('Article does not exist')
       }

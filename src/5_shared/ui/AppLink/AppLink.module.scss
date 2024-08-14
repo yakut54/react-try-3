@@ -1,9 +1,10 @@
 .app-link {
   text-decoration: none;
-}
 
-.app-link:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+    opacity: .8;
+  }
 }
 
 .app-link.normal {
