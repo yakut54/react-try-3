@@ -34,7 +34,7 @@ export const SBDecorator = (
         <ThemeProvider initialTheme={theme}>
           <div className={`flex-center app ${theme}`}>
             <Suspense fallback={<AppLoader />}>
-              <div className="page-wrapper">
+              <div className="storybook-page-wrapper">
                 <StoryComponent />
               </div>
             </Suspense>

@@ -22,8 +22,7 @@ describe('profileSlice', () => {
       readonly: false,
     }
 
-    expect(profileReducer(state as ProfileSchema, profileActions.setReadOnly(true)))
-      .toEqual({ readonly: true })
+    expect(profileReducer(state as ProfileSchema, profileActions.setReadOnly(true))).toEqual({ readonly: true })
   })
 
   it('cancelEdit', () => {
