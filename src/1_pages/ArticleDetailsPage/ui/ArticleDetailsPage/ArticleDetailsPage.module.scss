@@ -3,3 +3,14 @@
   max-width: 940px;
   padding: 20px;
 }
+
+.comment-title {
+  margin-top: 20px;
+  background: var(--inverted-bg-color);
+  padding-top: 15px;
+  padding-left: 2%;
+}
+
+.comment-title p {
+  color: var(--inverted-secondary-color);
+}

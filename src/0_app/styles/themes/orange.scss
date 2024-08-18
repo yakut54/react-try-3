@@ -1,16 +1,15 @@
-
 .app-orange-theme {
-  --bg-color: #faf4fb;
-  --inverted-bg-color: #bd5012;
-  --primary-color: #9a1a0e;
-  --secondary-color: #d01f0e;
-  --inverted-primary-color: #dbd5dc;
-  --inverted-secondary-color: #faf4fb;
+  --bg-color: #fff3e0; /* Светлый персиковый фон */
+  --inverted-bg-color: #d84315; /* Темный красновато-оранжевый */
+  --primary-color: #ff5722; /* Основной цвет — насыщенный оранжевый */
+  --secondary-color: #ff8a65; /* Вторичный цвет — светло-оранжевый */
+  --inverted-primary-color: #fff; /* Белый для инверсии основного цвета */
+  --inverted-secondary-color: #ffccbc; /* Светлый оранжевый для инверсии вторичного цвета */
 
   // skeleton
-  --skeleton-color: #fff;
-  --skeleton-shadow: rgba(0 0 0 / 20%);
+  --skeleton-color: #ffe0b2; /* Светлый оранжевый для скелетона */
+  --skeleton-shadow: rgb(216 67 21 / 20%); /* Тень с красновато-оранжевым оттенком */
 
   // code
-  --code-bg: #dbd5dc;
+  --code-bg: #ffebee; /* Светлый розовый с оранжевым оттенком для фона кода */
 }

@@ -1,5 +1,5 @@
 export { ProfileSchema, Profile, ValidateProfileError } from './model/types/profileSchema'
-export { profileReducer, profileActions } from './model/slice/profileSlice'
+export { profileReducer, profileActions } from '4_entities/Profile/model/slices/profileSlice'
 
 export { ProfileCard } from './ui/ProfileCard/ProfileCard'
 

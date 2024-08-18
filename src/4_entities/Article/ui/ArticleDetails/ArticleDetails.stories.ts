@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { SBDecorator } from '5_shared/lib/storybookDecorators/SBDecorator'
 import { Theme } from '0_app/providers/ThemeProvider'
-import { articleData } from '4_entities/Article/model/mocks/articleData'
+import { SBDecorator } from '5_shared/lib/storybookDecorators/SBDecorator'
+import { articleData as data } from '../../model/mocks/articleData'
 import { ArticleDetails } from './ArticleDetails'
 
 const meta: Meta<typeof ArticleDetails> = {
@@ -16,9 +16,7 @@ export const ArticleDetailsLight: Story = {
   args: {},
   decorators: [SBDecorator(Theme.LIGHT, {
     initialState: {
-      articleDetails: {
-        data: articleData,
-      },
+      articleDetails: { data },
     },
   })],
 }
@@ -27,9 +25,7 @@ export const ArticleDetailsDark: Story = {
   args: {},
   decorators: [SBDecorator(Theme.DARK, {
     initialState: {
-      articleDetails: {
-        data: articleData,
-      },
+      articleDetails: { data },
     },
   })],
 }

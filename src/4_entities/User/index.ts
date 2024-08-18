@@ -1,4 +1,4 @@
-export { userActions, userReducer } from './model/slice/userSlice'
+export { userActions, userReducer } from '4_entities/User/model/slices/userSlice'
 export type { User, UserSchema } from './model/types/userSchema'
 
 // сегодня 02.07.2024 ура! || Выяснил 07.07.2024 ура! ура! ура!

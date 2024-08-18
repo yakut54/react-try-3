@@ -7,11 +7,11 @@ import { classNames } from '5_shared/lib/classNames/classNames'
 import { Text, TextTheme } from '5_shared/ui/Text/Text'
 import { useTranslation } from 'react-i18next'
 import { Input } from '5_shared/ui/Input/Input'
+import { loginActions, loginReducer } from '3_features/AuthByUsername/model/slices/loginSlice'
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading'
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername'
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword'
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
-import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 import cls from './LoginForm.module.scss'
 
 export interface LoginFormProps {

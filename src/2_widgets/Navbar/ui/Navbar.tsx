@@ -5,6 +5,7 @@ import { LoginModal } from '3_features/AuthByUsername'
 import { memo, useCallback, useState } from 'react'
 import { getUserAuthData, userActions } from '4_entities/User'
 import { useAppDispatch, useAppSelector } from '5_shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { Text, TextSize, TextTheme } from '5_shared/ui/Text/Text'
 import cls from './Navbar.module.scss'
 
 interface NavbarProps {
@@ -33,6 +34,14 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   if (authData) {
     return (
       <div className={classNames(cls.navbar, {}, [className])}>
+
+        <Text
+          title={authData.username}
+          theme={TextTheme.NORMAl}
+          size={TextSize.L}
+          className={cls['user-name']}
+        />
+
         <Button
           className={cls.links}
           theme={ButtonVariant.CLEAR_INVERTED}

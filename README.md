@@ -12,16 +12,22 @@ git clone git@github.com:yakut54/react-try-3.git
 
 ## Использование
 
-### Запуск проекта
+### Запуск проекта и сервера
 
 ```bash
 npm start
 ```
 
-### Запуск проекта и сервера
+### Запуск сервера
 
 ```bash
-npm start:dev
+npm start:dev:server
+```
+
+### Запуск проекта
+
+```bash
+npm start:dev:app
 ```
 
 ### Сборка для продакшн

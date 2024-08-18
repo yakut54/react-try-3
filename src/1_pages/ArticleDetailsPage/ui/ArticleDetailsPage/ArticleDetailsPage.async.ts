@@ -5,5 +5,5 @@ export const ArticleDetailsPageAsync: LazyExoticComponent<
 > = lazy(() => new Promise((resolve) => {
   setTimeout(() => {
     resolve(import(/* webpackChunkName: "ArticleDetailsPage" */'./ArticleDetailsPage'))
-  }, 1000)
+  }, 0)
 }))

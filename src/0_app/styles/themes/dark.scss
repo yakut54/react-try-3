@@ -1,15 +1,15 @@
 .app-dark-theme {
-  --bg-color: #2c3531;
-  --inverted-bg-color: #d1e8e2;
-  --primary-color: #bca23c;
-  --secondary-color: #ccb27e;
-  --inverted-primary-color: #0ca70d;
-  --inverted-secondary-color: #0aff0a;
+  --bg-color: #2c3a3a; /* Темный зелено-бирюзовый фон */
+  --inverted-bg-color: #f7fbfc; /* Светлый голубовато-серый для инверсии фона */
+  --primary-color: #4fb1a1; /* Основной цвет — светлый зелено-бирюзовый */
+  --secondary-color: #72d3c1; /* Вторичный цвет — более яркий зелено-бирюзовый */
+  --inverted-primary-color: #2f8f83; /* Глубокий зелено-бирюзовый для инверсии основного цвета */
+  --inverted-secondary-color: #354f52; /* Темный серо-зеленый для инверсии вторичного цвета */
 
   // skeleton
-  --skeleton-color: #414b48;
-  --skeleton-shadow: #1e2724;
+  --skeleton-color: #374646; /* Темный зелено-бирюзовый для скелетона */
+  --skeleton-shadow: rgba(79 191 172 .2); /* Тень со светло-зелено-бирюзовым оттенком */
 
   // code
-  --code-bg: #36403c;
+  --code-bg: #263334; /* Темный зелено-серый для фона кода */
 }

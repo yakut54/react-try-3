@@ -1,16 +1,16 @@
-
 .app-light-theme {
-  --bg-color: #d1e8e2;
-  --inverted-bg-color: #2c3531;
-  --primary-color: #047c04;
-  --secondary-color: #0ca70d;
-  --inverted-primary-color: #498b8d;
-  --inverted-secondary-color: #ffcb9a;
+  --bg-color: #f7fbfc; /* Светлый голубовато-серый фон */
+  --inverted-bg-color: #354f52; /* Темный серо-зеленый для инверсии фона */
+  --primary-color: #2f8f83; /* Основной цвет — глубокий зелено-бирюзовый */
+  --secondary-color: #52a69a; /* Вторичный цвет — светлый зелено-бирюзовый */
+  --inverted-primary-color: #d1e8e2; /* Светлый голубовато-серый для инверсии основного цвета */
+  --inverted-secondary-color: #ffd6ba; /* Светло-оранжевый для инверсии вторичного цвета */
 
   // skeleton
-  --skeleton-color: #fff;
-  --skeleton-shadow: rgba(0 0 0 / 20%);
+  --skeleton-color: #e0f7fa; /* Светлый голубовато-зеленый для скелетона */
+  --skeleton-shadow: rgba(47 143 131 .2); /* Тень с зелено-бирюзовым оттенком */
 
   // code
-  --code-bg: #ecfffa;
+  --code-bg: #e3f2fd; /* Светлый голубой для фона кода */
 }
+

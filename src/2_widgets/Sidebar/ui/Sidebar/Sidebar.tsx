@@ -3,9 +3,9 @@ import { Button, ButtonSize, ButtonVariant } from '5_shared/ui/Button/Button'
 import { classNames } from '5_shared/lib/classNames/classNames'
 import { ThemeSwitcher } from '2_widgets/ThemeSwitcher'
 import { LangSwitcher } from '2_widgets/LangSwitcher'
+import cls from './Sidebar.module.scss'
 import { SidebarItemList } from '../../model/sidebarItemType'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
-import cls from './Sidebar.module.scss'
 
 interface SidebarProps {
     className?: string

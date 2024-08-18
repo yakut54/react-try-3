@@ -1,6 +1,4 @@
-import {
-  FC, memo, useCallback, useEffect,
-} from 'react'
+import { FC, memo, useCallback } from 'react'
 import { classNames } from '5_shared/lib/classNames/classNames'
 import { DynamicModuleLoader, ReducersList } from '5_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch, useAppSelector } from '5_shared/lib/hooks/useAppDispatch/useAppDispatch'
@@ -20,6 +18,7 @@ import { Country } from '4_entities/Country'
 import { ValidateProfileError } from '4_entities/Profile/model/types/profileSchema'
 import { Text, TextTheme } from '5_shared/ui/Text/Text'
 import { useTranslation } from 'react-i18next'
+import { useInitialEffect } from '5_shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 import cls from './ProfilePage.module.scss'
 
@@ -49,11 +48,9 @@ const ProfilePage: FC<ProfilePageProps> = memo((props: ProfilePageProps) => {
     [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
   }
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData())
-    }
-  }, [dispatch])
+  useInitialEffect(() => {
+    dispatch(fetchProfileData())
+  })
 
   const onChangeFirstName = useCallback((value?: string) => {
     dispatch(profileActions.updateProfile({ first: value || '' }))

@@ -3,4 +3,4 @@ export type { CounterSchema } from './model/types/counterSchema'
 export {
   counterActions,
   counterReducer,
-} from './model/slice/counterSlice'
+} from '4_entities/Counter/model/slices/counterSlice'

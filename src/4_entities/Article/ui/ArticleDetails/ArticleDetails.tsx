@@ -1,6 +1,4 @@
-import React, {
-  FC, memo, useCallback, useEffect,
-} from 'react'
+import React, { FC, memo, useCallback } from 'react'
 import { classNames } from '5_shared/lib/classNames/classNames'
 import { DynamicModuleLoader, ReducersList } from '5_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch, useAppSelector } from '5_shared/lib/hooks/useAppDispatch/useAppDispatch'
@@ -17,8 +15,9 @@ import { ArticleCodeComponent } from '4_entities/Article/ui/ArticleCodeComponent
 import { ArticleImageComponent } from '4_entities/Article/ui/ArticleImageComponent/ArticleImageComponent'
 import { ArticleTextComponent } from '4_entities/Article/ui/ArticleTextComponent/ArticleTextComponent'
 import { useTranslation } from 'react-i18next'
+import { articleDetailsReducer } from '4_entities/Article/model/slices/articleDetailsSlice'
+import { useInitialEffect } from '5_shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -42,6 +41,10 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props: ArticleDetai
   const isLoading = useAppSelector(getArticleDetailsIsLoading)
   const article = useAppSelector(getArticleDetailsData)
   const error = useAppSelector(getArticleDetailsError)
+
+  useInitialEffect(() => {
+    dispatch(fetchArticleById(id))
+  })
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
@@ -70,12 +73,6 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props: ArticleDetai
       return null
     }
   }, [])
-
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchArticleById(id))
-    }
-  }, [dispatch, id])
 
   let content
 

@@ -63,14 +63,18 @@ module.exports = {
   },
   overrides: [
     {
+      files: [
+        '**/src/**/*.{test,stories}.{ts,tsx}',
+        '**/src/**/mocks/*.{ts,tsx}',
+        '**/src/**/ArticleDetailsPage/**/*.{ts,tsx}',
+      ],
       rules: {
         'i18next/no-literal-string': 'off',
         'max-len': 'off',
       },
-      files: ['**/src/**/*.{test,stories}.{ts,tsx}', '**/src/**/mocks/*.{ts,tsx}'],
     },
     {
-      files: ['**/src/**/slice/*.{ts,tsx}'],
+      files: ['**/src/**/slices/*.{ts,tsx}'],
       rules: {
         'no-param-reassign': [
           'error',
@@ -82,7 +86,7 @@ module.exports = {
       },
     },
     {
-      files: ['DynamicModuleLoader.tsx'],
+      files: ['DynamicModuleLoader.tsx', 'useInitialEffect.ts'],
       rules: {
         'react-hooks/exhaustive-deps': 'off',
         'no-unused-vars': 'off',
