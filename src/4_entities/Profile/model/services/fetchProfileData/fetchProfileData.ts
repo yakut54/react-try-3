@@ -6,18 +6,23 @@ import type { Profile } from '../../types/profileSchema'
 
 export const fetchProfileData = createAsyncThunk<
     Profile,
-    void,
+    string,
     ThunkConfig<string>
 >(
   'profile/fetchProfileData',
-  async (_, thunkAPI) => {
-    const { rejectWithValue, extra } = thunkAPI
-
+  async (
+    profileId,
+    {
+      rejectWithValue,
+      extra,
+    },
+  ) => {
+    //
     try {
-      const response = await extra.api.get<Profile>('/profile')
+      const response = await extra.api.get<Profile>(`/profile/${profileId}`)
 
       if (!response.data) {
-        throw new Error('Profile does not exist')
+        throw new Error('Profile does not exist!')
       }
 
       return response.data

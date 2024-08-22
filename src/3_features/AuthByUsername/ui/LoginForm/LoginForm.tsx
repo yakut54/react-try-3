@@ -4,7 +4,7 @@ import loginByUserName from '3_features/AuthByUsername/model/services/loginByUse
 import { useAppDispatch, useAppSelector } from '5_shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { Button, ButtonVariant } from '5_shared/ui/Button/Button'
 import { classNames } from '5_shared/lib/classNames/classNames'
-import { Text, TextTheme } from '5_shared/ui/Text/Text'
+import { Text, TextMarginBottom, TextTheme } from '5_shared/ui/Text/Text'
 import { useTranslation } from 'react-i18next'
 import { Input } from '5_shared/ui/Input/Input'
 import { loginActions, loginReducer } from '3_features/AuthByUsername/model/slices/loginSlice'
@@ -45,15 +45,16 @@ const LoginForm: FC<LoginFormProps> = memo((props: LoginFormProps) => {
   }, [dispatch, password, username])
 
   return (
-    <DynamicModuleLoader
-      reducers={initialLoginReducer}
-      removeAfterUnmount
-    >
+    <DynamicModuleLoader reducers={initialLoginReducer}>
       <div
         className={classNames(cls['login-form'], {}, [className])}
         {...otherProps}
       >
-        <Text theme={TextTheme.NORMAl} title={t('Форма авторизации')} />
+        <Text
+          mb={TextMarginBottom.MB3}
+          theme={TextTheme.NORMAl}
+          title={t('Форма авторизации')}
+        />
 
         {error && <Text text={error} theme={TextTheme.ERROR} />}
 

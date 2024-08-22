@@ -20,6 +20,13 @@ export enum TextSize {
     XL = 'size-xl'
 }
 
+export enum TextMarginBottom {
+    MB0 = 'margin-bottom-0',
+    MB1 = 'margin-bottom-1',
+    MB2 = 'margin-bottom-2',
+    MB3 = 'margin-bottom-3',
+}
+
 interface TextProps {
     className?: string
     title?: string
@@ -27,6 +34,7 @@ interface TextProps {
     theme?: TextTheme
     align?: TextAlign
     size?: TextSize
+    mb?: TextMarginBottom
 }
 
 export const Text: FC<TextProps> = memo((props: TextProps) => {
@@ -37,11 +45,18 @@ export const Text: FC<TextProps> = memo((props: TextProps) => {
     theme = TextTheme.NORMAl,
     align = TextAlign.LEFT,
     size = TextSize.M,
+    mb = TextMarginBottom.MB1,
   } = props
 
   return (
     <div
-      className={classNames(cls.text, {}, [className, cls[theme], cls[align], cls[size]])}
+      className={classNames(cls.text, {}, [
+        className,
+        cls[theme],
+        cls[align],
+        cls[size],
+        cls[mb],
+      ])}
     >
       {title && <p className={cls.title}>{title}</p>}
       {text && <p className={cls.text}>{text}</p>}

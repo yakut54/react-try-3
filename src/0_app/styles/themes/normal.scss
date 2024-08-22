@@ -1,16 +1,33 @@
 .app-light-theme {
-  --bg-color: #f7fbfc; /* Светлый голубовато-серый фон */
-  --inverted-bg-color: #354f52; /* Темный серо-зеленый для инверсии фона */
-  --primary-color: #2f8f83; /* Основной цвет — глубокий зелено-бирюзовый */
-  --secondary-color: #52a69a; /* Вторичный цвет — светлый зелено-бирюзовый */
-  --inverted-primary-color: #d1e8e2; /* Светлый голубовато-серый для инверсии основного цвета */
-  --inverted-secondary-color: #ffd6ba; /* Светло-оранжевый для инверсии вторичного цвета */
+  --bg-color: #f7fbfc;
+  --inverted-bg-color: #354f52;
+
+  /* Разбиваем primary-color на отдельные компоненты */
+  --primary-color-rgb: 47 143 131;
+  --primary-color: rgb(var(--primary-color-rgb));
+
+  /* Разбиваем secondary-color на отдельные компоненты */
+  --secondary-color-rgb: 82 166 154;
+  --secondary-color: rgb(var(--secondary-color-rgb));
+
+  /* Разбиваем inverted-primary-color на отдельные компоненты */
+  --inverted-primary-color-rgb: 209 232 226;
+  --inverted-primary-color: rgb(var(--inverted-primary-color-rgb));
+
+  /* Разбиваем inverted-secondary-color на отдельные компоненты */
+  --inverted-secondary-color-rgb: 255 214 186;
+  --inverted-secondary-color: rgb(var(--inverted-secondary-color-rgb));
+
+  // opacity
+  --primary-color-opacity: rgb(var(--primary-color-rgb) / 20%);
+  --secondary-color-opacity: rgb(var(--secondary-color-rgb) / 20%);
+  --inverted-primary-color-opacity: rgb(var(--inverted-primary-color-rgb) / 20%);
+  --inverted-secondary-color-opacity: rgb(var(--inverted-secondary-color-rgb) / 20%);
 
   // skeleton
-  --skeleton-color: #e0f7fa; /* Светлый голубовато-зеленый для скелетона */
-  --skeleton-shadow: rgba(47 143 131 .2); /* Тень с зелено-бирюзовым оттенком */
+  --skeleton-color: #e0f7fa;
+  --skeleton-shadow: rgb(var(--primary-color-rgb) / 20%);
 
   // code
-  --code-bg: #e3f2fd; /* Светлый голубой для фона кода */
+  --code-bg: #e3f2fd;
 }
-

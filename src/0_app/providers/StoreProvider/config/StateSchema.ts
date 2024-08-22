@@ -2,15 +2,16 @@
 import type {
   AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit'
-import type { CounterSchema } from '4_entities/Counter'
-import type { UserSchema } from '4_entities/User'
-import type { LoginSchema } from '3_features/AuthByUsername'
-import type { ProfileSchema } from '4_entities/Profile'
-import { AxiosInstance } from 'axios'
+import type { AxiosInstance } from 'axios'
 import type { To } from '@remix-run/router'
+import type { UserSchema } from '4_entities/User'
+import type { ProfileSchema } from '4_entities/Profile'
+import type { CounterSchema } from '4_entities/Counter'
+import type { ArticleDetailsSchema } from '4_entities/Article'
+import type { LoginSchema } from '3_features/AuthByUsername'
+import type { AddCommentFormSchema } from '3_features/AddCommentForm'
+import type { ArticleDetailsCommentsSchema } from '1_pages/ArticleDetailsPage'
 import type { NavigateOptions } from 'react-router/dist/lib/context'
-import { ArticleDetailsSchema } from '4_entities/Article'
-import { ArticleCommentsSchema } from '1_pages/ArticleDetailsPage'
 
 export interface StateSchema {
     user: UserSchema
@@ -18,7 +19,8 @@ export interface StateSchema {
     loginForm?: LoginSchema
     profile?: ProfileSchema
     articleDetails?: ArticleDetailsSchema
-    articleComments?: ArticleCommentsSchema
+    articleDetailsComments?: ArticleDetailsCommentsSchema
+    addCommentForm?: AddCommentFormSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

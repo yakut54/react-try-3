@@ -6,7 +6,7 @@ import { RequireAuth } from '0_app/providers/router/ui/RequireAuth'
 
 export const AppRouter = memo(() => {
   const renderWithWrapper = useCallback((route: AppRouteProps) => {
-    const $element = (
+    const $element: JSX.Element = (
       <Suspense fallback={<AppLoader />}>
         <div className="page-wrapper">{route.element}</div>
       </Suspense>
@@ -16,7 +16,11 @@ export const AppRouter = memo(() => {
       <Route
         key={route.path}
         path={route.path}
-        element={route.authOnly ? <RequireAuth>{$element}</RequireAuth> : $element}
+        element={
+          route.authOnly
+            ? <RequireAuth>{$element}</RequireAuth>
+            : $element
+        }
       />
     )
   }, [])

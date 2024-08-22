@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import type { RouteProps } from 'react-router-dom'
 import { MainPage } from '1_pages/MainPage'
 import { AboutPage } from '1_pages/AboutPage'
@@ -21,7 +20,7 @@ export enum AppRoutes {
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
   [AppRoutes.ABOUT]: '/about',
-  [AppRoutes.PROFILE]: '/profile',
+  [AppRoutes.PROFILE]: '/profile/',
   [AppRoutes.ARTICLES]: '/articles',
   [AppRoutes.ARTICLE_DETAILS]: '/articles/',
   [AppRoutes.NOT_FOUND]: '*',
@@ -37,7 +36,7 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     element: <AboutPage />,
   },
   [AppRoutes.PROFILE]: {
-    path: RoutePath.profile,
+    path: `${RoutePath.profile}:id`,
     element: <ProfilePage />,
     authOnly: true,
   },

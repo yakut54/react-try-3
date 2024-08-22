@@ -29,8 +29,6 @@ export const fetchCommentsByArticleId = createAsyncThunk<
         throw new Error('fetchCommentsByArticleId data does not exist')
       }
 
-      console.log(response.data)
-
       return response.data
     } catch (e) {
       if (e instanceof AxiosError) {

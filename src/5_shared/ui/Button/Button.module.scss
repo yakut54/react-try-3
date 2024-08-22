@@ -47,6 +47,12 @@
   border: none;
 }
 
+.background-inverted-outline {
+  background: var(--inverted-bg-color);
+  color: var(--inverted-primary-color);
+  border: 1px solid var(--inverted-primary-color);
+}
+
 .square {
   padding: 0;
 }

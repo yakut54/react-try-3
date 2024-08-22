@@ -1,11 +1,11 @@
 import { FC, memo, useState } from 'react'
 import { Button, ButtonSize, ButtonVariant } from '5_shared/ui/Button/Button'
 import { classNames } from '5_shared/lib/classNames/classNames'
+import { SidebarItemList } from '2_widgets/Sidebar/model/sidebarItemType'
 import { ThemeSwitcher } from '2_widgets/ThemeSwitcher'
 import { LangSwitcher } from '2_widgets/LangSwitcher'
-import cls from './Sidebar.module.scss'
-import { SidebarItemList } from '../../model/sidebarItemType'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
+import cls from './Sidebar.module.scss'
 
 interface SidebarProps {
     className?: string
@@ -27,10 +27,10 @@ export const Sidebar: FC<SidebarProps> = memo((props: SidebarProps) => {
       )}
     >
       <Button
-        data-testid="sidebar-toggle"
-        onClick={onToggle}
         isSquare
+        onClick={onToggle}
         size={ButtonSize.L}
+        data-testid="sidebar-toggle"
         theme={ButtonVariant.BACKGROUND_INVERTED}
         className={cls['collapse-btn']}
       >

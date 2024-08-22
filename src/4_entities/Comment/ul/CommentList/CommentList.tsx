@@ -16,14 +16,28 @@ export const CommentList: FC<CommentListProps> = memo((props: CommentListProps) 
   const { className, comments, isLoading } = props
   const { t } = useTranslation('comments')
 
-  return (
+  if (isLoading) {
+    return (
+      <div
+        data-testid="comment-list"
+        className={classNames(cls['comment-list'], {}, [className])}
+      >
+        <CommentCard isLoading={isLoading} />
+        <CommentCard isLoading={isLoading} />
+        <CommentCard isLoading={isLoading} />
+      </div>
+    )
+  }
 
+  return (
     <div
+      data-testid="comment-list"
       className={classNames(cls['comment-list'], {}, [className])}
     >
       {comments?.length
         ? comments.map((comment) => (
           <CommentCard
+            isLoading={isLoading}
             className={cls['comment-card']}
             comment={comment}
             key={comment.id}

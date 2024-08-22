@@ -1,7 +1,13 @@
 import { FC, memo, useCallback } from 'react'
+import { useParams } from 'react-router-dom'
+import { Country } from '4_entities/Country'
+import { Currency } from '4_entities/Currency'
+import { useTranslation } from 'react-i18next'
+import { Text, TextTheme } from '5_shared/ui/Text/Text'
 import { classNames } from '5_shared/lib/classNames/classNames'
-import { DynamicModuleLoader, ReducersList } from '5_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useInitialEffect } from '5_shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useAppDispatch, useAppSelector } from '5_shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { ValidateProfileError } from '4_entities/Profile/model/types/profileSchema'
 import {
   fetchProfileData,
   getProfileError,
@@ -13,12 +19,7 @@ import {
   ProfileCard,
   profileReducer,
 } from '4_entities/Profile'
-import { Currency } from '4_entities/Currency'
-import { Country } from '4_entities/Country'
-import { ValidateProfileError } from '4_entities/Profile/model/types/profileSchema'
-import { Text, TextTheme } from '5_shared/ui/Text/Text'
-import { useTranslation } from 'react-i18next'
-import { useInitialEffect } from '5_shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { DynamicModuleLoader, ReducersList } from '5_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 import cls from './ProfilePage.module.scss'
 
@@ -48,32 +49,36 @@ const ProfilePage: FC<ProfilePageProps> = memo((props: ProfilePageProps) => {
     [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
   }
 
+  const { id = '1' } = useParams<{ id: string }>()
+
   useInitialEffect(() => {
-    dispatch(fetchProfileData())
+    if (id) {
+      dispatch(fetchProfileData(id))
+    }
   })
 
   const onChangeFirstName = useCallback((value?: string) => {
-    dispatch(profileActions.updateProfile({ first: value || '' }))
+    dispatch(profileActions.updateProfile({ first: value }))
   }, [dispatch])
 
   const onChangeLastName = useCallback((value?: string) => {
-    dispatch(profileActions.updateProfile({ lastname: value || '' }))
+    dispatch(profileActions.updateProfile({ lastname: value }))
   }, [dispatch])
 
   const onChangeCity = useCallback((value?: string) => {
-    dispatch(profileActions.updateProfile({ city: value || '' }))
+    dispatch(profileActions.updateProfile({ city: value }))
   }, [dispatch])
 
   const onChangeAge = useCallback((value?: string) => {
-    dispatch(profileActions.updateProfile({ age: Number(value) || 0 }))
+    dispatch(profileActions.updateProfile({ age: Number(value) }))
   }, [dispatch])
 
   const onChangeUsername = useCallback((value?: string) => {
-    dispatch(profileActions.updateProfile({ username: value || '' }))
+    dispatch(profileActions.updateProfile({ username: value }))
   }, [dispatch])
 
   const onChangeAvatar = useCallback((value?: string) => {
-    dispatch(profileActions.updateProfile({ avatar: value || '' }))
+    dispatch(profileActions.updateProfile({ avatar: value }))
   }, [dispatch])
 
   const onChangeCurrency = useCallback((currency: Currency) => {
@@ -85,7 +90,7 @@ const ProfilePage: FC<ProfilePageProps> = memo((props: ProfilePageProps) => {
   }, [dispatch])
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers}>
       <div
         className={classNames(cls['profile-page'], {}, [className])}
         {...otherProps}

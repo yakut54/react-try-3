@@ -19,7 +19,7 @@ export const App = () => {
   }, [dispatch])
 
   return (
-    <div className={classNames('app', {}, [theme])}>
+    <div className={classNames('app', {}, [])}>
       <Suspense fallback={<AppLoader />}>
         <Navbar />
         <div className="content-page">

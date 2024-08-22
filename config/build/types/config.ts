@@ -1,4 +1,5 @@
 export type BuildMode = 'production' | 'development'
+export type Project = 'frontend' | 'storybook' | 'jest'
 
 export interface BuildPaths {
     entry: string
@@ -14,10 +15,10 @@ export interface BuildEnv {
 }
 
 export interface BuildOptions {
+    project: Project,
     mode: BuildMode
     paths: BuildPaths,
     isDev: boolean,
     port: number,
     apiUrl: string,
-    project: 'frontend' | 'storybook' | 'jest',
 }

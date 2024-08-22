@@ -14,17 +14,19 @@ interface InputProps extends InputHTMLPropsWithout {
     // eslint-disable-next-line no-unused-vars
     onChange?: (value: string) => void
     isReadonly?: boolean
+    isMb?: boolean
 }
 
 export const Input: FC<InputProps> = memo((props: InputProps) => {
   const {
     onChange,
-    value,
+    value = '',
     className,
     autofocus,
     placeholder,
     type = 'text',
     isReadonly,
+    isMb,
     ...otherProps
   } = props
 
@@ -58,6 +60,7 @@ export const Input: FC<InputProps> = memo((props: InputProps) => {
 
   const mods: Mods = {
     [cls.readonly]: isReadonly,
+    [cls.mb]: isMb,
   }
 
   const isCaretVisible = isFocused && !isReadonly

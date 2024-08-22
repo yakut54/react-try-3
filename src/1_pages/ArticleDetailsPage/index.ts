@@ -3,5 +3,5 @@ export {
 } from './ui/ArticleDetailsPage/ArticleDetailsPage.async'
 
 export type {
-  ArticleCommentsSchema,
-} from './model/types/ArticleCommentSchema'
+  ArticleDetailsCommentsSchema,
+} from './model/types/ArticleDetailsCommentsSchema'

@@ -10,11 +10,15 @@ import { StoreProvider } from '0_app/providers/StoreProvider'
 import type { componentRenderOptions } from '5_shared/lib/tests/RenderWithRouter'
 import type { ReducersList } from '5_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { articleDetailsReducer } from '4_entities/Article/model/slices/articleDetailsSlice'
+import { addCommentFormReducer } from '3_features/AddCommentForm/model/slices/addCommentFormSlice'
+import { articleDetailsCommentsReducer } from '1_pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice'
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
+  addCommentForm: addCommentFormReducer,
+  articleDetailsComments: articleDetailsCommentsReducer,
 }
 
 export const SBDecorator = (

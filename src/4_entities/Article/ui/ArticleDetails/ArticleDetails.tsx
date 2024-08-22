@@ -30,7 +30,7 @@ interface ArticleDetailsProps {
     id: string
 }
 
-const initialArticleDetailsReducer: ReducersList = {
+const reducers: ReducersList = {
   articleDetails: articleDetailsReducer,
 }
 
@@ -139,10 +139,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props: ArticleDetai
   }
 
   return (
-    <DynamicModuleLoader
-      reducers={initialArticleDetailsReducer}
-      removeAfterUnmount
-    >
+    <DynamicModuleLoader reducers={reducers}>
       <div
         className={classNames(cls['article-details'], {}, [className])}
       >

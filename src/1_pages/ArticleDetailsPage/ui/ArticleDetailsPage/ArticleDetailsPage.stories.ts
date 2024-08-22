@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { SBDecorator } from '5_shared/lib/storybookDecorators/SBDecorator'
 import { Theme } from '0_app/providers/ThemeProvider'
+import { SBDecorator } from '5_shared/lib/storybookDecorators/SBDecorator'
 import { articleData } from '4_entities/Article/model/mocks/articleData'
 import ArticleDetailsPage from './ArticleDetailsPage'
 

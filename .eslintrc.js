@@ -86,7 +86,11 @@ module.exports = {
       },
     },
     {
-      files: ['DynamicModuleLoader.tsx', 'useInitialEffect.ts'],
+      files: [
+        'DynamicModuleLoader.tsx',
+        'useInitialEffect.ts',
+        'routeConfig.tsx',
+      ],
       rules: {
         'react-hooks/exhaustive-deps': 'off',
         'no-unused-vars': 'off',

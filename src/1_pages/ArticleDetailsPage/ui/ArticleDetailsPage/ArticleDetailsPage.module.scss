@@ -4,13 +4,15 @@
   padding: 20px;
 }
 
-.comment-title {
-  margin-top: 20px;
+.inverted-bg {
   background: var(--inverted-bg-color);
-  padding-top: 15px;
-  padding-left: 2%;
+  padding: 2%;
 }
 
 .comment-title p {
-  color: var(--inverted-secondary-color);
+  color: var(--inverted-primary-color);
+}
+
+.mt {
+  margin-top: 20px;
 }

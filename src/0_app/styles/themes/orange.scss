@@ -1,15 +1,33 @@
 .app-orange-theme {
-  --bg-color: #fff3e0; /* Светлый персиковый фон */
-  --inverted-bg-color: #d84315; /* Темный красновато-оранжевый */
-  --primary-color: #ff5722; /* Основной цвет — насыщенный оранжевый */
-  --secondary-color: #ff8a65; /* Вторичный цвет — светло-оранжевый */
-  --inverted-primary-color: #fff; /* Белый для инверсии основного цвета */
-  --inverted-secondary-color: #ffccbc; /* Светлый оранжевый для инверсии вторичного цвета */
+  --bg-color: #fff3e0;
+  --inverted-bg-color: #d84315;
+
+  /* Разбиваем primary-color на отдельные компоненты */
+  --primary-color-rgb: 255 87 34;
+  --primary-color: rgb(var(--primary-color-rgb));
+
+  /* Разбиваем secondary-color на отдельные компоненты */
+  --secondary-color-rgb: 255 138 101;
+  --secondary-color: rgb(var(--secondary-color-rgb));
+
+  /* Разбиваем inverted-primary-color на отдельные компоненты */
+  --inverted-primary-color-rgb: 255 255 255;
+  --inverted-primary-color: rgb(var(--inverted-primary-color-rgb));
+
+  /* Разбиваем inverted-secondary-color на отдельные компоненты */
+  --inverted-secondary-color-rgb: 255 204 188;
+  --inverted-secondary-color: rgb(var(--inverted-secondary-color-rgb));
+
+  // opacity
+  --primary-color-opacity: rgb(var(--primary-color-rgb) / 20%);
+  --secondary-color-opacity: rgb(var(--secondary-color-rgb) / 20%);
+  --inverted-primary-color-opacity: rgb(var(--inverted-primary-color-rgb) / 20%);
+  --inverted-secondary-color-opacity: rgb(var(--inverted-secondary-color-rgb) / 20%);
 
   // skeleton
-  --skeleton-color: #ffe0b2; /* Светлый оранжевый для скелетона */
-  --skeleton-shadow: rgb(216 67 21 / 20%); /* Тень с красновато-оранжевым оттенком */
+  --skeleton-color: #ffe0b2;
+  --skeleton-shadow: rgb(71 29 16 / 20%);
 
   // code
-  --code-bg: #ffebee; /* Светлый розовый с оранжевым оттенком для фона кода */
+  --code-bg: #ffebee;
 }

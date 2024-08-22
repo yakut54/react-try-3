@@ -19,7 +19,6 @@ export const StoreProvider: FC<StoreProviderProps> = (props: StoreProviderProps)
   } = props
 
   const navigate = useNavigate()
-  // alert('navigate')
 
   const store = createAppStore(
         initialState as StateSchema,

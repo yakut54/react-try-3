@@ -11,7 +11,8 @@ export enum ButtonVariant {
     OUTLINE = 'outline',
     OUTLINE_RED = 'outline-red',
     BACKGROUND = 'background',
-    BACKGROUND_INVERTED = 'background-inverted'
+    BACKGROUND_INVERTED = 'background-inverted',
+    BACKGROUND_INVERTED_OUTLINE = 'background-inverted-outline',
 }
 
 export enum ButtonSize {
