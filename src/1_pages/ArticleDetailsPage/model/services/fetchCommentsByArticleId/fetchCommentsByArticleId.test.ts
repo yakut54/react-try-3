@@ -22,7 +22,7 @@ describe('fetchCommentsByArticleId', () => {
     expect(result.meta.requestStatus).toBe('rejected')
   })
 
-  test("failed fetch of of articles's comments with error", async () => {
+  it("failed fetch of of articles's comments with error", async () => {
     const thunk = new TestAsyncThunk(fetchCommentsByArticleId)
     thunk.api.get.mockResolvedValue({ status: 403 })
     const result = await thunk.callThunk('1')
