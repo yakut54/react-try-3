@@ -1,9 +1,12 @@
-import { FC, memo, useState } from 'react'
+import {
+  FC, memo, useMemo, useState,
+} from 'react'
 import { Button, ButtonSize, ButtonVariant } from '5_shared/ui/Button/Button'
 import { classNames } from '5_shared/lib/classNames/classNames'
-import { SidebarItemList } from '2_widgets/Sidebar/model/sidebarItemType'
-import { ThemeSwitcher } from '2_widgets/ThemeSwitcher'
-import { LangSwitcher } from '2_widgets/LangSwitcher'
+import { useAppSelector } from '5_shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { ThemeSwitcher } from '../../../ThemeSwitcher'
+import { LangSwitcher } from '../../../LangSwitcher'
+import { getSidebarItems } from '../../model/selectors/getSidebarItems'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
 import cls from './Sidebar.module.scss'
 
@@ -16,6 +19,15 @@ export const Sidebar: FC<SidebarProps> = memo((props: SidebarProps) => {
 
   const [isCollapsed, setIsCollapsed] = useState(false)
   const onToggle = () => setIsCollapsed((prev) => !prev)
+  const sidebarItemList = useAppSelector(getSidebarItems)
+
+  const sidebarList = useMemo(() => sidebarItemList.map((item) => (
+    <SidebarItem
+      item={item}
+      key={item.path}
+      isCollapsed={isCollapsed}
+    />
+  )), [isCollapsed, sidebarItemList])
 
   return (
     <aside
@@ -38,13 +50,7 @@ export const Sidebar: FC<SidebarProps> = memo((props: SidebarProps) => {
       </Button>
 
       <div className={classNames(cls.items)}>
-        {SidebarItemList.map((item) => (
-          <SidebarItem
-            item={item}
-            key={item.path}
-            isCollapsed={isCollapsed}
-          />
-        ))}
+        {sidebarList}
       </div>
 
       <div className={cls.switchers}>

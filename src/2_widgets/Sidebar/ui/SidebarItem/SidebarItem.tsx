@@ -2,9 +2,9 @@ import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from '5_shared/lib/classNames/classNames'
 import { AppLink, AppLinkTheme } from '5_shared/ui/AppLink/AppLink'
-import { SidebarItemType } from '2_widgets/Sidebar/model/sidebarItemType'
 import { getUserAuthData } from '4_entities/User'
 import { useAppSelector } from '5_shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { SidebarItemType } from '2_widgets/Sidebar/model/types/sidebarItemType'
 import cls from './SidebarItem.module.scss'
 
 interface SidebarItemProps {
