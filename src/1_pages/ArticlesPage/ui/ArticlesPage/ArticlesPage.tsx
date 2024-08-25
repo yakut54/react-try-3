@@ -21,7 +21,6 @@ const ArticlesPage: FC<ArticlesPageProps> = (props: ArticlesPageProps) => {
       <h1>{t('Страница со статьями')}</h1>
 
       <ArticleList
-        isLoading
         articles={new Array(10)
           .fill(0)
           .map((_, index) => ({
