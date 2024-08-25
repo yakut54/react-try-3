@@ -11,7 +11,7 @@ export const mockArticleData: ArticleSchema = {
   user: {
     id: '1',
     username: 'Yulichka',
-    avatar: 'https://frambi.ru/wp-content/uploads/2022/12/frambi-bonus.png',
+    avatar: 'https://api.selcdn.ru/v1/SEL_53369/mng/_medium_5_/images/inst_1.png',
   },
   type: [
     ArticleType.IT,
