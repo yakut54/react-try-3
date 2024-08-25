@@ -25,9 +25,12 @@
   --inverted-secondary-color-opacity: rgb(var(--inverted-secondary-color-rgb) / 20%);
 
   // skeleton
-  --skeleton-color: #ffe0b2;
+  --skeleton-color: #fff1dd;
   --skeleton-shadow: rgb(71 29 16 / 20%);
 
   // code
   --code-bg: #ffebee;
+
+  // card
+  --card-bg: #ffded4;
 }

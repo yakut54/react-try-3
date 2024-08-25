@@ -5,7 +5,7 @@ describe('getArticleDetails', () => {
   it('Should return data', () => {
     const data = {
       id: '1',
-      title: 'Test Article',
+      title: 'Test ArticleSchema',
     }
 
     const state: DeepPartial<StateSchema> = {

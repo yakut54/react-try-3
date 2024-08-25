@@ -1,15 +1,23 @@
-import { Article } from '4_entities/Article'
-import { ArticleBlockType, ArticleType } from '4_entities/Article/model/types/Article'
+import { ArticleSchema } from '4_entities/Article'
+import { ArticleBlockType, ArticleType } from '4_entities/Article/model/types/ArticleSchema'
 
-export const articleData: Article = {
+export const mockArticleData: ArticleSchema = {
   id: '1',
-  title: 'Javascript News',
+  title: 'Javascript News 2024 every body common common!22',
   subtitle: 'Что нового в JS за 2024 год?',
-  img: 'https://api.selcdn.ru/v1/SEL_53369/mng/__medium__/images/java-script-dlya-nachinayushhix.webp',
+  img: 'https://masterpiecer-frontend-web.s3.yandex.net/32/_next/static/media/post-promo.c18ba5bc.png',
   views: 1022,
   createdAt: '12.08.2024',
+  user: {
+    id: '1',
+    username: 'Yulichka',
+    avatar: 'https://frambi.ru/wp-content/uploads/2022/12/frambi-bonus.png',
+  },
   type: [
     ArticleType.IT,
+    ArticleType.ECONOMICS,
+    ArticleType.SCIENCE,
+    ArticleType.POLITICS,
   ],
   blocks: [
     {

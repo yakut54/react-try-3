@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from '0_app/providers/ThemeProvider'
 import { SBDecorator } from '5_shared/lib/storybookDecorators/SBDecorator'
-import { articleData as data } from '../../model/mocks/articleData'
+import { mockArticleData as data } from '../../model/mocks/mockArticleData'
 import { ArticleDetails } from './ArticleDetails'
 
 const meta: Meta<typeof ArticleDetails> = {

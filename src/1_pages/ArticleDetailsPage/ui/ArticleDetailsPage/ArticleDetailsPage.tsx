@@ -1,5 +1,5 @@
 import { FC, memo, useCallback } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { CommentList } from '4_entities/Comment'
 import { ArticleDetails } from '4_entities/Article'
@@ -9,7 +9,9 @@ import { classNames } from '5_shared/lib/classNames/classNames'
 import { useInitialEffect } from '5_shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useAppDispatch, useAppSelector } from '5_shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { DynamicModuleLoader, ReducersList } from '5_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import addCommentForArticle from '1_pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle'
+import { Button, ButtonVariant } from '5_shared/ui/Button/Button'
+import { RoutePath } from '5_shared/config/routeConfig/routeConfig'
+import addCommentForArticle from '../../model/services/addCommentForArticle/addCommentForArticle'
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentsSlice'
 import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/getArticleDetailsComments'
@@ -30,6 +32,11 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props: ArticleDetailsPa
   const dispatch = useAppDispatch()
   const comments = useAppSelector(getArticleComments.selectAll)
   const isLoading = useAppSelector(getArticleDetailsCommentsIsLoading)
+  const navigate = useNavigate()
+
+  const onBackToList = useCallback(() => {
+    navigate(RoutePath.articles)
+  }, [navigate])
 
   const onSendComment = useCallback((text: string) => {
     dispatch(addCommentForArticle(text))
@@ -44,6 +51,9 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props: ArticleDetailsPa
       <div
         className={classNames(cls['article-details-page'], {}, [className])}
       >
+        <Button theme={ButtonVariant.OUTLINE} onClick={onBackToList}>
+          {t('Назад к списку статей')}
+        </Button>
         <ArticleDetails id={id} />
         <div className={classNames(cls['inverted-bg'], {}, [cls.mt])}>
           <Text

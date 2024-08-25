@@ -20,8 +20,8 @@ export default (env: BuildEnv) => {
     mode,
     paths,
     isDev,
-    port: PORT,
     apiUrl,
+    port: PORT,
     project: 'frontend',
   }
 

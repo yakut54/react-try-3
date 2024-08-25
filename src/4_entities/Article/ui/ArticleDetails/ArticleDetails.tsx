@@ -3,20 +3,20 @@ import { classNames } from '5_shared/lib/classNames/classNames'
 import { DynamicModuleLoader, ReducersList } from '5_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch, useAppSelector } from '5_shared/lib/hooks/useAppDispatch/useAppDispatch'
 import {
-  Text, TextAlign, TextSize, TextTheme,
+  Text, TextAlign, TextMarginBottom, TextSize, TextTheme,
 } from '5_shared/ui/Text/Text'
 import { Skeleton } from '5_shared/ui/Skeleton/Skeleton'
 import { Avatar } from '5_shared/ui/Avatar/Avatar'
 import EyeIcon from '5_shared/assets/icons/eye.svg'
 import CalendarIcon from '5_shared/assets/icons/calendar.svg'
 import { Icon } from '5_shared/ui/Icon/Icon'
-import { ArticleBlock, ArticleBlockType } from '4_entities/Article/model/types/Article'
-import { ArticleCodeComponent } from '4_entities/Article/ui/ArticleCodeComponent/ArticleCodeComponent'
-import { ArticleImageComponent } from '4_entities/Article/ui/ArticleImageComponent/ArticleImageComponent'
-import { ArticleTextComponent } from '4_entities/Article/ui/ArticleTextComponent/ArticleTextComponent'
 import { useTranslation } from 'react-i18next'
 import { articleDetailsReducer } from '4_entities/Article/model/slices/articleDetailsSlice'
 import { useInitialEffect } from '5_shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { ArticleBlock, ArticleBlockType } from '../../model/types/ArticleSchema'
+import { ArticleCodeComponent } from '../ArticleCodeComponent/ArticleCodeComponent'
+import { ArticleImageComponent } from '../ArticleImageComponent/ArticleImageComponent'
+import { ArticleTextComponent } from '../ArticleTextComponent/ArticleTextComponent'
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
 import {
   getArticleDetailsData,
@@ -117,7 +117,10 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props: ArticleDetai
             Svg={EyeIcon}
             className={cls.icon}
           />
-          <Text text={String(article?.views)} />
+          <Text
+            text={String(article?.views)}
+            mb={TextMarginBottom.MB0}
+          />
         </div>
         <div
           className={classNames(cls['article-info'], {}, [])}
@@ -126,7 +129,10 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props: ArticleDetai
             Svg={CalendarIcon}
             className={cls.icon}
           />
-          <Text text={article?.createdAt} />
+          <Text
+            text={article?.createdAt}
+            mb={TextMarginBottom.MB0}
+          />
         </div>
 
         {article?.blocks.map((block) => (

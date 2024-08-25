@@ -1,3 +1,5 @@
+import { User } from '4_entities/User'
+
 /* eslint-disable no-unused-vars */
 export enum ArticleBlockType {
     TEXT = 'TEXT',
@@ -33,15 +35,19 @@ export enum ArticleType {
     IT = 'IT',
     SCIENCE = 'SCIENCE',
     ECONOMICS = 'ECONOMICS',
+    POLITICS = 'POLITICS',
 }
 
-export interface Article {
+export type ArticleView = 'tile' | 'list'
+
+export interface ArticleSchema {
     id: string
     title: string,
     subtitle: string,
     img: string,
     views: number,
     createdAt: string,
+    user: User,
     type: ArticleType[],
     blocks: ArticleBlock[]
 }

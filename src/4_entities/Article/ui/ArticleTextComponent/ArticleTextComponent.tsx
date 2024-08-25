@@ -2,7 +2,7 @@ import { FC, memo } from 'react'
 import { classNames } from '5_shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
 import { Text } from '5_shared/ui/Text/Text'
-import type { ArticleTextBlock } from '../../model/types/Article'
+import type { ArticleTextBlock } from '../../model/types/ArticleSchema'
 import cls from './ArticleTextComponent.module.scss'
 
 interface ArticleTextComponentProps {

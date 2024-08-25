@@ -14,7 +14,7 @@
   "articles": [
     {
       "id": "1",
-      "title": "Javascript news СВЕЖАЯ",
+      "title": "Javascript news СВЕЖАЯ!!!!!!",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg",
       "views": 1022,
@@ -116,7 +116,7 @@
       "img": "https://wallpaperbat.com/img/874408-kotlin-wallpaper-top-free-kotlin-background.jpg",
       "views": 94002,
       "createdAt": "26.02.2024",
-      "userId": "1",
+      "userId": "2",
       "type": [
         "IT"
       ],
@@ -138,7 +138,7 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Scala-full-color.svg/1280px-Scala-full-color.svg.png",
       "views": 10222,
       "createdAt": "24.01.2022",
-      "userId": "1",
+      "userId": "2",
       "type": [
         "IT"
       ],
@@ -162,7 +162,7 @@
       "img": "https://openupthecloud.com/wp-content/uploads/2020/01/Golang.png",
       "views": 10222,
       "createdAt": "26.02.2020",
-      "userId": "1",
+      "userId": "3",
       "type": [
         "IT"
       ],
@@ -186,7 +186,7 @@
       "img": "https://andreyex.ru/wp-content/uploads/2018/05/Kak-ustanovit-Java-s-apt-na-Ubuntu-18.04.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "userId": "1",
+      "userId": "3",
       "type": [
         "IT"
       ],
@@ -210,7 +210,7 @@
       "img": "https://res.cloudinary.com/practicaldev/image/fetch/s--oqV3akcU--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/pgnw91fs7tpxn0wyeqh2.jpg",
       "views": 100,
       "createdAt": "21.02.2022",
-      "userId": "1",
+      "userId": "4",
       "type": [
         "IT"
       ],
@@ -231,7 +231,7 @@
       "id": "8",
       "title": "TypeScript news",
       "subtitle": "Что нового в TypeScript за 2022 год?",
-      "img": "https://miro.medium.com/max/1400/1*aTCN2ctKNoZupUCMP0hQuw.png",
+      "img": "https://t3.ftcdn.net/jpg/05/72/36/96/240_F_572369665_hfHDDCoy3iJLZtJCQUG0H5JqWw1dfyvP.jpg",
       "views": 102222,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -354,6 +354,12 @@
       "userId": "3",
       "articleId": "3",
       "id": "76XMmEH"
+    },
+    {
+      "text": "Комментарий от Юлички! Ураа!!",
+      "userId": "4",
+      "articleId": "3",
+      "id": "Gvv_Qkh"
     }
   ],
   "users": [
@@ -377,6 +383,13 @@
       "password": "123",
       "role": "USER",
       "avatar": "https://testing-library.com/img/octopus-64x64.png"
+    },
+    {
+      "id": "4",
+      "username": "yulichka",
+      "password": "123",
+      "role": "USER",
+      "avatar": "https://api.selcdn.ru/v1/SEL_53369/mng/receive/images/ulichka.png"
     }
   ],
   "profile": [
@@ -411,6 +424,17 @@
       "country": "Armenia",
       "city": "Земля",
       "username": "Vasilii_Terkin",
+      "avatar": "https://images.ctfassets.net/hrltx12pl8hq/703epYjcNn6LkOTds55r7E/92b60412462efd533b9f9edb7f514d30/CVRT_1457_Starry_Night_HP_background.webp?fit=fill&w=1280&h=720"
+    },
+    {
+      "id": "4",
+      "first": "Yulichka",
+      "lastname": "Vonuchka",
+      "age": 42,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Новосибирск",
+      "username": "yulichka",
       "avatar": "https://images.ctfassets.net/hrltx12pl8hq/703epYjcNn6LkOTds55r7E/92b60412462efd533b9f9edb7f514d30/CVRT_1457_Starry_Night_HP_background.webp?fit=fill&w=1280&h=720"
     }
   ]

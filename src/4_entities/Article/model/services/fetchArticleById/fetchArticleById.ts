@@ -2,10 +2,10 @@ import i18n from 'i18next'
 import { AxiosError } from 'axios'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from '0_app/providers/StoreProvider'
-import { Article } from '../../types/Article'
+import { ArticleSchema } from '../../types/ArticleSchema'
 
 export const fetchArticleById = createAsyncThunk<
-    Article,
+    ArticleSchema,
     string,
     ThunkConfig<string>
 >(
@@ -14,10 +14,10 @@ export const fetchArticleById = createAsyncThunk<
     const { rejectWithValue, extra } = thunkAPI
 
     try {
-      const response = await extra.api.get<Article>(`/articles/${articleId}`)
+      const response = await extra.api.get<ArticleSchema>(`/articles/${articleId}`)
 
       if (!response.data) {
-        throw new Error('Article does not exist')
+        throw new Error('ArticleSchema does not exist')
       }
 
       return response.data

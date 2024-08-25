@@ -36,6 +36,7 @@ img {
   flex-direction: column;
   height: calc(100vh - var(--navbar-height));
   overflow-y: auto;
+  flex-shrink: 100;
 }
 
 .flex-center {
