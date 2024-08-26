@@ -15,7 +15,6 @@ const diffDir = joinPath(lokiDir, 'difference');
   const expectedScreenshots = await asyncReaddir(expectedDir)
   const diffs = await asyncReaddir(diffDir)
 
-  // Здесь должна быть логика для определения newItems и deletedItems
   const newItems = actualScreenshots.filter((item) => !expectedScreenshots.includes(item))
   const deletedItems = expectedScreenshots.filter((item) => !actualScreenshots.includes(item))
 
