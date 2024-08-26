@@ -34,27 +34,13 @@ export const ArticleList: FC<ArticleListProps> = memo((props: ArticleListProps) 
     />
   )
 
-  if (isLoading) {
-    return (
-      <div
-        data-testid="article-list-skeleton"
-        className={classNames(cls['article-list'], {}, [className, cls[view]])}
-      >
-        {
-          $getSkeletons(view)
-        }
-      </div>
-    )
-  }
-
   return (
     <div
       data-testid="article-list"
       className={classNames(cls['article-list'], {}, [className, cls[view]])}
     >
-      {articles.length > 0
-        ? articles.map(renderArticle)
-        : null}
+      {articles.length > 0 ? articles.map(renderArticle) : null}
+      {isLoading && $getSkeletons(view)}
     </div>
   )
 })

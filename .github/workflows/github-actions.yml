@@ -33,9 +33,7 @@ jobs:
         if: always()
       - name: screenshots testing
         run: npm run test:ui:ci
-      - name: Check image availability
-        run: |
-          curl -I https://frambi.ru/wp-content/uploads/2022/12/frambi-bonus.png || true
+
 
 
 

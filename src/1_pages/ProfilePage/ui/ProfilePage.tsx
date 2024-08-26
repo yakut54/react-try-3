@@ -20,6 +20,7 @@ import {
   profileReducer,
 } from '4_entities/Profile'
 import { DynamicModuleLoader, ReducersList } from '5_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { PageWrapper } from '5_shared/ui/PageWrapper/PageWrapper'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 import cls from './ProfilePage.module.scss'
 
@@ -91,7 +92,7 @@ const ProfilePage: FC<ProfilePageProps> = memo((props: ProfilePageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div
+      <PageWrapper
         className={classNames(cls['profile-page'], {}, [className])}
         {...otherProps}
       >
@@ -117,7 +118,7 @@ const ProfilePage: FC<ProfilePageProps> = memo((props: ProfilePageProps) => {
           onChangeCurrency={onChangeCurrency}
           onChangeCountry={onChangeCountry}
         />
-      </div>
+      </PageWrapper>
     </DynamicModuleLoader>
   )
 })

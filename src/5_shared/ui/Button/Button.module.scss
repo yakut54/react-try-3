@@ -28,6 +28,10 @@
   background: none;
 }
 
+.limit-size {
+  max-width: fit-content;
+}
+
 .outline-red {
   border: 1px solid var(--color-red-light);
   color: var(--color-red-light);

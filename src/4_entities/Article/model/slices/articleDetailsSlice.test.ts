@@ -112,14 +112,14 @@ describe('articleDetailsSlice', () => {
 
     const rejectedAction = {
       type: fetchArticleById.rejected.type,
-      payload: 'Ошибка получения статьи', // Хорошо. Если я напишу тут "Ехал грека через реку"
+      payload: 'Ошибка получения статьи',
     }
 
     const updatedState = articleDetailsReducer(state as ArticleDetailsSchema, rejectedAction)
 
     expect(updatedState).toEqual({
       isLoading: false,
-      error: 'Ошибка получения статьи', // то и тут будет "Ехал грека через реку" это никак не связано с реальностью
+      error: 'Ошибка получения статьи',
     })
   })
 })

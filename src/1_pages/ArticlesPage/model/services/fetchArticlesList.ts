@@ -3,24 +3,35 @@ import { AxiosError } from 'axios'
 import { ArticleSchema } from '4_entities/Article'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from '0_app/providers/StoreProvider'
+import { getArticlesPageLimit } from '1_pages/ArticlesPage/model/selectors/getArticlesSelectors'
 
-const getArticlesList = createAsyncThunk<
+interface FetchArticlesListProps {
+    page?: number
+}
+
+const fetchArticlesList = createAsyncThunk<
     ArticleSchema[],
-    void,
+    FetchArticlesListProps,
     ThunkConfig<string>
 >(
-  'articlesPages/getArticlesList',
-  async (_, thunkAPI) => {
-    const { rejectWithValue, extra, dispatch } = thunkAPI
+  'articlesPages/fetchArticlesList',
+  async (props, thunkAPI) => {
+    const {
+      rejectWithValue, extra, dispatch, getState,
+    } = thunkAPI
+    const { page = 1 } = props
+    const limit = getArticlesPageLimit(getState())
+
+    console.log('limit', limit)
 
     try {
       const response = await extra.api.get<ArticleSchema[]>('/articles', {
         params: {
           _expand: 'user',
+          _limit: limit,
+          _page: page,
         },
       })
-
-      // dispatch(articlePageActions.setView(response.data))
 
       return response.data
     } catch (e) {
@@ -39,4 +50,4 @@ const getArticlesList = createAsyncThunk<
   {},
 )
 
-export default getArticlesList
+export default fetchArticlesList

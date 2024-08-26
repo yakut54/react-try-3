@@ -1,19 +1,20 @@
 import { FC, memo, useCallback } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { CommentList } from '4_entities/Comment'
 import { ArticleDetails } from '4_entities/Article'
+import { useNavigate, useParams } from 'react-router-dom'
 import { AddCommentForm } from '3_features/AddCommentForm'
 import { Text, TextMarginBottom } from '5_shared/ui/Text/Text'
 import { classNames } from '5_shared/lib/classNames/classNames'
+import { PageWrapper } from '5_shared/ui/PageWrapper/PageWrapper'
+import { Button, ButtonVariant } from '5_shared/ui/Button/Button'
+import { RoutePath } from '5_shared/config/routeConfig/routeConfig'
 import { useInitialEffect } from '5_shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useAppDispatch, useAppSelector } from '5_shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { DynamicModuleLoader, ReducersList } from '5_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { Button, ButtonVariant } from '5_shared/ui/Button/Button'
-import { RoutePath } from '5_shared/config/routeConfig/routeConfig'
-import addCommentForArticle from '../../model/services/addCommentForArticle/addCommentForArticle'
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentsSlice'
+import addCommentForArticle from '../../model/services/addCommentForArticle/addCommentForArticle'
 import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/getArticleDetailsComments'
 import cls from './ArticleDetailsPage.module.scss'
 
@@ -48,10 +49,14 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props: ArticleDetailsPa
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div
+      <PageWrapper
         className={classNames(cls['article-details-page'], {}, [className])}
       >
-        <Button theme={ButtonVariant.OUTLINE} onClick={onBackToList}>
+        <Button
+          isLimitSize
+          theme={ButtonVariant.OUTLINE}
+          onClick={onBackToList}
+        >
           {t('Назад к списку статей')}
         </Button>
         <ArticleDetails id={id} />
@@ -69,7 +74,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props: ArticleDetailsPa
             isLoading={isLoading}
           />
         </div>
-      </div>
+      </PageWrapper>
     </DynamicModuleLoader>
   )
 }

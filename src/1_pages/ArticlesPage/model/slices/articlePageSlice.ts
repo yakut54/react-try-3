@@ -2,7 +2,7 @@ import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolki
 import { ArticleSchema, ArticleView } from '4_entities/Article'
 import { StateSchema } from '0_app/providers/StoreProvider'
 import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from '5_shared/const/localStorage'
-import getArticlesList from '../../model/services/getArticlesList'
+import fetchArticlesList from '../services/fetchArticlesList'
 import { ArticlesPageSchema } from '../types/ArticlesPageSchema'
 
 const articleAdapter = createEntityAdapter<ArticleSchema>()
@@ -17,30 +17,38 @@ export const articlePageSlice = createSlice({
   initialState: articleAdapter.getInitialState<ArticlesPageSchema>({
     ids: [],
     entities: {},
+    view: 'list',
+    isMore: true,
     error: undefined,
     isLoading: false,
-    view: 'list',
+    page: 1,
   }),
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
       state.view = action.payload
       window.localStorage.setItem(ARTICLE_VIEW_LOCAL_STORAGE_KEY, action.payload)
     },
+    setPage: (state, action: PayloadAction<number>) => {
+      state.page = action.payload
+    },
     initState: (state) => {
-      state.view = window.localStorage.getItem(ARTICLE_VIEW_LOCAL_STORAGE_KEY) as ArticleView
+      const view = window.localStorage.getItem(ARTICLE_VIEW_LOCAL_STORAGE_KEY) as ArticleView
+      state.view = view
+      state.limit = view === 'list' ? 4 : 18
     },
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getArticlesList.pending, (state) => {
+      .addCase(fetchArticlesList.pending, (state) => {
         state.isLoading = true
         state.error = undefined
       })
-      .addCase(getArticlesList.fulfilled, (state, action: PayloadAction<ArticleSchema[]>) => {
+      .addCase(fetchArticlesList.fulfilled, (state, action: PayloadAction<ArticleSchema[]>) => {
         state.isLoading = false
-        articleAdapter.setAll(state, action.payload)
+        articleAdapter.addMany(state, action.payload)
+        state.isMore = action.payload.length > 0
       })
-      .addCase(getArticlesList.rejected, (state, action) => {
+      .addCase(fetchArticlesList.rejected, (state, action) => {
         state.isLoading = false
         state.error = action.payload
       })

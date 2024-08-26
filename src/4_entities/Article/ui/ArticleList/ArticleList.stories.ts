@@ -66,7 +66,7 @@ export const ArticleListLoadingLight: Story = {
   args: {
     isLoading: true,
     view: 'list',
-    articles: [mockArticleData],
+    articles: [],
   },
   decorators: [SBDecorator(Theme.LIGHT)],
 }
@@ -75,7 +75,7 @@ export const ArticleListLoadingDark: Story = {
   args: {
     isLoading: true,
     view: 'list',
-    articles: [mockArticleData],
+    articles: [],
   },
   decorators: [SBDecorator(Theme.DARK)],
 }
@@ -84,7 +84,7 @@ export const ArticleListLoadingOrange: Story = {
   args: {
     isLoading: true,
     view: 'list',
-    articles: [mockArticleData],
+    articles: [],
   },
   decorators: [SBDecorator(Theme.ORANGE)],
 }
@@ -93,7 +93,7 @@ export const ArticleTileLoadingLight: Story = {
   args: {
     isLoading: true,
     view: 'tile',
-    articles: [mockArticleData],
+    articles: [],
   },
   decorators: [SBDecorator(Theme.LIGHT)],
 }
@@ -102,7 +102,7 @@ export const ArticleTileLoadingDark: Story = {
   args: {
     isLoading: true,
     view: 'tile',
-    articles: [mockArticleData],
+    articles: [],
   },
   decorators: [SBDecorator(Theme.DARK)],
 }
@@ -111,7 +111,7 @@ export const ArticleTileLoadingOrange: Story = {
   args: {
     isLoading: true,
     view: 'tile',
-    articles: [mockArticleData],
+    articles: [],
   },
   decorators: [SBDecorator(Theme.ORANGE)],
 }

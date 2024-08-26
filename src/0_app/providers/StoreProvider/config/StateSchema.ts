@@ -10,19 +10,19 @@ import type { CounterSchema } from '4_entities/Counter'
 import type { LoginSchema } from '3_features/AuthByUsername'
 import type { ArticleDetailsSchema } from '4_entities/Article'
 import type { ArticlesPageSchema } from '1_pages/ArticlesPage'
+import type { NavigateOptions } from 'react-router/dist/lib/context'
 import type { AddCommentFormSchema } from '3_features/AddCommentForm'
 import type { ArticleDetailsCommentsSchema } from '1_pages/ArticleDetailsPage'
-import type { NavigateOptions } from 'react-router/dist/lib/context'
 
 export interface StateSchema {
     user: UserSchema
     counter: CounterSchema
     loginForm?: LoginSchema
     profile?: ProfileSchema
-    articleDetails?: ArticleDetailsSchema
-    articleDetailsComments?: ArticleDetailsCommentsSchema
-    addCommentForm?: AddCommentFormSchema
     articlesPage?: ArticlesPageSchema
+    articleDetails?: ArticleDetailsSchema
+    addCommentForm?: AddCommentFormSchema
+    articleDetailsComments?: ArticleDetailsCommentsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

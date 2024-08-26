@@ -1,7 +1,10 @@
 import { StateSchema } from '0_app/providers/StoreProvider'
 import {
   getArticlesPageError,
+  getArticlesPageIsHasMore,
   getArticlesPageIsLoading,
+  getArticlesPageLimit,
+  getArticlesPageNum,
   getArticlesPageView,
 } from '1_pages/ArticlesPage/model/selectors/getArticlesSelectors'
 
@@ -54,5 +57,53 @@ describe('getArticlesPageIsLoading', () => {
     }
 
     expect(getArticlesPageView(state as StateSchema)).toEqual('list')
+  })
+
+  it('Testing limit', () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: { limit: 20 },
+    }
+
+    expect(getArticlesPageLimit(state as StateSchema)).toEqual(20)
+  })
+
+  it('Testing limit with undefined, return default value', () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: {},
+    }
+
+    expect(getArticlesPageLimit(state as StateSchema)).toEqual(9)
+  })
+
+  it('Testing page', () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: { page: 5 },
+    }
+
+    expect(getArticlesPageNum(state as StateSchema)).toEqual(5)
+  })
+
+  it('Testing page with undefined', () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: {},
+    }
+
+    expect(getArticlesPageNum(state as StateSchema)).toEqual(1)
+  })
+
+  it('Testing is has more', () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: { isMore: true },
+    }
+
+    expect(getArticlesPageIsHasMore(state as StateSchema)).toEqual(true)
+  })
+
+  it('Testing is has more with undefined', () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: {},
+    }
+
+    expect(getArticlesPageIsHasMore(state as StateSchema)).toEqual(undefined)
   })
 })

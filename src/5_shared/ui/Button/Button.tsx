@@ -26,6 +26,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     theme?: ButtonVariant
     isSquare?: boolean
     disabled?: boolean
+    isLimitSize?: boolean
     size?: ButtonSize
     children: ReactNode
 }
@@ -35,6 +36,7 @@ export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
     className,
     children,
     theme = ButtonVariant.OUTLINE,
+    isLimitSize = true,
     isSquare,
     disabled,
     size,
@@ -44,6 +46,7 @@ export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
   const mods: Mods = {
     [cls.square]: isSquare,
     [cls.disabled]: disabled,
+    [cls['limit-size']]: isLimitSize,
   }
 
   return (

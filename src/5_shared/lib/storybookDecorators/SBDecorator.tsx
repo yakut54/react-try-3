@@ -12,12 +12,14 @@ import type { ReducersList } from '5_shared/lib/components/DynamicModuleLoader/D
 import { articleDetailsReducer } from '4_entities/Article/model/slices/articleDetailsSlice'
 import { addCommentFormReducer } from '3_features/AddCommentForm/model/slices/addCommentFormSlice'
 import { articleDetailsCommentsReducer } from '1_pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice'
+import { articlePageReducer } from '1_pages/ArticlesPage/model/slices/articlePageSlice'
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
   addCommentForm: addCommentFormReducer,
+  articlesPage: articlePageReducer,
   articleDetailsComments: articleDetailsCommentsReducer,
 }
 

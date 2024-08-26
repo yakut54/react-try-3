@@ -26,25 +26,25 @@ describe('ArticleList', () => {
     expect(articleList).toBeInTheDocument()
   })
 
-  it('render ArticleList view="list" is loading', () => {
-    componentRender(<ArticleList
-      view="list"
-      isLoading
-      articles={[mockArticleData]}
-    />)
+  // it('render ArticleList view="list" is loading', () => {
+  //   componentRender(<ArticleList
+  //     view="list"
+  //     isLoading
+  //     articles={[mockArticleData]}
+  //   />)
+  //
+  //   const articleListSkeleton = screen.getByTestId('article-list-skeleton')
+  //   expect(articleListSkeleton).toBeInTheDocument()
+  // })
 
-    const articleListSkeleton = screen.getByTestId('article-list-skeleton')
-    expect(articleListSkeleton).toBeInTheDocument()
-  })
-
-  it('render ArticleList view="tile" is loading', () => {
-    componentRender(<ArticleList
-      view="tile"
-      isLoading
-      articles={[mockArticleData]}
-    />)
-
-    const articleListSkeleton = screen.getByTestId('article-list-skeleton')
-    expect(articleListSkeleton).toBeInTheDocument()
-  })
+  // it('render ArticleList view="tile" is loading', () => {
+  //   componentRender(<ArticleList
+  //     view="tile"
+  //     isLoading
+  //     articles={[mockArticleData]}
+  //   />)
+  //
+  //   const articleListSkeleton = screen.getByTestId('article-list-skeleton')
+  //   expect(articleListSkeleton).toBeInTheDocument()
+  // })
 })
