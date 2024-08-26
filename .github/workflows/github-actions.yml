@@ -33,48 +33,7 @@ jobs:
         if: always()
       - name: screenshots testing
         run: npm run test:ui:ci
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        if: always()
+      - name: update visual test references
+        run: npx loki update --storiesFilter="^Pages\\/ArticlesPage Articles Page List Light|Pages\\/ArticlesPage Articles Page List Dark\$" --reactUri="file:./storybook-static"
+        if: always()
