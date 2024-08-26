@@ -1,6 +1,7 @@
-export { ArticleView } from './model/types/ArticleSchema'
+export type { ArticleView } from './model/types/ArticleSchema'
 export type { ArticleSchema } from './model/types/ArticleSchema'
 export type { ArticleDetailsSchema } from './model/types/ArticleDetailsSchema'
 export { getArticleDetailsData } from './model/selectors/getArticleDetails'
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails'
 export { ArticleList } from './ui/ArticleList/ArticleList'
+export { ArticleViewSwitcher } from './ui/ArticleViewSwitcher/ArticleViewSwitcher'

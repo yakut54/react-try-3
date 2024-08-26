@@ -1,36 +1,66 @@
-import { FC, memo } from 'react'
-import { classNames } from '5_shared/lib/classNames/classNames'
+import { FC, memo, useCallback } from 'react'
+import { useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
-import { ArticleList } from '4_entities/Article'
-import { mockArticleData } from '4_entities/Article/model/mocks/mockArticleData'
+import { ArticleList, ArticleView, ArticleViewSwitcher } from '4_entities/Article'
+import { classNames } from '5_shared/lib/classNames/classNames'
+import { useAppSelector } from '5_shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useInitialEffect } from '5_shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { DynamicModuleLoader, ReducersList } from '5_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import getArticlesList from '../../model/services/getArticlesList'
+import {
+  getArticlesPageError,
+  getArticlesPageIsLoading,
+  getArticlesPageView,
+} from '../../model/selectors/getArticlesSelectors'
+import { articlePageActions, articlePageReducer, getArticles } from '../../model/slices/articlePageSlice'
 import cls from './ArticlesPage.module.scss'
 
-interface ArticlesPageProps {
+export interface ArticlesPageProps {
     className?: string
 }
 
+const reducers: ReducersList = {
+  articlesPage: articlePageReducer,
+}
+
 const ArticlesPage: FC<ArticlesPageProps> = (props: ArticlesPageProps) => {
-  const { className, ...otherProps } = props
+  const { className } = props
   const { t } = useTranslation('article-details')
+  const articles = useAppSelector(getArticles.selectAll)
+  const isLoading = useAppSelector(getArticlesPageIsLoading)
+  const error = useAppSelector(getArticlesPageError)
+  const view = useAppSelector(getArticlesPageView)
+  const dispatch = useDispatch()
+
+  const onChangeView = useCallback((view: ArticleView) => {
+    dispatch(articlePageActions.setView(view))
+  }, [dispatch])
+
+  useInitialEffect(() => {
+    dispatch(getArticlesList())
+    dispatch(articlePageActions.initState())
+  })
 
   return (
-    <div
-      className={classNames(cls['articles-page'], {}, [className])}
-      {...otherProps}
-    >
-      <h1>{t('Страница со статьями')}</h1>
+    <DynamicModuleLoader reducers={reducers}>
+      <div
+        className={classNames(cls['articles-page'], {}, [className])}
+      >
+        <h1>{t('Страница со статьями')}</h1>
 
-      <ArticleList
-        articles={new Array(10)
-          .fill(0)
-          .map((_, index) => ({
-            ...mockArticleData,
-            id: String(index + 1),
-          }))}
-        view="list"
-      />
+        <ArticleViewSwitcher
+          view={view}
+          onViewClick={onChangeView}
+        />
 
-    </div>
+        <ArticleList
+          isLoading={isLoading}
+          articles={articles}
+          view={view}
+        />
+
+      </div>
+    </DynamicModuleLoader>
   )
 }
 

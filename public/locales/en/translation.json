@@ -18,5 +18,6 @@
   "Профиль": "Profile",
   "Статьи": "Article",
   "Ошибка обновления": "Update error",
-  "Ошибка получения статьи": "Error receiving the article"
+  "Ошибка получения статьи": "Error receiving the article",
+  "Ошибка при получении статей": "Error when receiving articles"
 }

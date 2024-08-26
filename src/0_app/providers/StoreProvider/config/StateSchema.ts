@@ -7,8 +7,9 @@ import type { To } from '@remix-run/router'
 import type { UserSchema } from '4_entities/User'
 import type { ProfileSchema } from '4_entities/Profile'
 import type { CounterSchema } from '4_entities/Counter'
-import type { ArticleDetailsSchema } from '4_entities/Article'
 import type { LoginSchema } from '3_features/AuthByUsername'
+import type { ArticleDetailsSchema } from '4_entities/Article'
+import type { ArticlesPageSchema } from '1_pages/ArticlesPage'
 import type { AddCommentFormSchema } from '3_features/AddCommentForm'
 import type { ArticleDetailsCommentsSchema } from '1_pages/ArticleDetailsPage'
 import type { NavigateOptions } from 'react-router/dist/lib/context'
@@ -21,6 +22,7 @@ export interface StateSchema {
     articleDetails?: ArticleDetailsSchema
     articleDetailsComments?: ArticleDetailsCommentsSchema
     addCommentForm?: AddCommentFormSchema
+    articlesPage?: ArticlesPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
