@@ -34,6 +34,4 @@ jobs:
       - name: screenshots testing
         run: npm run test:ui:ci
         if: always()
-      - name: update visual test references
-        run: loki update --storiesFilter="^Pages\\/ArticlesPage Articles Page Tile Light|Features\\/LoginForm Login Form Error Light\$" --reactUri="file:./storybook-static"
-        if: always()
+
