@@ -19,6 +19,8 @@ export const StoreProvider = ({
   const aReducers = asyncReducers as ReducersMapObject<StateSchema>
   const store = createAppStore(inState, aReducers)
 
+  console.log('RENDER')
+
   return (
     <Provider store={store}>
       {children}

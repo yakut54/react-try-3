@@ -20,7 +20,7 @@ interface InputProps extends InputHTMLPropsWithout {
 export const Input: FC<InputProps> = memo((props: InputProps) => {
   const {
     onChange,
-    value = '',
+    value,
     className,
     autofocus,
     placeholder,
