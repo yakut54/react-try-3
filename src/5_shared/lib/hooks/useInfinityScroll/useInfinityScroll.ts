@@ -8,8 +8,11 @@ export interface UseInfinityScrollOptions {
 
 export function useInfinityScroll({ callback, wrapperRef, triggerRef }: UseInfinityScrollOptions) {
   useEffect(() => {
+    const triggerElement = triggerRef.current
+    const wrapperElement = wrapperRef.current
+
     const options = {
-      root: wrapperRef.current,
+      root: wrapperElement,
       rootMargin: '0px',
       threshold: 1.0,
     }
@@ -22,14 +25,12 @@ export function useInfinityScroll({ callback, wrapperRef, triggerRef }: UseInfin
       }
     }, options)
 
-    const triggerElement = triggerRef.current
-
     if (triggerElement) {
       observer.observe(triggerElement)
     }
 
     return () => {
-      if (triggerElement) {
+      if (observer.unobserve && triggerElement) {
         observer.unobserve(triggerElement)
       }
     }

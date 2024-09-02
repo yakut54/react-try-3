@@ -21,13 +21,14 @@ export const Sidebar: FC<SidebarProps> = memo((props: SidebarProps) => {
   const onToggle = () => setIsCollapsed((prev) => !prev)
   const sidebarItemList = useAppSelector(getSidebarItems)
 
-  const sidebarList = useMemo(() => sidebarItemList.map((item) => (
-    <SidebarItem
-      item={item}
-      key={item.path}
-      isCollapsed={isCollapsed}
-    />
-  )), [isCollapsed, sidebarItemList])
+  const sidebarList = useMemo(() => sidebarItemList
+    .map((item) => (
+      <SidebarItem
+        item={item}
+        key={item.path}
+        isCollapsed={isCollapsed}
+      />
+    )), [isCollapsed, sidebarItemList])
 
   return (
     <aside

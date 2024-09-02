@@ -22,8 +22,6 @@ const fetchArticlesList = createAsyncThunk<
     const { page = 1 } = props
     const limit = getArticlesPageLimit(getState())
 
-    console.log('limit', limit)
-
     try {
       const response = await extra.api.get<ArticleSchema[]>('/articles', {
         params: {

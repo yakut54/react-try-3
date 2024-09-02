@@ -18,7 +18,7 @@ import addCommentForArticle from '../../model/services/addCommentForArticle/addC
 import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/getArticleDetailsComments'
 import cls from './ArticleDetailsPage.module.scss'
 
-interface ArticleDetailsPageProps {
+export interface ArticleDetailsPageProps {
     className?: string
 }
 

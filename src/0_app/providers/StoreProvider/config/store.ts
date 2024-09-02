@@ -1,6 +1,4 @@
 /* eslint-disable no-unused-vars */
-import type { To } from '@remix-run/router'
-import type { NavigateOptions } from 'react-router/dist/lib/context'
 import type { ReducersMapObject } from '@reduxjs/toolkit'
 import { configureStore } from '@reduxjs/toolkit'
 import { CombinedState, Reducer } from 'redux'
@@ -13,7 +11,6 @@ import { createReducerManager } from './reducerManager'
 export function createAppStore(
   initialState?: StateSchema,
   asyncReducers?: ReducersMapObject<StateSchema>,
-  navigate?: (to: To, options?: NavigateOptions) => void,
 ) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
@@ -25,7 +22,6 @@ export function createAppStore(
 
   const extraArg: ThunkExtraArgs = {
     api: $api,
-    navigate,
   }
 
   const store = configureStore({

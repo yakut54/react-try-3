@@ -2,7 +2,7 @@ import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolki
 import { ArticleSchema, ArticleView } from '4_entities/Article'
 import { StateSchema } from '0_app/providers/StoreProvider'
 import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from '5_shared/const/localStorage'
-import fetchArticlesList from '../services/fetchArticlesList'
+import fetchArticlesList from '../services/fetchArticlesList/fetchArticlesList'
 import { ArticlesPageSchema } from '../types/ArticlesPageSchema'
 
 const articleAdapter = createEntityAdapter<ArticleSchema>()
@@ -22,6 +22,7 @@ export const articlePageSlice = createSlice({
     error: undefined,
     isLoading: false,
     page: 1,
+    _isInited: false,
   }),
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
@@ -35,6 +36,7 @@ export const articlePageSlice = createSlice({
       const view = window.localStorage.getItem(ARTICLE_VIEW_LOCAL_STORAGE_KEY) as ArticleView
       state.view = view
       state.limit = view === 'list' ? 4 : 18
+      state._isInited = true
     },
   },
   extraReducers: (builder) => {

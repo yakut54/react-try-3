@@ -28,7 +28,10 @@ export const PageWrapper: FC<PageWrapperProps> = memo((props: PageWrapperProps) 
       className={classNames(cls['page-wrapper'], {}, [className])}
     >
       {children}
-      <div ref={triggerRef} />
+      <div
+        ref={triggerRef}
+        // style={{ width: 100, height: 100, backgroundColor: 'red' }}
+      />
     </section>
   )
 })

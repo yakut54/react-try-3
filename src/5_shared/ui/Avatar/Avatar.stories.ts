@@ -43,7 +43,7 @@ export const AvatarSmallNormal: Story = {
 
 export const AvatarSmallDark: Story = {
   args: {
-    size: 150,
+    size: 300,
   },
   decorators: [
     SBDecorator(Theme.DARK),

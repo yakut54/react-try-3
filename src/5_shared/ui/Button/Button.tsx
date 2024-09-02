@@ -36,7 +36,7 @@ export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
     className,
     children,
     theme = ButtonVariant.OUTLINE,
-    isLimitSize = true,
+    isLimitSize = false,
     isSquare,
     disabled,
     size,

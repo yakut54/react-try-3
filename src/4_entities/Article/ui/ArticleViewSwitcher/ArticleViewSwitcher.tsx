@@ -2,7 +2,6 @@ import {
   FC, memo, SVGProps, VFC,
 } from 'react'
 import { classNames } from '5_shared/lib/classNames/classNames'
-import { useTranslation } from 'react-i18next'
 import { ArticleView } from '4_entities/Article'
 import TileIcon from '5_shared/assets/icons/tiled.svg'
 import ListIcon from '5_shared/assets/icons/list.svg'
@@ -26,7 +25,6 @@ const viewTypes: ViewType[] = [
 
 export const ArticleViewSwitcher: FC<ArticleViewSwitcherProps> = memo((props: ArticleViewSwitcherProps) => {
   const { className, view, onViewClick } = props
-  const { t } = useTranslation()
 
   const onClick = (newView: ArticleView) => () => {
     onViewClick?.(newView)
@@ -42,7 +40,6 @@ export const ArticleViewSwitcher: FC<ArticleViewSwitcherProps> = memo((props: Ar
             key={viewType.view}
             theme={ButtonVariant.CLEAR}
             onClick={onClick(viewType.view)}
-
           >
             <Icon
               Svg={viewType.icon}
