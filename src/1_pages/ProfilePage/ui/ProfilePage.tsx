@@ -20,7 +20,7 @@ import {
   profileReducer,
 } from '4_entities/Profile'
 import { DynamicModuleLoader, ReducersList } from '5_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { PageWrapper } from '5_shared/ui/PageWrapper/PageWrapper'
+import { PageWrapper } from '2_widgets/PageWrapper/PageWrapper'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 import cls from './ProfilePage.module.scss'
 

@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
 import type { ReducersMapObject } from '@reduxjs/toolkit'
 import { configureStore } from '@reduxjs/toolkit'
+import { counterReducer } from '4_entities/Counter'
 import { CombinedState, Reducer } from 'redux'
 import { userReducer } from '4_entities/User'
-import { counterReducer } from '4_entities/Counter'
+import { uiReducer } from '3_features/UI'
 import { $api } from '5_shared/api/api'
-import { StateSchema, ThunkExtraArgs } from './StateSchema'
+import type { StateSchema, ThunkExtraArgs } from './StateSchema'
 import { createReducerManager } from './reducerManager'
 
 export function createAppStore(
@@ -16,6 +17,7 @@ export function createAppStore(
     ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
+    UI: uiReducer,
   }
 
   const reducerManager = createReducerManager(rootReducers)

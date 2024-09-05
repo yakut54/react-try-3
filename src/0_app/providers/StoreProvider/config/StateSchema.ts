@@ -3,6 +3,7 @@ import type {
   AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit'
 import type { AxiosInstance } from 'axios'
+import type { UISchema } from '3_features/UI'
 import type { UserSchema } from '4_entities/User'
 import type { ProfileSchema } from '4_entities/Profile'
 import type { CounterSchema } from '4_entities/Counter'
@@ -13,6 +14,7 @@ import type { AddCommentFormSchema } from '3_features/AddCommentForm'
 import type { ArticleDetailsCommentsSchema } from '1_pages/ArticleDetailsPage'
 
 export interface StateSchema {
+    UI: UISchema
     user: UserSchema
     counter: CounterSchema
     loginForm?: LoginSchema
