@@ -47,6 +47,7 @@ export const PageWrapper: FC<PageWrapperProps> = memo((props: PageWrapperProps) 
       {children}
       <div
         ref={triggerRef}
+        // style={{ width: 100, height: 2, backgroundColor: 'red' }}
       />
     </section>
   )
