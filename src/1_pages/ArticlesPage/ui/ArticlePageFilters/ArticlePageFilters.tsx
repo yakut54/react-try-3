@@ -8,7 +8,11 @@ import { useAppDispatch, useAppSelector } from '5_shared/lib/hooks/useAppDispatc
 import {
   ArticleSortField, ArticleSortSelector, ArticleView, ArticleViewSwitcher,
 } from '4_entities/Article'
-import { getArticlesPageOrder, getArticlesPageSort } from '../../model/selectors/getArticlesSelectors'
+import {
+  getArticlesPageOrder,
+  getArticlesPageSearch,
+  getArticlesPageSort,
+} from '../../model/selectors/getArticlesSelectors'
 import { articlePageActions } from '../../model/slices/articlePageSlice'
 import cls from './ArticlePageFilters.module.scss'
 
@@ -21,6 +25,7 @@ export const ArticlePageFilters: FC<ArticlePageFiltersProps> = memo((props: Arti
   const dispatch = useAppDispatch()
   const order = useAppSelector(getArticlesPageOrder)
   const sort = useAppSelector(getArticlesPageSort)
+  const search = useAppSelector(getArticlesPageSearch)
   const { t } = useTranslation()
 
   const onChangeView = useCallback((view: ArticleView) => {
@@ -33,6 +38,10 @@ export const ArticlePageFilters: FC<ArticlePageFiltersProps> = memo((props: Arti
 
   const onChangeSort = useCallback((newSort: ArticleSortField) => {
     dispatch(articlePageActions.setSort(newSort))
+  }, [dispatch])
+
+  const onChangeSearch = useCallback((newSearch: string) => {
+    dispatch(articlePageActions.setSearch(newSearch))
   }, [dispatch])
 
   return (
@@ -52,7 +61,11 @@ export const ArticlePageFilters: FC<ArticlePageFiltersProps> = memo((props: Arti
         />
       </div>
       <Card className={cls.search}>
-        <Input placeholder={t('Поиск')} />
+        <Input
+          onChange={onChangeSearch}
+          value={search}
+          placeholder={t('Поиск')}
+        />
       </Card>
     </div>
   )
