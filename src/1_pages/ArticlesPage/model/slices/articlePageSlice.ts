@@ -2,6 +2,8 @@ import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolki
 import { ArticleSchema, ArticleView } from '4_entities/Article'
 import { StateSchema } from '0_app/providers/StoreProvider'
 import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from '5_shared/const/localStorage'
+import { SortOrder } from '5_shared/types/SortOrder'
+import { ArticleSortField } from '4_entities/Article/model/types/ArticleSchema'
 import fetchArticlesList from '../services/fetchArticlesList/fetchArticlesList'
 import { ArticlesPageSchema } from '../types/ArticlesPageSchema'
 
@@ -12,27 +14,42 @@ export const getArticles = articleAdapter.getSelectors<StateSchema>(
   (state) => state.articlesPage || articleAdapter.getInitialState(),
 )
 
+const initialState = articleAdapter.getInitialState<ArticlesPageSchema>({
+  ids: [],
+  entities: {},
+  view: 'list',
+  isMore: true,
+  error: undefined,
+  isLoading: false,
+  page: 1,
+  _isInited: false,
+  order: 'asc',
+  limit: 18,
+  sort: 'createdAt',
+  search: '',
+})
+
 export const articlePageSlice = createSlice({
   name: 'articlePageSlice',
-  initialState: articleAdapter.getInitialState<ArticlesPageSchema>({
-    ids: [],
-    entities: {},
-    view: 'list',
-    isMore: true,
-    error: undefined,
-    isLoading: false,
-    page: 1,
-    _isInited: false,
-  }),
+  initialState,
   reducers: {
-    setView: (state, action: PayloadAction<ArticleView>) => {
+    setView(state, action: PayloadAction<ArticleView>) {
       state.view = action.payload
       window.localStorage.setItem(ARTICLE_VIEW_LOCAL_STORAGE_KEY, action.payload)
     },
-    setPage: (state, action: PayloadAction<number>) => {
+    setPage(state, action: PayloadAction<number>) {
       state.page = action.payload
     },
-    initState: (state) => {
+    setOrder(state, action: PayloadAction<SortOrder>) {
+      state.order = action.payload
+    },
+    setSort(state, action: PayloadAction<ArticleSortField>) {
+      state.sort = action.payload
+    },
+    setSearch(state, action: PayloadAction<string>) {
+      state.search = action.payload
+    },
+    initState(state) {
       const view = window.localStorage.getItem(ARTICLE_VIEW_LOCAL_STORAGE_KEY) as ArticleView
       state.view = view
       state.limit = view === 'list' ? 4 : 18

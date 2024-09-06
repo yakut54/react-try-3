@@ -4,13 +4,14 @@ import { useTranslation } from 'react-i18next'
 import { classNames } from '5_shared/lib/classNames/classNames'
 import { PageWrapper } from '2_widgets/PageWrapper/PageWrapper'
 import { useAppSelector } from '5_shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { ArticleList, ArticleView, ArticleViewSwitcher } from '4_entities/Article'
+import { ArticleList } from '4_entities/Article'
 import { useInitialEffect } from '5_shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { DynamicModuleLoader, ReducersList } from '5_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { ArticlePageFilters } from '1_pages/ArticlesPage/ui/ArticlePageFilters/ArticlePageFilters'
 import initArticlesPage from '../../model/services/initArticlesPage/initArticlesPage'
 import fetchNextArticlePage from '../../model/services/fetchNextArticlePage/fetchNextArticlePage'
 import { getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/getArticlesSelectors'
-import { articlePageActions, articlePageReducer, getArticles } from '../../model/slices/articlePageSlice'
+import { articlePageReducer, getArticles } from '../../model/slices/articlePageSlice'
 import cls from './ArticlesPage.module.scss'
 
 export interface ArticlesPageProps {
@@ -29,10 +30,6 @@ const ArticlesPage: FC<ArticlesPageProps> = (props: ArticlesPageProps) => {
   const view = useAppSelector(getArticlesPageView)
 
   const dispatch = useDispatch()
-
-  const onChangeView = useCallback((view: ArticleView) => {
-    dispatch(articlePageActions.setView(view))
-  }, [dispatch])
 
   const onLoadNextPart = useCallback(() => {
     if (__PROJECT__ !== 'storybook') {
@@ -55,15 +52,13 @@ const ArticlesPage: FC<ArticlesPageProps> = (props: ArticlesPageProps) => {
       >
         <h1>{t('Страница со статьями')}</h1>
 
-        <ArticleViewSwitcher
-          view={view}
-          onViewClick={onChangeView}
-        />
+        <ArticlePageFilters />
 
         <ArticleList
           isLoading={isLoading}
           articles={articles}
           view={view}
+          className={cls.list}
         />
 
       </PageWrapper>

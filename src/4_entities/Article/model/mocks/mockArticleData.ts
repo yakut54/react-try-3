@@ -84,4 +84,5 @@ export const mockArticleData: ArticleSchema = {
       ],
     },
   ],
+  search: 'test',
 }

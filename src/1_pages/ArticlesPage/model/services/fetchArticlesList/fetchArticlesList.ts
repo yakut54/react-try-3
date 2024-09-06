@@ -3,7 +3,7 @@ import { AxiosError } from 'axios'
 import { ArticleSchema } from '4_entities/Article'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from '0_app/providers/StoreProvider'
-import { getArticlesPageLimit } from '1_pages/ArticlesPage/model/selectors/getArticlesSelectors'
+import { getArticlesPageLimit } from '../../selectors/getArticlesSelectors'
 
 interface FetchArticlesListProps {
     page?: number
@@ -17,7 +17,7 @@ const fetchArticlesList = createAsyncThunk<
   'articlesPages/fetchArticlesList',
   async (props, thunkAPI) => {
     const {
-      rejectWithValue, extra, dispatch, getState,
+      rejectWithValue, extra, getState,
     } = thunkAPI
     const { page = 1 } = props
     const limit = getArticlesPageLimit(getState())

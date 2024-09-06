@@ -19,5 +19,15 @@
   "Статьи": "Article",
   "Ошибка обновления": "Update error",
   "Ошибка получения статьи": "Error receiving the article",
-  "Ошибка при получении статей": "Error when receiving articles"
+  "Ошибка при получении статей": "Error when receiving articles",
+  "Сортировать ПО": "Sort FROM",
+  "Поиск": "Search",
+  "Возрастанию": "Ascending",
+  "Убыванию": "Descending",
+  "ПО": "ПО",
+  "возрастанию": "ascending",
+  "убыванию": "descending",
+  "просмотрам": "views",
+  "названию": "title",
+  "дате создания": "date creation"
 }

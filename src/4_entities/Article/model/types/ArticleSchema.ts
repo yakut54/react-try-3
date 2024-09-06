@@ -40,12 +40,15 @@ export enum ArticleType {
 
 export type ArticleView = 'tile' | 'list'
 
+export type ArticleSortField = 'views' | 'title' | 'createdAt'
+
 export interface ArticleSchema {
     id: string
     title: string,
     subtitle: string,
     img: string,
     views: number,
+    search: string,
     createdAt: string,
     user: User,
     type: ArticleType[],
