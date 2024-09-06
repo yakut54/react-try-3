@@ -1,6 +1,4 @@
-import {
-  FC, memo, useCallback, useMemo,
-} from 'react'
+import { FC, memo, useMemo } from 'react'
 import { classNames } from '5_shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
 import { Select, SelectOption } from '5_shared/ui/Select/Select'
@@ -28,41 +26,43 @@ export const ArticleSortSelector: FC<ArticleSortSelectorProps> = memo((props: Ar
   } = props
   const { t } = useTranslation()
 
-  const orderOptions = useMemo<SelectOption[]>(() => [
+  const orderOptions = useMemo<SelectOption<SortOrder>[]>(() => [
     { value: 'asc', content: t('возрастанию') },
     { value: 'desc', content: t('убыванию') },
   ], [t])
 
-  const sortFieldOptions = useMemo<SelectOption[]>(() => [
+  const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(() => [
     { value: 'views', content: t('просмотрам') },
     { value: 'title', content: t('названию') },
     { value: 'createdAt', content: t('дате создания') },
   ], [t])
 
-  const changeSortHandler = useCallback((newSort: string) => {
-    onChangeSort(newSort as ArticleSortField)
-  }, [onChangeSort])
-
-  const changeOrderHandler = useCallback((newOrder: string) => {
-    onChangeOrder(newOrder as SortOrder)
-  }, [onChangeOrder])
+  // Так не надо делать!
+  // const changeSortHandler = useCallback((newSort: string) => {
+  //   onChangeSort(newSort as ArticleSortField)
+  // }, [onChangeSort])
+  //
+  // const changeOrderHandler = useCallback((newOrder: string) => {
+  //   onChangeOrder(newOrder as SortOrder)
+  // }, [onChangeOrder])
 
   return (
     <div
       className={classNames(cls['article-sort-selector'], {}, [className])}
     >
-      <Select
+      <Select<ArticleSortField>
         value={sort}
         className={cls.mb}
         label={t('Сортировать ПО')}
         options={sortFieldOptions}
-        onChange={changeSortHandler}
+        onChange={onChangeSort}
       />
-      <Select
+      <Select<SortOrder>
+        className={classNames(cls.order, {}, [cls.mb])}
         value={order}
         label={t('ПО')}
         options={orderOptions}
-        onChange={changeOrderHandler}
+        onChange={onChangeOrder}
       />
     </div>
   )

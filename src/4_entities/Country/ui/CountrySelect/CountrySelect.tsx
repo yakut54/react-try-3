@@ -13,7 +13,7 @@ interface CountrySelectProps {
     isReadonly?: boolean
 }
 
-const options: SelectOption[] = Object.values(Country).map((country) => ({
+const options: SelectOption<Country>[] = Object.values(Country).map((country) => ({
   value: country,
   content: country,
 }))
@@ -36,7 +36,7 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
   }
 
   return (
-    <Select
+    <Select<Country>
       className={classNames('', mods, [className])}
       label={t('Укажите страну')}
       options={options}
@@ -46,4 +46,5 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
     />
   )
 })
+
 CountrySelect.displayName = 'CountrySelect'

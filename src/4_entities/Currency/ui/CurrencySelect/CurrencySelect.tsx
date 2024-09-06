@@ -13,7 +13,7 @@ interface CurrencySelectProps {
     isReadonly?: boolean
 }
 
-const options: SelectOption[] = Object.values(Currency).map((currency) => ({
+const options: SelectOption<Currency>[] = Object.values(Currency).map((currency) => ({
   value: currency,
   content: currency,
 }))
@@ -36,7 +36,7 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
   }
 
   return (
-    <Select
+    <Select<Currency>
       className={classNames('', mods, [className])}
       label={t('Укажите валюту')}
       options={options}
