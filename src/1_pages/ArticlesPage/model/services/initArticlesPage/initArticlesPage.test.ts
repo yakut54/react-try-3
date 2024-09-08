@@ -17,7 +17,7 @@ describe('initArticlesPage', () => {
     await thunk.callThunk()
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(4)
-    expect(fetchArticlesList).toHaveBeenCalledWith({ page: 1 })
+    expect(fetchArticlesList).toHaveBeenCalledWith({})
   })
 
   it('is initial state', async () => {

@@ -8,6 +8,7 @@ import { useAppDispatch, useAppSelector } from '5_shared/lib/hooks/useAppDispatc
 import {
   ArticleSortField, ArticleSortSelector, ArticleView, ArticleViewSwitcher,
 } from '4_entities/Article'
+import fetchArticlesList from '1_pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList'
 import {
   getArticlesPageOrder,
   getArticlesPageSearch,
@@ -22,11 +23,15 @@ interface ArticlePageFiltersProps {
 
 export const ArticlePageFilters: FC<ArticlePageFiltersProps> = memo((props: ArticlePageFiltersProps) => {
   const { className } = props
+  const { t } = useTranslation()
   const dispatch = useAppDispatch()
+  const search = useAppSelector(getArticlesPageSearch)
   const order = useAppSelector(getArticlesPageOrder)
   const sort = useAppSelector(getArticlesPageSort)
-  const search = useAppSelector(getArticlesPageSearch)
-  const { t } = useTranslation()
+
+  const fetchData = useCallback(() => {
+    dispatch(fetchArticlesList({ replace: true }))
+  }, [dispatch])
 
   const onChangeView = useCallback((view: ArticleView) => {
     dispatch(articlePageActions.setView(view))
@@ -34,15 +39,21 @@ export const ArticlePageFilters: FC<ArticlePageFiltersProps> = memo((props: Arti
 
   const onChangeOrder = useCallback((newOrder: SortOrder) => {
     dispatch(articlePageActions.setOrder(newOrder))
-  }, [dispatch])
+    dispatch(articlePageActions.setPage(1))
+    fetchData()
+  }, [dispatch, fetchData])
 
   const onChangeSort = useCallback((newSort: ArticleSortField) => {
     dispatch(articlePageActions.setSort(newSort))
-  }, [dispatch])
+    dispatch(articlePageActions.setPage(1))
+    fetchData()
+  }, [dispatch, fetchData])
 
   const onChangeSearch = useCallback((newSearch: string) => {
     dispatch(articlePageActions.setSearch(newSearch))
-  }, [dispatch])
+    dispatch(articlePageActions.setPage(1))
+    fetchData()
+  }, [dispatch, fetchData])
 
   return (
     <div

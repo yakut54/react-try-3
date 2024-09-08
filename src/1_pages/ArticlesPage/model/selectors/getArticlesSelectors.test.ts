@@ -2,9 +2,13 @@ import { StateSchema } from '0_app/providers/StoreProvider'
 import {
   getArticlesPageError,
   getArticlesPageIsHasMore,
+  getArticlesPageIsInited,
   getArticlesPageIsLoading,
   getArticlesPageLimit,
   getArticlesPageNum,
+  getArticlesPageOrder,
+  getArticlesPageSearch,
+  getArticlesPageSort,
   getArticlesPageView,
 } from '1_pages/ArticlesPage/model/selectors/getArticlesSelectors'
 
@@ -105,5 +109,69 @@ describe('getArticlesPageIsLoading', () => {
     }
 
     expect(getArticlesPageIsHasMore(state as StateSchema)).toEqual(undefined)
+  })
+
+  it('Testing is inited false', () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: { _isInited: false },
+    }
+
+    expect(getArticlesPageIsInited(state as StateSchema)).toEqual(false)
+  })
+
+  it('Testing is inited true', () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: { _isInited: true },
+    }
+
+    expect(getArticlesPageIsInited(state as StateSchema)).toEqual(true)
+  })
+
+  it('Testing page order "asc"', () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: { order: 'asc' },
+    }
+
+    expect(getArticlesPageOrder(state as StateSchema)).toEqual('asc')
+  })
+
+  it('Testing page order "desc"', () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: { order: 'desc' },
+    }
+
+    expect(getArticlesPageOrder(state as StateSchema)).toEqual('desc')
+  })
+
+  it('Testing page sort "createdAt"', () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: { sort: 'createdAt' },
+    }
+
+    expect(getArticlesPageSort(state as StateSchema)).toEqual('createdAt')
+  })
+
+  it('Testing page sort "title"', () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: { sort: 'title' },
+    }
+
+    expect(getArticlesPageSort(state as StateSchema)).toEqual('title')
+  })
+
+  it('Testing page sort "views"', () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: { sort: 'views' },
+    }
+
+    expect(getArticlesPageSort(state as StateSchema)).toEqual('views')
+  })
+
+  it('Testing page Search', () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: { search: 'some search text' },
+    }
+
+    expect(getArticlesPageSearch(state as StateSchema)).toEqual('some search text')
   })
 })

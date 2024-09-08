@@ -3,33 +3,46 @@ import { AxiosError } from 'axios'
 import { ArticleSchema } from '4_entities/Article'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from '0_app/providers/StoreProvider'
-import { getArticlesPageLimit } from '../../selectors/getArticlesSelectors'
+import {
+  getArticlesPageLimit,
+  getArticlesPageNum,
+  getArticlesPageOrder,
+  getArticlesPageSearch,
+  getArticlesPageSort,
+} from '../../selectors/getArticlesSelectors'
 
-interface FetchArticlesListProps {
-    page?: number
+export interface fetchArticlesListProps {
+    replace?: boolean
 }
 
 const fetchArticlesList = createAsyncThunk<
     ArticleSchema[],
-    FetchArticlesListProps,
+    fetchArticlesListProps,
     ThunkConfig<string>
 >(
   'articlesPages/fetchArticlesList',
-  async (props, thunkAPI) => {
+  async (_, thunkAPI) => {
     const {
       rejectWithValue, extra, getState,
     } = thunkAPI
-    const { page = 1 } = props
+
+    const page = getArticlesPageNum(getState())
     const limit = getArticlesPageLimit(getState())
+    const search = getArticlesPageSearch(getState())
+    const order = getArticlesPageOrder(getState())
+    const sort = getArticlesPageSort(getState())
+
+    const params = {
+      q: search,
+      _page: page,
+      _sort: sort,
+      _order: order,
+      _limit: limit,
+      _expand: 'user',
+    }
 
     try {
-      const response = await extra.api.get<ArticleSchema[]>('/articles', {
-        params: {
-          _expand: 'user',
-          _limit: limit,
-          _page: page,
-        },
-      })
+      const response = await extra.api.get<ArticleSchema[]>('/articles', { params })
 
       return response.data
     } catch (e) {

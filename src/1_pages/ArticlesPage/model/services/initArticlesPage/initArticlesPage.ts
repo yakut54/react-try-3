@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from '0_app/providers/StoreProvider'
-import { getArticlesPageIsInited } from '1_pages/ArticlesPage/model/selectors/getArticlesSelectors'
-import { articlePageActions } from '1_pages/ArticlesPage/model/slices/articlePageSlice'
-import fetchArticlesList from '1_pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList'
+import { articlePageActions } from '../../slices/articlePageSlice'
+import fetchArticlesList from '../fetchArticlesList/fetchArticlesList'
+import { getArticlesPageIsInited } from '../../selectors/getArticlesSelectors'
 
 const initArticlesPage = createAsyncThunk<
     void,
@@ -18,7 +18,7 @@ const initArticlesPage = createAsyncThunk<
     const isInited = getArticlesPageIsInited(getState())
     if (!isInited) {
       dispatch(articlePageActions.initState())
-      dispatch(fetchArticlesList({ page: 1 }))
+      dispatch(fetchArticlesList({}))
     }
   },
   {},

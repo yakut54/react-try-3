@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 
-export function useInitialEffect(cb: () => void) {
+export function useInitialEffect(callback: () => void) {
   useEffect(() => {
     if (__PROJECT__ !== 'storybook') {
-      cb()
+      callback()
     }
   }, [])
 }
