@@ -9,6 +9,7 @@ import {
   ArticleSortField, ArticleSortSelector, ArticleView, ArticleViewSwitcher,
 } from '4_entities/Article'
 import fetchArticlesList from '1_pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList'
+import { useDebounce } from '5_shared/lib/hooks/useDebounce/useDebounce'
 import {
   getArticlesPageOrder,
   getArticlesPageSearch,
@@ -49,11 +50,13 @@ export const ArticlePageFilters: FC<ArticlePageFiltersProps> = memo((props: Arti
     fetchData()
   }, [dispatch, fetchData])
 
+  const debouncedFetchData = useDebounce(fetchData, 500)
+
   const onChangeSearch = useCallback((newSearch: string) => {
     dispatch(articlePageActions.setSearch(newSearch))
     dispatch(articlePageActions.setPage(1))
-    fetchData()
-  }, [dispatch, fetchData])
+    debouncedFetchData()
+  }, [debouncedFetchData, dispatch])
 
   return (
     <div

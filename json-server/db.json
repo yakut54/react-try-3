@@ -250,7 +250,7 @@
       "title": "Kotlin news",
       "subtitle": "Что нового в Kotlin за 2024 год?",
       "img": "https://firebasestorage.googleapis.com/v0/b/flutter-flow-54.appspot.com/o/kotlin.png?alt=media&token=ce47f93e-5c64-462d-a51e-c5b74ad4e5d2",
-      "views": 1300,
+      "views": 13040,
       "createdAt": "30.08.2024",
       "userId": "4",
       "type": [
@@ -319,7 +319,7 @@
       "title": "Perl news",
       "subtitle": "Что нового в Perl за 2024 год?",
       "img": "https://firebasestorage.googleapis.com/v0/b/flutter-flow-54.appspot.com/o/Perl.webp?alt=media&token=93be923b-26c1-4ecb-86f1-faa43c6db558",
-      "views": 980,
+      "views": 22980,
       "createdAt": "04.08.2024",
       "userId": "3",
       "type": [
@@ -388,7 +388,7 @@
       "title": "Objective-C news",
       "subtitle": "Что нового в Objective-C за 2024 год?",
       "img": "https://firebasestorage.googleapis.com/v0/b/flutter-flow-54.appspot.com/o/Objective-C.webp?alt=media&token=68e7e5e3-d97a-49f5-8e93-961947946f29",
-      "views": 1100,
+      "views": 3100,
       "createdAt": "29.08.2024",
       "userId": "2",
       "type": [
@@ -411,7 +411,7 @@
       "title": "Lua news",
       "subtitle": "Что нового в Lua за 2024 год?",
       "img": "https://firebasestorage.googleapis.com/v0/b/flutter-flow-54.appspot.com/o/lua.jpg?alt=media&token=12b3d2bf-56f9-468c-ae68-3471fa6b683b",
-      "views": 925,
+      "views": 7925,
       "createdAt": "16.08.2024",
       "userId": "3",
       "type": [
@@ -457,7 +457,7 @@
       "title": "MATLAB news",
       "subtitle": "Что нового в MATLAB за 2024 год?",
       "img": "https://firebasestorage.googleapis.com/v0/b/flutter-flow-54.appspot.com/o/MATLAB.webp?alt=media&token=258db2b4-44d6-439a-accd-95cc09a60101",
-      "views": 1150,
+      "views": 7150,
       "createdAt": "07.08.2024",
       "userId": "1",
       "type": [
@@ -503,7 +503,7 @@
       "title": "Scheme news",
       "subtitle": "Что нового в Scheme за 2024 год?",
       "img": "https://firebasestorage.googleapis.com/v0/b/flutter-flow-54.appspot.com/o/Scheme.png?alt=media&token=cde00b65-0aeb-435d-beec-d9c15f654823",
-      "views": 1135,
+      "views": 8135,
       "createdAt": "18.08.2024",
       "userId": "3",
       "type": [
@@ -572,7 +572,30 @@
       "title": "Ada news",
       "subtitle": "Что нового в Ada за 2024 год?",
       "img": "https://firebasestorage.googleapis.com/v0/b/flutter-flow-54.appspot.com/o/Ada.webp?alt=media&token=59ee9047-961a-466f-9c16-5b8aaa498a79",
-      "views": 880,
+      "views": 2880,
+      "createdAt": "31.08.2024",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Ada в 2024 году представил несколько обновлений, направленных на улучшение поддержки безопасного программирования и интеграции с современными стандартами. Одним из ключевых улучшений является расширение возможностей работы с многопоточностью и улучшение производительности компилятора.",
+            "Также стоит отметить новые функции для работы с объектами и улучшение интеграции с другими языками. Эти изменения помогают разработчикам создавать более надежные и эффективные программные решения, используя преимущества языка Ada."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "title": "Ada news",
+      "subtitle": "Что нового в Ada за 2024 год?",
+      "img": "https://firebasestorage.googleapis.com/v0/b/flutter-flow-54.appspot.com/o/Ada.webp?alt=media&token=59ee9047-961a-466f-9c16-5b8aaa498a79",
+      "views": 2880,
       "createdAt": "31.08.2024",
       "userId": "2",
       "type": [
@@ -734,6 +757,12 @@
       "userId": "4",
       "articleId": "4",
       "id": "aXccVLt"
+    },
+    {
+      "text": "trert",
+      "userId": "4",
+      "articleId": "11",
+      "id": "8uTQQuc"
     }
   ],
   "users": [

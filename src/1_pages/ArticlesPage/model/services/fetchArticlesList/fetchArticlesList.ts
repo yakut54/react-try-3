@@ -3,6 +3,7 @@ import { AxiosError } from 'axios'
 import { ArticleSchema } from '4_entities/Article'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from '0_app/providers/StoreProvider'
+import { addQueryParams } from '5_shared/lib/url/addQueryParams/addQueryParams'
 import {
   getArticlesPageLimit,
   getArticlesPageNum,
@@ -42,6 +43,9 @@ const fetchArticlesList = createAsyncThunk<
     }
 
     try {
+      addQueryParams({
+        sort, order, search,
+      })
       const response = await extra.api.get<ArticleSchema[]>('/articles', { params })
 
       return response.data
