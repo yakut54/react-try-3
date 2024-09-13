@@ -8,8 +8,8 @@ import { useAppDispatch, useAppSelector } from '5_shared/lib/hooks/useAppDispatc
 import {
   ArticleSortField, ArticleSortSelector, ArticleView, ArticleViewSwitcher,
 } from '4_entities/Article'
-import fetchArticlesList from '1_pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList'
 import { useDebounce } from '5_shared/lib/hooks/useDebounce/useDebounce'
+import fetchArticlesList from '../../model/services/fetchArticlesList/fetchArticlesList'
 import {
   getArticlesPageOrder,
   getArticlesPageSearch,

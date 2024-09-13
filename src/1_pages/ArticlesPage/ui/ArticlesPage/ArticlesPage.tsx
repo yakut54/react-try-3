@@ -1,7 +1,8 @@
-import { FC, memo, useCallback } from 'react'
 import { useDispatch } from 'react-redux'
+import { FC, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ArticleList } from '4_entities/Article'
+import { useSearchParams } from 'react-router-dom'
 import { classNames } from '5_shared/lib/classNames/classNames'
 import { PageWrapper } from '2_widgets/PageWrapper/PageWrapper'
 import { useAppSelector } from '5_shared/lib/hooks/useAppDispatch/useAppDispatch'
@@ -24,11 +25,11 @@ const reducers: ReducersList = {
 
 const ArticlesPage: FC<ArticlesPageProps> = (props: ArticlesPageProps) => {
   const { className } = props
+  const [searchParams] = useSearchParams()
   const { t } = useTranslation('article-details')
   const articles = useAppSelector(getArticles.selectAll)
   const isLoading = useAppSelector(getArticlesPageIsLoading)
   const view = useAppSelector(getArticlesPageView)
-
   const dispatch = useDispatch()
 
   const onLoadNextPart = useCallback(() => {
@@ -38,7 +39,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props: ArticlesPageProps) => {
   }, [dispatch])
 
   useInitialEffect(() => {
-    dispatch(initArticlesPage())
+    dispatch(initArticlesPage(searchParams))
   })
 
   return (
