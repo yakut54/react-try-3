@@ -91,7 +91,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props: ArticleLis
         [className, cls[view]],
       )}
     >
-      <Card className={cls.card} onClick={onOpenArticle}>
+      <Card className={classNames(cls.card, {}, [cls.max])} onClick={onOpenArticle}>
         <div className={cls['image-wrapper']}>
           <img src={article.img} alt={article.title} className={cls.img} />
           <Text text={article.createdAt} className={cls.date} />

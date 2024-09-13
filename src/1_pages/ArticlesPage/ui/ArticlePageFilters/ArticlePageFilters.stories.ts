@@ -4,7 +4,7 @@ import { Theme } from '0_app/providers/ThemeProvider'
 import { ArticlePageFilters } from './ArticlePageFilters'
 
 const meta: Meta<typeof ArticlePageFilters> = {
-  title: 'Shared/ArticlePageFilters',
+  title: 'Pages/Articles/ArticlePageFilters',
   component: ArticlePageFilters,
 }
 

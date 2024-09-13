@@ -1,4 +1,6 @@
-import { FC, memo, useCallback } from 'react'
+import {
+  FC, memo, useCallback, useMemo,
+} from 'react'
 import { Card } from '5_shared/ui/Card/Card'
 import { useTranslation } from 'react-i18next'
 import { Input } from '5_shared/ui/Input/Input'
@@ -9,6 +11,7 @@ import {
   ArticleSortField, ArticleSortSelector, ArticleView, ArticleViewSwitcher,
 } from '4_entities/Article'
 import { useDebounce } from '5_shared/lib/hooks/useDebounce/useDebounce'
+import { TabItem, Tabs } from '5_shared/ui/Tabs/Tabs'
 import fetchArticlesList from '../../model/services/fetchArticlesList/fetchArticlesList'
 import {
   getArticlesPageOrder,
@@ -58,6 +61,8 @@ export const ArticlePageFilters: FC<ArticlePageFiltersProps> = memo((props: Arti
     debouncedFetchData()
   }, [debouncedFetchData, dispatch])
 
+  const typeTabs = useMemo<TabItem[]>(() => [{ value: '44', content: '666' }], [])
+
   return (
     <div
       className={classNames(cls['article-page-filters'], {}, [className])}
@@ -81,6 +86,12 @@ export const ArticlePageFilters: FC<ArticlePageFiltersProps> = memo((props: Arti
           placeholder={t('Поиск')}
         />
       </Card>
+      <Tabs
+        tabs={typeTabs}
+        value="44"
+        onTabClick={() => {
+        }}
+      />
     </div>
   )
 })
