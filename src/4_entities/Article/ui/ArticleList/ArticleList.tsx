@@ -32,17 +32,10 @@ export const ArticleList: FC<ArticleListProps> = memo((props: ArticleListProps) 
   } = props
   const { t } = useTranslation('article-details')
 
-  const renderArticle = (article: ArticleSchema) => (
-    <ArticleListItem
-      view={view}
-      key={article.id}
-      article={article}
-    />
-  )
-
   if (!isLoading && !articles.length) {
     return (
       <div
+        data-testid="article-not-found"
         className={classNames(cls['article-list'], {}, [className, cls[view]])}
       >
         <Text
@@ -55,11 +48,18 @@ export const ArticleList: FC<ArticleListProps> = memo((props: ArticleListProps) 
 
   return (
     <div
+      data-testid="article-list"
       className={classNames(cls['article-list'], {}, [className, cls[view]])}
     >
       {
         articles.length > 0
-          ? articles.map(renderArticle)
+          ? articles.map((article: ArticleSchema) => (
+            <ArticleListItem
+              view={view}
+              key={article.id}
+              article={article}
+            />
+          ))
           : null
       }
       {
