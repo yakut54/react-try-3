@@ -29,5 +29,10 @@
   "убыванию": "descending",
   "просмотрам": "views",
   "названию": "title",
-  "дате создания": "date creation"
+  "дате создания": "date creation",
+  "АйТи": "IT",
+  "Все статьи": "All articles",
+  "Наука": "Science",
+  "Экономика": "Economics",
+  "Политика": "Politics"
 }

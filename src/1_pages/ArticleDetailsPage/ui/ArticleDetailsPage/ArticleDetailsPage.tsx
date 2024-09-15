@@ -59,7 +59,9 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props: ArticleDetailsPa
         >
           {t('Назад к списку статей')}
         </Button>
+
         <ArticleDetails id={id} />
+
         <div className={classNames(cls['inverted-bg'], {}, [cls.mt])}>
           <Text
             mb={TextMarginBottom.MB2}

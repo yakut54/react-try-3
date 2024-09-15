@@ -1,6 +1,6 @@
 import i18n from 'i18next'
 import { AxiosError } from 'axios'
-import { ArticleSchema } from '4_entities/Article'
+import { ArticleSchema, ArticleType } from '4_entities/Article'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from '0_app/providers/StoreProvider'
 import { addQueryParams } from '5_shared/lib/url/addQueryParams/addQueryParams'
@@ -10,6 +10,7 @@ import {
   getArticlesPageOrder,
   getArticlesPageSearch,
   getArticlesPageSort,
+  getArticlesPageType,
 } from '../../selectors/getArticlesSelectors'
 
 export interface fetchArticlesListProps {
@@ -32,24 +33,27 @@ const fetchArticlesList = createAsyncThunk<
     const search = getArticlesPageSearch(getState())
     const order = getArticlesPageOrder(getState())
     const sort = getArticlesPageSort(getState())
-
-    const params = {
-      q: search,
-      _page: page,
-      _sort: sort,
-      _order: order,
-      _limit: limit,
-      _expand: 'user',
-    }
+    const type = getArticlesPageType(getState())
 
     try {
       addQueryParams({
+        type,
         sort,
         order,
         search,
       })
 
-      const response = await extra.api.get<ArticleSchema[]>('/articles', { params })
+      const response = await extra.api.get<ArticleSchema[]>('/articles', {
+        params: {
+          q: search,
+          _page: page,
+          _sort: sort,
+          _order: order,
+          _limit: limit,
+          _expand: 'user',
+          type: type === ArticleType.ALL ? undefined : type,
+        },
+      })
 
       return response.data
     } catch (e) {

@@ -21,7 +21,9 @@
       "createdAt": "26.04.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "SCIENCE",
+        "IT",
+        "POLITICS"
       ],
       "blocks": [
         {
@@ -93,7 +95,8 @@
       "createdAt": "05.08.2024",
       "userId": "1",
       "type": [
-        "IT"
+        "SCIENCE",
+        "POLITICS"
       ],
       "blocks": [
         {
@@ -116,7 +119,7 @@
       "createdAt": "12.08.2024",
       "userId": "2",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -139,6 +142,7 @@
       "createdAt": "19.08.2024",
       "userId": "3",
       "type": [
+        "ECONOMICS",
         "IT"
       ],
       "blocks": [
@@ -162,6 +166,7 @@
       "createdAt": "26.08.2024",
       "userId": "4",
       "type": [
+        "ECONOMICS",
         "IT"
       ],
       "blocks": [
@@ -185,7 +190,7 @@
       "createdAt": "02.08.2024",
       "userId": "1",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -208,7 +213,9 @@
       "createdAt": "14.08.2024",
       "userId": "2",
       "type": [
-        "IT"
+        "SCIENCE",
+        "ECONOMICS",
+        "POLITICS"
       ],
       "blocks": [
         {
@@ -231,7 +238,10 @@
       "createdAt": "21.08.2024",
       "userId": "3",
       "type": [
-        "IT"
+        "IT",
+        "SCIENCE",
+        "ECONOMICS",
+        "POLITICS"
       ],
       "blocks": [
         {
@@ -254,7 +264,7 @@
       "createdAt": "30.08.2024",
       "userId": "4",
       "type": [
-        "IT"
+        "POLITICS"
       ],
       "blocks": [
         {
@@ -277,7 +287,10 @@
       "createdAt": "09.08.2024",
       "userId": "1",
       "type": [
-        "IT"
+        "IT",
+        "SCIENCE",
+        "ECONOMICS",
+        "POLITICS"
       ],
       "blocks": [
         {
@@ -300,7 +313,10 @@
       "createdAt": "22.08.2024",
       "userId": "2",
       "type": [
-        "IT"
+        "IT",
+        "SCIENCE",
+        "ECONOMICS",
+        "POLITICS"
       ],
       "blocks": [
         {
@@ -323,7 +339,9 @@
       "createdAt": "04.08.2024",
       "userId": "3",
       "type": [
-        "IT"
+        "IT",
+        "ECONOMICS",
+        "POLITICS"
       ],
       "blocks": [
         {
@@ -346,7 +364,8 @@
       "createdAt": "13.08.2024",
       "userId": "4",
       "type": [
-        "IT"
+        "IT",
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -369,7 +388,8 @@
       "createdAt": "20.08.2024",
       "userId": "1",
       "type": [
-        "IT"
+        "IT",
+        "SCIENCE"
       ],
       "blocks": [
         {

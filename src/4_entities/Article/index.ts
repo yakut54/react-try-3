@@ -1,5 +1,7 @@
 export type { ArticleDetailsSchema } from './model/types/ArticleDetailsSchema'
 export type { ArticleSortField, ArticleView, ArticleSchema } from './model/types/ArticleSchema'
+export { ArticleType } from './model/types/ArticleSchema'
+export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs'
 export { getArticleDetailsData } from './model/selectors/getArticleDetails'
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails'
 export { ArticleList } from './ui/ArticleList/ArticleList'

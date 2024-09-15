@@ -9,8 +9,10 @@ import {
   getArticlesPageOrder,
   getArticlesPageSearch,
   getArticlesPageSort,
+  getArticlesPageType,
   getArticlesPageView,
 } from '1_pages/ArticlesPage/model/selectors/getArticlesSelectors'
+import { ArticleType } from '4_entities/Article'
 
 describe('getArticlesPageIsLoading', () => {
   it('isLoading: false', () => {
@@ -173,5 +175,13 @@ describe('getArticlesPageIsLoading', () => {
     }
 
     expect(getArticlesPageSearch(state as StateSchema)).toEqual('some search text')
+  })
+
+  it('Testing page Type', () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: { type: ArticleType.ALL },
+    }
+
+    expect(getArticlesPageType(state as StateSchema)).toEqual(ArticleType.ALL)
   })
 })

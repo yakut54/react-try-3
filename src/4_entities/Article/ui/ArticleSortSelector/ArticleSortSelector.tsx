@@ -37,15 +37,6 @@ export const ArticleSortSelector: FC<ArticleSortSelectorProps> = memo((props: Ar
     { value: 'createdAt', content: t('дате создания') },
   ], [t])
 
-  // Так не надо делать!
-  // const changeSortHandler = useCallback((newSort: string) => {
-  //   onChangeSort(newSort as ArticleSortField)
-  // }, [onChangeSort])
-  //
-  // const changeOrderHandler = useCallback((newOrder: string) => {
-  //   onChangeOrder(newOrder as SortOrder)
-  // }, [onChangeOrder])
-
   return (
     <div
       className={classNames(cls['article-sort-selector'], {}, [className])}

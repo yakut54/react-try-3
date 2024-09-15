@@ -1,30 +1,31 @@
-import {
-  FC, memo, ReactNode, useCallback,
-} from 'react'
+import { ReactNode, useCallback } from 'react'
 import { classNames } from '5_shared/lib/classNames/classNames'
 import { Card, CardTheme } from '../Card/Card'
 import cls from './Tabs.module.scss'
 
-export interface TabItem {
-    value: string
+export interface TabItem<T extends string> {
+    value: T
     content: ReactNode
 }
 
-export interface TabsProps {
+export interface TabsProps<T extends string> {
     className?: string
-    tabs: TabItem[]
-    value: string
+    tabs: TabItem<T>[]
+    value: T
     // eslint-disable-next-line no-unused-vars
-    onTabClick: (tab: TabItem) => void
+    onTabClick: (tab: TabItem<T>) => void
 }
 
-export const Tabs: FC<TabsProps> = memo((props: TabsProps) => {
+export const Tabs = <T extends string>(props: TabsProps<T>) => {
   const {
-    className, tabs, onTabClick, value,
+    className,
+    tabs,
+    onTabClick,
+    value,
   } = props
 
-  const onClickHandle = useCallback((tab: TabItem) => () => {
-    onTabClick(tab)
+  const onClickHandle = useCallback((tab: TabItem<T>) => () => {
+    onTabClick(tab as TabItem<T>)
   }, [onTabClick])
 
   return (
@@ -33,19 +34,16 @@ export const Tabs: FC<TabsProps> = memo((props: TabsProps) => {
     >
       {tabs.map((tab) => (
         <Card
-          onClick={() => onClickHandle(tab)}
+          onClick={onClickHandle(tab)}
           theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINED}
           className={cls.tab}
           key={tab.value}
         >
-          {tab.value}
-          {' '}
-          <br />
           {tab.content}
         </Card>
       ))}
     </div>
   )
-})
+}
 
 Tabs.displayName = 'Tabs'

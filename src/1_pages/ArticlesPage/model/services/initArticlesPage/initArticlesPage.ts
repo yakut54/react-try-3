@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from '0_app/providers/StoreProvider'
 import { SortOrder } from '5_shared/types/SortOrder'
-import { ArticleSortField } from '4_entities/Article'
+import { ArticleSortField, ArticleType } from '4_entities/Article'
 import { articlePageActions } from '../../slices/articlePageSlice'
 import fetchArticlesList from '../fetchArticlesList/fetchArticlesList'
 import { getArticlesPageIsInited } from '../../selectors/getArticlesSelectors'
@@ -22,18 +22,14 @@ const initArticlesPage = createAsyncThunk<
     if (!isInited) {
       searchParams.forEach((value, key) => {
         if (key) {
-          switch (key) {
-          case 'sort':
+          if (key === 'sort') {
             dispatch(articlePageActions.setSort(value as ArticleSortField))
-            break
-          case 'order':
+          } else if (key === 'order') {
             dispatch(articlePageActions.setOrder(value as SortOrder))
-            break
-          case 'search':
+          } else if (key === 'search') {
             dispatch(articlePageActions.setSearch(value))
-            break
-          default:
-            console.log(`Неизвестный ключ: ${key}`)
+          } else if (key === 'type') {
+            dispatch(articlePageActions.setType(value as ArticleType))
           }
         }
       })

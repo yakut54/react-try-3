@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import {
   FC, HTMLAttributes, memo, ReactNode,
 } from 'react'
@@ -16,11 +17,14 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const Card: FC<CardProps> = memo((props: CardProps) => {
-  const { className, children, theme = CardTheme.NORMAL } = props
+  const {
+    className, children, theme = CardTheme.NORMAL, ...otherProps
+  } = props
 
   return (
     <div
       className={classNames(cls.card, {}, [className, cls[theme]])}
+      {...otherProps}
     >
       {children}
     </div>

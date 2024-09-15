@@ -31,6 +31,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props: ArticleLis
   const navigate = useNavigate()
 
   const onOpenArticle = useCallback(() => {
+    console.log(123)
     navigate(RoutePath.article_details + article.id)
   }, [article.id, navigate])
 
@@ -85,13 +86,16 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props: ArticleLis
   return (
     <div
       data-testid="tile-item"
+      onClick={onOpenArticle}
       className={classNames(
         cls['article-list-item'],
         {},
         [className, cls[view]],
       )}
     >
-      <Card className={classNames(cls.card, {}, [cls.max])} onClick={onOpenArticle}>
+      <Card
+        className={classNames(cls.card, {}, [cls.max])}
+      >
         <div className={cls['image-wrapper']}>
           <img src={article.img} alt={article.title} className={cls.img} />
           <Text text={article.createdAt} className={cls.date} />
