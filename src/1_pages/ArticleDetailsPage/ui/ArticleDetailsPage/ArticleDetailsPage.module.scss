@@ -14,3 +14,12 @@
 .mt {
   margin-top: 20px;
 }
+
+.recommendations {
+  margin-bottom: 2%;
+  padding-bottom: 2%;
+  display: flex !important;
+  flex-wrap: nowrap;
+  overflow: auto hidden;
+  grid-template-columns: unset;
+}

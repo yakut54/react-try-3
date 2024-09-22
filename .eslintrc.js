@@ -48,6 +48,7 @@ module.exports = {
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx', '.tsx'] }],
     'react/jsx-no-useless-fragment': 'off',
     'react/no-array-index-key': 'off',
+    'arrow-body-style': 'off',
     'no-undef': 'off',
     'i18next/no-literal-string': [
       'error',
@@ -67,6 +68,11 @@ module.exports = {
     {
       files: [
         '**/src/**/*.{test,stories}.{ts,tsx}',
+      ],
+    },
+    {
+      files: [
+        '**/src/**/*.{test,stories}.{ts,tsx}',
         '**/src/**/mocks/*.{ts,tsx}',
         '**/src/**/ArticleDetailsPage/**/*.{ts,tsx}',
       ],
@@ -76,7 +82,7 @@ module.exports = {
       },
     },
     {
-      files: ['**/src/**/slices/*.{ts,tsx}'],
+      files: ['**/src/**/slices/**/*.{ts,tsx}'],
       rules: {
         'no-param-reassign': [
           'error',

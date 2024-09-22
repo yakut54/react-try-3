@@ -1,7 +1,7 @@
 import { ArticleDetailsSchema } from '4_entities/Article'
-import { comments, ids } from '../mocks/commentsData'
-import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId'
-import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema'
+import { comments, ids } from '../../mocks/commentsData'
+import { fetchCommentsByArticleId } from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId'
+import { ArticleDetailsCommentsSchema } from '../../types/ArticleDetailsCommentsSchema'
 import { articleDetailsCommentsReducer } from './articleDetailsCommentsSlice'
 
 const entities = {

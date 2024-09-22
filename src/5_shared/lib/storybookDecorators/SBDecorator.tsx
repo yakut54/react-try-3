@@ -1,18 +1,18 @@
 import { Suspense } from 'react'
-import type { StoryFn } from '@storybook/react/'
-import { AppLoader } from '5_shared/ui/AppLoader/AppLoader'
-import { Theme, ThemeProvider } from '0_app/providers/ThemeProvider'
-import { loginReducer } from '3_features/AuthByUsername/model/slices/loginSlice'
-import { profileReducer } from '4_entities/Profile'
 import { BrowserRouter } from 'react-router-dom'
+import type { StoryFn } from '@storybook/react/'
+import { profileReducer } from '4_entities/Profile'
+import { AppLoader } from '5_shared/ui/AppLoader/AppLoader'
 import type { StateSchema } from '0_app/providers/StoreProvider'
 import { StoreProvider } from '0_app/providers/StoreProvider'
+import { Theme, ThemeProvider } from '0_app/providers/ThemeProvider'
+import { loginReducer } from '3_features/AuthByUsername/model/slices/loginSlice'
 import type { componentRenderOptions } from '5_shared/lib/tests/RenderWithRouter'
-import type { ReducersList } from '5_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { articleDetailsPageReducer } from '1_pages/ArticleDetailsPage/model/slices'
+import { articlePageReducer } from '1_pages/ArticlesPage/model/slices/articlePageSlice'
 import { articleDetailsReducer } from '4_entities/Article/model/slices/articleDetailsSlice'
 import { addCommentFormReducer } from '3_features/AddCommentForm/model/slices/addCommentFormSlice'
-import { articleDetailsCommentsReducer } from '1_pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice'
-import { articlePageReducer } from '1_pages/ArticlesPage/model/slices/articlePageSlice'
+import type { ReducersList } from '5_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
@@ -20,7 +20,7 @@ const defaultAsyncReducers: ReducersList = {
   articleDetails: articleDetailsReducer,
   addCommentForm: addCommentFormReducer,
   articlesPage: articlePageReducer,
-  articleDetailsComments: articleDetailsCommentsReducer,
+  articleDetailsPage: articleDetailsPageReducer,
 }
 
 export const SBDecorator = (

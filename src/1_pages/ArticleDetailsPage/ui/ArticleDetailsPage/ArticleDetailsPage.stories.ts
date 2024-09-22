@@ -20,11 +20,13 @@ export const ArticleDetailsPageLight: Story = {
       articleDetails: {
         data: mockArticleData,
       },
-      articleDetailsComments: {
-        ids: ['1', '2'],
-        entities: {
-          1: mockCommentData,
-          2: { ...mockCommentData, id: '2' },
+      articleDetailsPage: {
+        comments: {
+          ids: ['1', '2'],
+          entities: {
+            1: mockCommentData,
+            2: { ...mockCommentData, id: '2' },
+          },
         },
       },
     },
@@ -38,11 +40,13 @@ export const ArticleDetailsPageDark: Story = {
       articleDetails: {
         data: mockArticleData,
       },
-      articleDetailsComments: {
-        ids: ['1', '2'],
-        entities: {
-          1: mockCommentData,
-          2: { ...mockCommentData, id: '2' },
+      articleDetailsPage: {
+        comments: {
+          ids: ['1', '2'],
+          entities: {
+            1: mockCommentData,
+            2: { ...mockCommentData, id: '2' },
+          },
         },
       },
     },

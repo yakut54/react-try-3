@@ -1,8 +1,8 @@
 import { FC, memo } from 'react'
 import { classNames } from '5_shared/lib/classNames/classNames'
-import { ArticleListItemSkeleton } from '4_entities/Article/ui/ArticleListItem/ArticleListItemSkeleton'
 import { Text, TextSize } from '5_shared/ui/Text/Text'
 import { useTranslation } from 'react-i18next'
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleSchema, ArticleView } from '../../model/types/ArticleSchema'
 import cls from './ArticleList.module.scss'
@@ -49,7 +49,13 @@ export const ArticleList: FC<ArticleListProps> = memo((props: ArticleListProps) 
   return (
     <div
       data-testid="article-list"
-      className={classNames(cls['article-list'], {}, [className, cls[view]])}
+      className={
+        classNames(
+          cls['article-list'],
+          {},
+          [className, cls[view], cls.mb],
+        )
+      }
     >
       {
         articles.length > 0

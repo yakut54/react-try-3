@@ -7,11 +7,11 @@ export interface ArticlesPageSchema extends EntityState<ArticleSchema> {
     isLoading?: boolean
     error?: string
     // filter
+    search: string,
     order: SortOrder
+    type: ArticleType
     view: ArticleView
     sort: ArticleSortField
-    search: string,
-    type: ArticleType
     // pagination
     page: number
     limit: number

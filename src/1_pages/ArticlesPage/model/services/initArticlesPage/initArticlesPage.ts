@@ -7,8 +7,8 @@ import fetchArticlesList from '../fetchArticlesList/fetchArticlesList'
 import { getArticlesPageIsInited } from '../../selectors/getArticlesSelectors'
 
 const initArticlesPage = createAsyncThunk<
-    void,
-    URLSearchParams,
+    void, // returned
+    URLSearchParams, // props
     ThunkConfig<string>
 >(
   'articlesPage/initArticlesPage',

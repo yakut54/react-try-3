@@ -17,17 +17,20 @@ export const getArticles = articleAdapter.getSelectors<StateSchema>(
 const initialState = articleAdapter.getInitialState<ArticlesPageSchema>({
   ids: [],
   entities: {},
-  view: 'list',
-  isMore: true,
-  error: undefined,
   isLoading: false,
-  page: 1,
-  _isInited: false,
-  order: 'desc',
-  limit: 18,
-  sort: 'createdAt',
-  type: ArticleType.ALL,
+  error: undefined,
+  // filter
   search: '',
+  order: 'desc',
+  type: ArticleType.ALL,
+  view: 'list',
+  sort: 'createdAt',
+  // pagination
+  page: 1,
+  limit: 18,
+  isMore: true,
+  // init
+  _isInited: false,
 })
 
 export const articlePageSlice = createSlice({

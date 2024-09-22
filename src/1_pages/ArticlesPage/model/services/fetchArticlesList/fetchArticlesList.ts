@@ -23,7 +23,7 @@ const fetchArticlesList = createAsyncThunk<
     ThunkConfig<string>
 >(
   'articlesPages/fetchArticlesList',
-  async (_, thunkAPI) => {
+  async (props, thunkAPI) => {
     const {
       rejectWithValue, extra, getState,
     } = thunkAPI
@@ -37,10 +37,7 @@ const fetchArticlesList = createAsyncThunk<
 
     try {
       addQueryParams({
-        type,
-        sort,
-        order,
-        search,
+        type, sort, order, search,
       })
 
       const response = await extra.api.get<ArticleSchema[]>('/articles', {
