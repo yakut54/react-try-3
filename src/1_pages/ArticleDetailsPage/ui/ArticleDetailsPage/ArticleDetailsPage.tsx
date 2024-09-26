@@ -73,6 +73,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props: ArticleDetailsPa
         <div className={classNames(cls['inverted-bg'], {}, [cls.mt])}>
           <Text title={t('Рекомендуем')} className={cls['comment-title']} />
           <ArticleList
+            target="_blank"
             className={cls.recommendations}
             articles={recommendations}
             isLoading={recommendationsIsLoading}

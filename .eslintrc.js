@@ -57,6 +57,7 @@ module.exports = {
         ignoreAttribute: [
           'to',
           'view',
+          'target',
           'fallback',
           'reducerKey',
           'data-testid',

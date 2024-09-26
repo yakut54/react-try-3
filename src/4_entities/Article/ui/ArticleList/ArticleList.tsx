@@ -1,4 +1,4 @@
-import { FC, memo } from 'react'
+import { FC, HTMLAttributeAnchorTarget, memo } from 'react'
 import { classNames } from '5_shared/lib/classNames/classNames'
 import { Text, TextSize } from '5_shared/ui/Text/Text'
 import { useTranslation } from 'react-i18next'
@@ -12,6 +12,7 @@ interface ArticleListProps {
     articles: ArticleSchema[]
     isLoading?: boolean
     view?: ArticleView
+    target?: HTMLAttributeAnchorTarget
 }
 
 const $getSkeletons = (view: ArticleView) => new Array(view === 'tile' ? 9 : 3)
@@ -29,6 +30,7 @@ export const ArticleList: FC<ArticleListProps> = memo((props: ArticleListProps) 
     articles,
     isLoading,
     view = 'tile',
+    target,
   } = props
   const { t } = useTranslation('article-details')
 
@@ -61,6 +63,7 @@ export const ArticleList: FC<ArticleListProps> = memo((props: ArticleListProps) 
         articles.length > 0
           ? articles.map((article: ArticleSchema) => (
             <ArticleListItem
+              target={target}
               view={view}
               key={article.id}
               article={article}
