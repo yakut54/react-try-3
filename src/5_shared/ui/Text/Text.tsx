@@ -5,6 +5,7 @@ import cls from './Text.module.scss'
 
 export enum TextTheme {
     NORMAl = 'normal',
+    INVERTED = 'inverted',
     ERROR = 'error'
 }
 

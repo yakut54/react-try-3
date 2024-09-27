@@ -74,3 +74,13 @@
     color: var(--color-red-dark);
   }
 }
+
+.inverted {
+  .title {
+    color: var(--inverted-primary-color);
+  }
+
+  .text {
+    color: var(--inverted-secondary-color);
+  }
+}

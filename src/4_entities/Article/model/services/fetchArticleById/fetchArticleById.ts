@@ -14,7 +14,11 @@ export const fetchArticleById = createAsyncThunk<
     const { rejectWithValue, extra } = thunkAPI
 
     try {
-      const response = await extra.api.get<ArticleSchema>(`/articles/${articleId}`)
+      const response = await extra.api.get<ArticleSchema>(`/articles/${articleId}`, {
+        params: {
+          _expand: 'user',
+        },
+      })
 
       if (!response.data) {
         throw new Error('ArticleSchema does not exist')

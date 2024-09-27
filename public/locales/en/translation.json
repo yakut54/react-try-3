@@ -35,5 +35,8 @@
   "Наука": "Science",
   "Экономика": "Economics",
   "Политика": "Politics",
-  "Ошибка": "Ошибка"
+  "Ошибка": "Error",
+  "Редактирование статьи с ID = ": "Editing an article with an ID =",
+  "Создание новой статьи": "Creating a new article",
+  "Создать статью": "Create an article"
 }
