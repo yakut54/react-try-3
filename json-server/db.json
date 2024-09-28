@@ -789,6 +789,18 @@
       "userId": "1",
       "articleId": "5",
       "id": "KA0BjAH"
+    },
+    {
+      "text": "test",
+      "userId": "4",
+      "articleId": "15",
+      "id": "EBi8HFg"
+    },
+    {
+      "text": "test2",
+      "userId": "4",
+      "articleId": "15",
+      "id": "OD8t7-T"
     }
   ],
   "users": [

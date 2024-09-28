@@ -1,7 +1,3 @@
-import { JSXElementConstructor, lazy, LazyExoticComponent } from 'react'
+import { lazy } from 'react'
 
-export const ProfilePageAsync: LazyExoticComponent<JSXElementConstructor<{}>> = lazy(() => new Promise((resolve) => {
-  setTimeout(() => {
-    resolve(import(/* webpackChunkName: "ProfilePage" */'./ProfilePage'))
-  }, 1000)
-}))
+export const ProfilePageAsync = lazy(() => import(/* webpackChunkName: "ProfilePage" */'./ProfilePage'))

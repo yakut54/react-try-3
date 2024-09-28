@@ -1,4 +1,4 @@
-import React, { FC, memo, useCallback } from 'react'
+import React, { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Input } from '5_shared/ui/Input/Input'
 import { classNames } from '5_shared/lib/classNames/classNames'
@@ -19,7 +19,7 @@ const reducers: ReducersList = {
   addCommentForm: addCommentFormReducer,
 }
 
-const AddCommentForm: FC<AddCommentFormProps> = memo((props: AddCommentFormProps) => {
+const AddCommentForm = memo((props: AddCommentFormProps) => {
   const { className, onSendComment } = props
   const { t } = useTranslation('comments')
   const text = useAppSelector(getAddCommentFormText)
