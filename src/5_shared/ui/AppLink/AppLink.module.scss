@@ -1,0 +1,16 @@
+.app-link {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    opacity: .8;
+  }
+}
+
+.app-link.normal {
+  color: var(--primary-color);
+}
+
+.app-link.inverted {
+  color: var(--inverted-primary-color);
+}

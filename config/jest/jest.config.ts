@@ -33,11 +33,16 @@ const config: Config = {
   ],
   moduleNameMapper: {
     '\\.(s?css)$': 'identity-obj-proxy', // для react testing library (scss module)
-    '\\.svg': '<rootDir>/config/jest/jestEmptyComponent.tsx',
+    '\\.(jpg|jpeg|png|gif|svg)': '<rootDir>/config/jest/jestEmptyComponent.tsx',
   },
   setupFilesAfterEnv: [
     '<rootDir>config/jest/setupTests.ts',
   ],
+  globals: {
+    __IS_DEV__: true,
+    __API__: true,
+    __PROJECT__: 'jest',
+  },
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -91,12 +96,9 @@ const config: Config = {
   // A path to a module which exports an async function that is triggered once after all test suites
   // globalTeardown: undefined,
 
-  // A set of global variables that need to be available in all test environments
-  // globals: {},
-
   // The maximum amount of workers used to run your tests. Can be specified as %
   // or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the
-  // maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
+  // maximum worker number. maxWorkers: 2_widgets will use a maximum of 2_widgets workers.
   // maxWorkers: "50%",
   // An array of regexp pattern strings, matched against all
   // module paths before considered 'visible' to the module loader

@@ -1,0 +1,34 @@
+.article-details {
+  position: static;
+}
+
+.avatar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.article-info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  margin: 0 auto;
+}
+
+.title {
+  margin-top: 20px;
+}
+
+.skeleton {
+  margin-top: 15px;
+}
+
+.icon {
+  margin-right: 6px;
+}
+
+.block {
+  margin-top: 16px;
+}

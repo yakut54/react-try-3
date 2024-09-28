@@ -1,0 +1,67 @@
+.modal {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background: transparent;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  color: var(--primary-color);
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--bg-color);
+  transition: .6s transform;
+  transform: scale(.1);
+  max-width: 60%;
+  width: 600px;
+}
+
+.opened {
+  pointer-events: auto;
+  opacity: 1;
+  z-index: var(--modal-z-index);
+
+  .content {
+    animation: modal-open .3s ease-in-out forwards;
+  }
+}
+
+.is-closing {
+  .content {
+    animation: modal-close .3s ease-in-out forwards;
+  }
+}
+
+
+@keyframes modal-open {
+  0% {
+    transform: scale(.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes modal-close {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(.1);
+  }
+}

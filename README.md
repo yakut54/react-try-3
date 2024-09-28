@@ -8,14 +8,26 @@
 git clone git@github.com:yakut54/react-try-3.git
 ````
 
-2. Установите зависимости с помощью `npm install`
+2. Установите зависимости с помощью `npm install --legacy-peer-deps`
 
 ## Использование
 
-[package.json](package.json)### Запуск проекта
+### Запуск проекта и сервера
 
 ```bash
 npm start
+```
+
+### Запуск сервера
+
+```bash
+npm start:dev:server
+```
+
+### Запуск проекта
+
+```bash
+npm start:dev:app
 ```
 
 ### Сборка для продакшн

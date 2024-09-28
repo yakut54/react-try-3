@@ -23,21 +23,21 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
-    indent: [2],
     'no-shadow': 'off',
-    'react/jsx-indent': [2],
+    indent: ['error', 2],
     semi: ['error', 'never'],
     'no-unused-vars': 'warn',
     'import/extensions': 'off',
-    'react/jsx-indent-props': [2],
     'import/no-unresolved': 'off',
     'no-underscore-dangle': 'off',
+    'react/jsx-indent': ['error', 2],
     'react/react-in-jsx-scope': 'off',
     'react/require-default-props': 'off',
     'react/jsx-props-no-spreading': 'off',
     'import/prefer-default-export': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
+    'react/jsx-indent-props': ['error', 2],
     'import/no-extraneous-dependencies': 'off',
     'react/function-component-definition': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
@@ -45,23 +45,70 @@ module.exports = {
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
     'max-len': ['error', { code: 120, ignoreComments: true }],
     'eslint-disable-next-line react/jsx-props-no-spreading': 'off',
-    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
+    'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx', '.tsx'] }],
+    'react/jsx-no-useless-fragment': 'off',
+    'react/no-array-index-key': 'off',
+    'arrow-body-style': 'off',
+    'no-undef': 'off',
     'i18next/no-literal-string': [
       'error',
       {
         markupOnly: true,
-        ignoreAttribute: ['data-testid', 'to', 'fallback'],
+        ignoreAttribute: [
+          'to',
+          'view',
+          'target',
+          'fallback',
+          'reducerKey',
+          'data-testid',
+        ],
       },
     ],
   },
   overrides: [
     {
+      files: [
+        '**/src/**/*.{test,stories}.{ts,tsx}',
+      ],
+    },
+    {
+      files: [
+        '**/src/**/*.{test,stories}.{ts,tsx}',
+        '**/src/**/mocks/*.{ts,tsx}',
+        '**/src/**/ArticleDetailsPage/**/*.{ts,tsx}',
+      ],
       rules: {
         'i18next/no-literal-string': 'off',
         'max-len': 'off',
       },
-      files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+    },
+    {
+      files: ['**/src/**/slices/**/*.{ts,tsx}'],
+      rules: {
+        'no-param-reassign': [
+          'error',
+          {
+            props: true,
+            ignorePropertyModificationsFor: ['state'],
+          },
+        ],
+      },
+    },
+    {
+      files: [
+        'DynamicModuleLoader.tsx',
+        'useInitialEffect.ts',
+        'routeConfig.tsx',
+      ],
+      rules: {
+        'react-hooks/exhaustive-deps': 'off',
+        'no-unused-vars': 'off',
+      },
     },
   ],
-  globals: { __IS_DEV__: true },
+  globals: {
+    __IS_DEV__: true,
+    __API__: true,
+    __PROJECT__: true,
+  },
 }

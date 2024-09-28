@@ -1,0 +1,36 @@
+.app-dark-theme {
+  --bg-color: #2c3a3a;
+  --inverted-bg-color: #f7fbfc;
+
+  /* Разбиваем primary-color на отдельные компоненты */
+  --primary-color-rgb: 79 177 161;
+  --primary-color: rgb(var(--primary-color-rgb));
+
+  /* Разбиваем secondary-color на отдельные компоненты */
+  --secondary-color-rgb: 114 211 193;
+  --secondary-color: rgb(var(--secondary-color-rgb));
+
+  /* Разбиваем inverted-primary-color на отдельные компоненты */
+  --inverted-primary-color-rgb: 47 143 131;
+  --inverted-primary-color: rgb(var(--inverted-primary-color-rgb));
+
+  /* Разбиваем inverted-secondary-color на отдельные компоненты */
+  --inverted-secondary-color-rgb: 53 79 82;
+  --inverted-secondary-color: rgb(var(--inverted-secondary-color-rgb));
+
+  // opacity
+  --primary-color-opacity: rgb(var(--primary-color-rgb) / 20%);
+  --secondary-color-opacity: rgb(var(--secondary-color-rgb) / 20%);
+  --inverted-primary-color-opacity: rgb(var(--inverted-primary-color-rgb) / 20%);
+  --inverted-secondary-color-opacity: rgb(var(--inverted-secondary-color-rgb) / 20%);
+
+  // skeleton
+  --skeleton-color: #b3bebe;
+  --skeleton-shadow: rgb(var(--primary-color-rgb) / 20%);
+
+  // code
+  --code-bg: #263334;
+
+  // card
+  --card-bg: rgb(92 115 115);
+}

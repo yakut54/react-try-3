@@ -1,0 +1,19 @@
+.article-list {
+  position: static;
+  width: 100%;
+}
+
+.tile {
+  width: 100%;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}
+
+.list {
+  position: relative;
+}
+
+.mb {
+  margin-bottom: 2%;
+}

@@ -1,0 +1,36 @@
+.app-orange-theme {
+  --bg-color: #fff3e0;
+  --inverted-bg-color: #d84315;
+
+  /* Разбиваем primary-color на отдельные компоненты */
+  --primary-color-rgb: 255 87 34;
+  --primary-color: rgb(var(--primary-color-rgb));
+
+  /* Разбиваем secondary-color на отдельные компоненты */
+  --secondary-color-rgb: 255 138 101;
+  --secondary-color: rgb(var(--secondary-color-rgb));
+
+  /* Разбиваем inverted-primary-color на отдельные компоненты */
+  --inverted-primary-color-rgb: 255 255 255;
+  --inverted-primary-color: rgb(var(--inverted-primary-color-rgb));
+
+  /* Разбиваем inverted-secondary-color на отдельные компоненты */
+  --inverted-secondary-color-rgb: 255 204 188;
+  --inverted-secondary-color: rgb(var(--inverted-secondary-color-rgb));
+
+  // opacity
+  --primary-color-opacity: rgb(var(--primary-color-rgb) / 20%);
+  --secondary-color-opacity: rgb(var(--secondary-color-rgb) / 20%);
+  --inverted-primary-color-opacity: rgb(var(--inverted-primary-color-rgb) / 20%);
+  --inverted-secondary-color-opacity: rgb(var(--inverted-secondary-color-rgb) / 20%);
+
+  // skeleton
+  --skeleton-color: #fff1dd;
+  --skeleton-shadow: rgb(71 29 16 / 20%);
+
+  // code
+  --code-bg: #ffebee;
+
+  // card
+  --card-bg: #ffded4;
+}

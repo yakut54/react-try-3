@@ -1,0 +1,29 @@
+.comment-card {
+  border: 1px solid var(--inverted-primary-color);
+  padding: 10px;
+}
+
+.comment-card-header {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  margin-top: 10px;
+}
+
+.username {
+  margin-left: 10px;
+}
+
+.username p, .text p {
+  color: var(--inverted-primary-color);
+}
+
+.text p {
+  color: var(--inverted-secondary-color);
+}
+
+.loading {
+  border: none;
+}

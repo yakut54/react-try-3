@@ -2,7 +2,7 @@ name: linting, testing, and building
 run-name: Hedonism and sybaritism 👻
 on: [ push ]
 jobs:
-  pipline:
+  pipeline:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -33,48 +33,5 @@ jobs:
         if: always()
       - name: screenshots testing
         run: npm run test:ui:ci
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        if: always()
 
