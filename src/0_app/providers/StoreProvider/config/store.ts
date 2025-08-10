@@ -9,10 +9,7 @@ import { $api } from '5_shared/api/api'
 import type { StateSchema, ThunkExtraArgs } from './StateSchema'
 import { createReducerManager } from './reducerManager'
 
-export function createAppStore(
-  initialState?: StateSchema,
-  asyncReducers?: ReducersMapObject<StateSchema>,
-) {
+export function createAppStore(initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     counter: counterReducer,
@@ -40,4 +37,4 @@ export function createAppStore(
 
 export type AppStore = ReturnType<typeof createAppStore>
 export type RootState = ReturnType<AppStore['getState']>
-export type AppDispatch = ReturnType<typeof createAppStore>['dispatch']
+export type AppDispatch = AppStore['dispatch']

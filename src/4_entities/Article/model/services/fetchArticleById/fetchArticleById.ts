@@ -2,7 +2,7 @@ import i18n from 'i18next'
 import { AxiosError } from 'axios'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from '0_app/providers/StoreProvider'
-import { ArticleSchema } from '../../types/ArticleSchema'
+import { ArticleSchema } from '4_entities/Article'
 
 export const fetchArticleById = createAsyncThunk<
     ArticleSchema,

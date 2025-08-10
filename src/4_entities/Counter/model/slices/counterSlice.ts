@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { CounterSchema } from '../types/counterSchema'
+import { CounterSchema } from '4_entities/Counter'
 
 // import type { PayloadAction } from '@reduxjs/toolkit'
 

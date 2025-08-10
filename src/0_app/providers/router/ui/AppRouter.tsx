@@ -4,6 +4,7 @@ import { AppRouteProps, routeConfig } from '5_shared/config/routeConfig/routeCon
 import { RequireAuth } from '0_app/providers/router/ui/RequireAuth'
 
 export const AppRouter = memo(() => {
+  //
   const renderWithWrapper = useCallback((route: AppRouteProps) => {
     const $element: JSX.Element = (
       <Suspense fallback="">
