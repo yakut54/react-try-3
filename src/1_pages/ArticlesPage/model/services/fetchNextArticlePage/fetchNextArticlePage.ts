@@ -15,8 +15,6 @@ const fetchNextArticlePage = createAsyncThunk<
 >(
   'articlesPage/fetchNextArticlePage',
   async (_, thunkAPI) => {
-      console.log(thunkAPI)
-
     const {
       dispatch, getState,
     } = thunkAPI
