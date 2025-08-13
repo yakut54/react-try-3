@@ -98,6 +98,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
+    "@tanstack/react-virtual": "^3.13.12",
     "axios": "^1.7.2",
     "i18next": "^21.6.11",
     "i18next-browser-languagedetector": "^6.1.3",
