@@ -12,6 +12,7 @@ import type { ArticleDetailsSchema } from '4_entities/Article'
 import type { ArticlesPageSchema } from '1_pages/ArticlesPage'
 import type { AddCommentFormSchema } from '3_features/AddCommentForm'
 import type { ArticleDetailsPageSchema } from '1_pages/ArticleDetailsPage'
+import type { TempPageSchema } from '1_pages/TempPage/model/types/TempPageSchema'
 
 export interface StateSchema {
     UI: UISchema
@@ -23,6 +24,7 @@ export interface StateSchema {
     articleDetails?: ArticleDetailsSchema
     addCommentForm?: AddCommentFormSchema
     articleDetailsPage?: ArticleDetailsPageSchema
+    tempPage?: TempPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

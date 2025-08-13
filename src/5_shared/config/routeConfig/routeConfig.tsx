@@ -6,6 +6,7 @@ import { NotFoundPage } from '1_pages/NotFoundPage'
 import { ArticlesPage } from '1_pages/ArticlesPage'
 import { ArticleDetailsPage } from '1_pages/ArticleDetailsPage'
 import { ArticleEditPage } from '1_pages/ArticleEditPage'
+import { TempPage } from '1_pages/TempPage'
 
 export type AppRouteProps = RouteProps & { authOnly?: boolean }
 
@@ -18,6 +19,7 @@ export enum AppRoutes {
     ARTICLE_CREATE = 'article_create',
     ARTICLE_EDIT = 'article_edit',
     NOT_FOUND = 'not_found',
+    TEMP = 'temp'
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
@@ -29,6 +31,7 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.ARTICLE_CREATE]: '/articles/new',
   [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
   [AppRoutes.NOT_FOUND]: '*',
+  [AppRoutes.TEMP]: '/temp',
 }
 
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {
@@ -68,5 +71,9 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
   [AppRoutes.NOT_FOUND]: {
     path: RoutePath.not_found,
     element: <NotFoundPage />,
+  },
+  [AppRoutes.TEMP]: {
+    path: RoutePath.temp,
+    element: <TempPage />,
   },
 }

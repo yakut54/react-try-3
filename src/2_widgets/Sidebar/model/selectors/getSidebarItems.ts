@@ -4,6 +4,7 @@ import MainIcon from '5_shared/assets/icons/home.svg'
 import AboutIcon from '5_shared/assets/icons/about.svg'
 import ProfileIcon from '5_shared/assets/icons/chuvak.svg'
 import ArticlesIcon from '5_shared/assets/icons/articles.svg'
+import TempIcon from '5_shared/assets/icons/temp.svg'
 import { RoutePath } from '5_shared/config/routeConfig/routeConfig'
 import { SidebarItemType } from '../types/sidebarItemType'
 
@@ -35,6 +36,12 @@ export const getSidebarItems = createSelector(
           path: RoutePath.articles,
           Icon: ArticlesIcon,
           text: 'Статьи',
+          authOnly: true,
+        },
+        {
+          path: RoutePath.temp,
+          Icon: TempIcon,
+          text: 'TEMP',
           authOnly: true,
         },
       )
