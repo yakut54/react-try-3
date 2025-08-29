@@ -47,9 +47,12 @@ export const PageWrapper: FC<PageWrapperProps> = memo((props: PageWrapperProps) 
       {children}
       {onScrollEnd ? (
         <div
+          style={{ width: 100, height: 50, backgroundColor: 'red' }}
           ref={triggerRef}
           className={cls.trigger}
-        />
+        >
+          12
+        </div>
       ) : null}
     </section>
   )

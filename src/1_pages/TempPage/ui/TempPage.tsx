@@ -29,7 +29,7 @@ const TempPage: FC = memo(() => {
         className={classNames(cls['temp-page'], {}, [])}
       >
         <>
-          {/* The scrollable element for your list */}
+          {/* Прокручиваемый элемент списка */}
           <div
             ref={parentRef}
             style={{
@@ -38,7 +38,7 @@ const TempPage: FC = memo(() => {
               width: '100%',
             }}
           >
-            {/* The large inner element to hold all of the items */}
+            {/* Внутренний элемент, который содержит все элементы списка */}
             <div
               style={{
                 height: `${rowVirtualizer.getTotalSize()}px`,

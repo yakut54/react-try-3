@@ -7,6 +7,8 @@ export function RequireAuth({ children }: { children: JSX.Element }) {
   const isAuth = useAppSelector(getUserAuthData)
   const location = useLocation()
 
+  console.log('Эге-гей я тут!!')
+
   if (!isAuth) {
     return (
       <Navigate

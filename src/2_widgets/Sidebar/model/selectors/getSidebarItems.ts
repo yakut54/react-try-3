@@ -22,6 +22,11 @@ export const getSidebarItems = createSelector(
         Icon: AboutIcon,
         text: 'О сайте',
       },
+      {
+        path: RoutePath.temp,
+        Icon: TempIcon,
+        text: 'TEMP',
+      },
     ]
 
     if (authData && authData.id) {
@@ -30,19 +35,13 @@ export const getSidebarItems = createSelector(
           path: `${RoutePath.profile}${authData.id}`,
           Icon: ProfileIcon,
           text: 'Профиль',
-          authOnly: true,
+          isShowOnlyAuth: true,
         },
         {
           path: RoutePath.articles,
           Icon: ArticlesIcon,
           text: 'Статьи',
-          authOnly: true,
-        },
-        {
-          path: RoutePath.temp,
-          Icon: TempIcon,
-          text: 'TEMP',
-          authOnly: true,
+          isShowOnlyAuth: true,
         },
       )
     }

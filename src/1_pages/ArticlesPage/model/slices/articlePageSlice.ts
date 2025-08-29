@@ -4,11 +4,13 @@ import { StateSchema } from '0_app/providers/StoreProvider'
 import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from '5_shared/const/localStorage'
 import { SortOrder } from '5_shared/types/SortOrder'
 import { ArticleSortField } from '4_entities/Article/model/types/ArticleSchema'
+import { ArticlesPageSchema } from '1_pages/ArticlesPage'
+import { LIST_ARTICLES, TILE_ARTICLES } from '4_entities/Article/model/const/articleCount'
 import fetchArticlesList from '../services/fetchArticlesList/fetchArticlesList'
-import { ArticlesPageSchema } from '../types/ArticlesPageSchema'
 
-const articleAdapter = createEntityAdapter<ArticleSchema>()
-articleAdapter.selectId = (article: ArticleSchema) => article.id
+const articleAdapter = createEntityAdapter<ArticleSchema>({
+  selectId: (article: ArticleSchema) => article.id,
+})
 
 export const getArticles = articleAdapter.getSelectors<StateSchema>(
   (state) => state.articlesPage || articleAdapter.getInitialState(),
@@ -27,7 +29,7 @@ const initialState = articleAdapter.getInitialState<ArticlesPageSchema>({
   sort: 'createdAt',
   // pagination
   page: 1,
-  limit: 18,
+  limit: 0,
   isMore: true,
   // init
   _isInited: false,
@@ -59,7 +61,7 @@ export const articlePageSlice = createSlice({
     initState(state) {
       const view = window.localStorage.getItem(ARTICLE_VIEW_LOCAL_STORAGE_KEY) as ArticleView
       state.view = view
-      state.limit = view === 'list' ? 3 : 9
+      state.limit = view === 'list' ? LIST_ARTICLES : TILE_ARTICLES
       state._isInited = true
     },
   },

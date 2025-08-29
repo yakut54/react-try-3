@@ -17,7 +17,7 @@ export const SidebarItem: FC<SidebarItemProps> = memo((props: SidebarItemProps) 
   const { t } = useTranslation()
   const isAuth = !!useAppSelector(getUserAuthData)
 
-  if (item.authOnly && !isAuth) {
+  if (item.isShowOnlyAuth && !isAuth) {
     return null
   }
 
