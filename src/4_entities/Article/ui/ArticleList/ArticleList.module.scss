@@ -5,9 +5,9 @@
 
 .tile {
   width: 100%;
-  display: grid;
+  display: flex;
   gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  flex-wrap: wrap;
 }
 
 .list {

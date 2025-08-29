@@ -2,9 +2,10 @@ import { FC, HTMLAttributeAnchorTarget, memo } from 'react'
 import { classNames } from '5_shared/lib/classNames/classNames'
 import { Text, TextSize } from '5_shared/ui/Text/Text'
 import { useTranslation } from 'react-i18next'
+import { ArticleSchema, ArticleView } from '4_entities/Article'
+import { LIST_ARTICLES, TILE_ARTICLES } from '4_entities/Article/model/const/articleCount'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
-import { ArticleSchema, ArticleView } from '../../model/types/ArticleSchema'
 import cls from './ArticleList.module.scss'
 
 interface ArticleListProps {
@@ -15,7 +16,11 @@ interface ArticleListProps {
     target?: HTMLAttributeAnchorTarget
 }
 
-const $getSkeletons = (view: ArticleView) => new Array(view === 'tile' ? 9 : 3)
+const $getSkeletons = (view: ArticleView) => new Array(
+  view === 'tile'
+    ? TILE_ARTICLES
+    : LIST_ARTICLES,
+)
   .fill(0)
   .map((_, idx) => (
     <ArticleListItemSkeleton

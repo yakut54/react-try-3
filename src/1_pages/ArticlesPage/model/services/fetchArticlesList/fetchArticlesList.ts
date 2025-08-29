@@ -43,10 +43,10 @@ const fetchArticlesList = createAsyncThunk<
       const response = await extra.api.get<ArticleSchema[]>('/articles', {
         params: {
           q: search,
-          _page: page,
+          // _page: page,
+          // _limit: limit,
           _sort: sort,
           _order: order,
-          _limit: limit,
           _expand: 'user',
           type: type === ArticleType.ALL ? undefined : type,
         },
